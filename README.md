@@ -1,15 +1,39 @@
-# Ansh & Riley Full-Stack Template
+# Obesity Learning Center
 
-This is a full-stack template project for Software Composers to create  applications with AI.
+A modern, password-protected educational website showcasing obesity research, statistics, and educational activities. Built with Next.js and designed with a sleek, professional interface.
 
-## Getting started
-To create a new project, you go to `/paths`, choose from our list of Paths, and then use Cursor's Composer feature to quickly scaffold your project!
+## Features
 
-You can also edit the Path's prompt template to be whatever you like!
+- **Password Protection**: Secure access with environment-based authentication
+- **Modern Design**: Glassmorphism effects, animated gradients, and smooth transitions
+- **Responsive Layout**: Optimized for all device sizes
+- **Educational Content**: 
+  - Global obesity statistics with animated counters
+  - Educational activities with external links
+  - Curated research resources from PubMed
+  - Video introduction section
+- **Professional Branding**: ReachMD logo integration and consistent theming
 
-## Technologies used
-This doesn't really matter, but is useful for the AI to understand more about this project. We are using the following technologies
-- React with Next.js 14 App Router
-- TailwindCSS
-- Firebase Auth, Storage, and Database
-- Multiple AI endpoints including OpenAI, Anthropic, and Replicate using Vercel's AI SDK
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Create a `.env.local` file with: `SITE_PASSWORD=obesity123`
+4. Run the development server: `npm run dev`
+5. Visit `http://localhost:3000` and enter the password to access the site
+
+## Technologies Used
+
+- **Frontend**: React with Next.js 14 App Router
+- **Styling**: TailwindCSS with custom animations
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Authentication**: Custom password protection with environment variables
+
+## Deployment
+
+This project is ready for deployment on Vercel. Make sure to add the `SITE_PASSWORD` environment variable in your Vercel project settings.
+
+## Environment Variables
+
+- `SITE_PASSWORD` - The password required to access the website
