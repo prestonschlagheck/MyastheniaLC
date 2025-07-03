@@ -19,11 +19,11 @@ function FacultyCard({ name, title, image, index }: FacultyCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="group h-full"
+      className="h-full"
     >
-      <div className="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-lg hover:border-blue-200 transition-all duration-300 text-center h-full flex flex-col justify-between min-h-[160px]">
+      <div className="bg-white border border-gray-200 rounded-xl p-4 transition-all duration-300 text-center h-full flex flex-col justify-between min-h-[160px]">
         {/* Profile Photo */}
-        <div className="w-20 h-20 mx-auto mb-3 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-200 transition-colors overflow-hidden flex-shrink-0">
+        <div className="w-20 h-20 mx-auto mb-3 bg-gray-100 rounded-full flex items-center justify-center transition-colors overflow-hidden flex-shrink-0">
           {image ? (
             <Image
               src={image}
