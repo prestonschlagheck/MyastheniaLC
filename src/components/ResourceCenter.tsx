@@ -1,8 +1,8 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { FileText, ExternalLink, Calendar, Users } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { FileText, ExternalLink, Calendar, Users, ChevronDown, ChevronUp } from 'lucide-react'
 
 interface ResourceCardProps {
   title: string
@@ -75,6 +75,7 @@ function ResourceCard({ title, authors, publication, date, link, index }: Resour
 export function ResourceCenter() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [isExpanded, setIsExpanded] = useState(false)
 
   const resources = [
     {
@@ -128,39 +129,46 @@ export function ResourceCenter() {
   ]
 
   return (
-    <section ref={ref} className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section ref={ref} className="py-8 lg:py-12 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Resource Center
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             Discover a curated collection of foundational, practical, and real-world educational resources at your fingertips. Click on a link to get started.
           </p>
+
+          {/* Toggle Button */}
+          <motion.button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 mx-auto"
+          >
+            {isExpanded ? 'Hide Resources' : 'Click to View Resources'}
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </motion.button>
         </motion.div>
 
-        {/* Resources Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {resources.map((resource, index) => (
-            <ResourceCard key={index} {...resource} />
-          ))}
-        </div>
-
-        {/* References Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 text-center text-sm text-gray-500"
-        >
-          <p>All research papers and resources are peer-reviewed and sourced from reputable medical journals</p>
-        </motion.div>
+        {/* Resources Grid - Collapsible */}
+        {isExpanded && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-3 gap-6"
+          >
+            {resources.map((resource, index) => (
+              <ResourceCard key={index} {...resource} />
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   )

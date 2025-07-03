@@ -12,7 +12,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center">
           {/* ReachMD Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -34,20 +34,6 @@ export function Header() {
               }}
               priority
             />
-          </motion.div>
-
-          {/* Access Link */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <button className="flex items-center gap-2 text-gray-800 hover:text-blue-600 transition-colors font-medium">
-              Access on ReachMD
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </button>
           </motion.div>
         </div>
       </div>

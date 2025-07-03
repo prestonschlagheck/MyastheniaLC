@@ -8,14 +8,13 @@ import Image from 'next/image'
 interface ActivityCardProps {
   title: string
   category: string
-  segmentId: string
   credits: string
   image: string
   link: string
   index: number
 }
 
-function ActivityCard({ title, category, segmentId, credits, image, link, index }: ActivityCardProps) {
+function ActivityCard({ title, category, credits, image, link, index }: ActivityCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -42,13 +41,6 @@ function ActivityCard({ title, category, segmentId, credits, image, link, index 
           <div className="absolute top-4 left-4">
             <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
               {category}
-            </span>
-          </div>
-
-          {/* Segment ID Badge */}
-          <div className="absolute top-4 right-4">
-            <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
-              {segmentId}
             </span>
           </div>
 
@@ -89,7 +81,6 @@ export function EducationalPrograms() {
     {
       title: "Transforming Global Obesity Care: Empowering Clinicians With Comprehensive Strategies From Early Diagnosis to Patient-Centered Treatments",
       category: "CME/CE",
-      segmentId: "#29163",
       credits: "1.50",
       image: "/tab1.png",
       link: "https://reachmd.com/programs/cme/transforming-global-obesity-care-empowering-clinicians-with-comprehensive-strategies-from-early-diagnosis-to-patient-centered-treatments/29163/"
@@ -97,7 +88,6 @@ export function EducationalPrograms() {
     {
       title: "The Health Gains of Weight Loss: GLP-1 Receptor Agonists for Comprehensive, Long-Term Management of Obesity and Its Comorbidities",
       category: "CME/CE",
-      segmentId: "#29756",
       credits: "0.50",
       image: "/tab2.png",
       link: "https://reachmd.com/programs/cme/the-health-gains-of-weight-loss-glp-1-receptor-agonists-for-comprehensive-long-term-management-of-obesity-and-its-comorbidities/29756/"
@@ -105,7 +95,7 @@ export function EducationalPrograms() {
   ]
 
   return (
-    <section ref={ref} id="educational-activities" className="py-20 lg:py-32 bg-white">
+    <section ref={ref} id="educational-activities" className="py-8 lg:py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <motion.div
@@ -125,8 +115,6 @@ export function EducationalPrograms() {
             <ActivityCard key={index} {...activity} index={index} />
           ))}
         </div>
-
-
       </div>
     </section>
   )

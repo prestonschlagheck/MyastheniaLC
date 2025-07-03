@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function Hero() {
   return (
-    <section className="relative h-[80vh] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+    <section className="relative h-[45vh] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
       {/* Animated Background Gradients */}
       <div className="absolute inset-0">
         <motion.div
@@ -62,48 +62,36 @@ export function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-full px-6 lg:px-12">
-        <div className="text-center space-y-8 max-w-5xl">
+        <div className="text-center space-y-6 max-w-5xl">
           {/* Main Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
+            className="space-y-3"
           >
-            <h1 className="text-6xl lg:text-8xl font-bold text-white leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
               Obesity Learning Center
             </h1>
-            <h2 className="text-3xl lg:text-4xl font-light text-cyan-300">
+            <h2 className="text-2xl lg:text-3xl font-light text-cyan-300">
               ADVANCING CARE IN OBESITY
             </h2>
           </motion.div>
 
-
-
-
-
-          {/* CTA Buttons */}
+          {/* CTA Button - Only Explore Activities, made smaller */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-6 pt-8"
+            className="flex justify-center pt-4"
           >
             <button 
-              onClick={() => document.getElementById('video-introduction')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-cyan-500 hover:bg-cyan-400 text-white px-10 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg text-lg"
-            >
-              Watch Introduction
-            </button>
-            <button 
               onClick={() => document.getElementById('educational-activities')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-white/30 hover:border-white/50 text-white px-10 py-4 rounded-xl font-semibold transition-all hover:bg-white/10 text-lg"
+              className="border-2 border-white/30 hover:border-white/50 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:bg-white/10 text-base"
             >
               Explore Activities
             </button>
           </motion.div>
-
-
         </div>
       </div>
 
@@ -112,7 +100,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

@@ -49,10 +49,10 @@ function StatCard({ icon, statValue, animatedNumber, suffix, description, delay 
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: delay / 1000 }}
-      className="group"
+      className="group h-full"
     >
-      <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group-hover:scale-105">
-        <div className="flex flex-col items-center text-center space-y-6">
+      <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group-hover:scale-105 h-full flex flex-col">
+        <div className="flex flex-col items-center text-center space-y-6 flex-1">
           <motion.div
             initial={{ scale: 0 }}
             animate={isInView ? { scale: 1 } : {}}
@@ -62,7 +62,7 @@ function StatCard({ icon, statValue, animatedNumber, suffix, description, delay 
             {icon}
           </motion.div>
           
-          <div className="space-y-3">
+          <div className="space-y-3 flex-1 flex flex-col justify-center">
             <motion.div
               className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
             >
@@ -70,8 +70,6 @@ function StatCard({ icon, statValue, animatedNumber, suffix, description, delay 
                 <>1 in {count}</>
               ) : statValue.includes('million') ? (
                 <>{count} million</>
-              ) : statValue.includes('and') ? (
-                <>{count}% & 16%</>
               ) : (
                 <>{count}{suffix}</>
               )}
@@ -102,10 +100,10 @@ export function Statistics() {
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-blue-500" />,
-      statValue: "43% and 16%",
-      animatedNumber: 43,
+      statValue: "16%",
+      animatedNumber: 16,
       suffix: "%",
-      description: "of adults aged 18+ were overweight (43%) and living with obesity (16%) in 2023",
+      description: "of adults aged 18+ were living with obesity in 2022",
       delay: 400
     },
     {
@@ -119,29 +117,13 @@ export function Statistics() {
   ]
 
   return (
-    <section ref={ref} className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
+    <section ref={ref} className="py-8 lg:py-12 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Global Obesity Statistics
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Critical statistics that highlight the global impact and importance of obesity awareness and treatment
-          </p>
-        </motion.div>
-
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
             <StatCard key={index} {...stat} />
           ))}
         </div>
-
-
       </div>
     </section>
   )
