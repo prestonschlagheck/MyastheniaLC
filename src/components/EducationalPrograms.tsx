@@ -166,25 +166,39 @@ function ActivityCard({ title, category, credits, image, link, index }: Activity
     }
   ] : [
     {
-      title: "Introduction to GLP-1 Receptor Agonists",
-      category: "Part 1",
-      credits: "0.15",
-      image: "/tab2.png",
-      link: "https://example.com/part1"
+      title: "Obesity: Unmasking the Chronic Disease Beneath the Weight",
+      category: "Episode",
+      credits: "",
+      image: "/im1.png",
+      link: "https://reachmd.com/programs/cme/obesity-unmasking-the-chronic-disease-beneath-the-weight/35826/"
     },
     {
-      title: "Clinical Efficacy and Safety Profiles",
-      category: "Part 2",
-      credits: "0.20",
-      image: "/tab2.png",
-      link: "https://example.com/part2"
+      title: "Obesity and Comorbidities: Strategies for Effective Patient Management",
+      category: "Episode",
+      credits: "",
+      image: "/im2.png",
+      link: "https://reachmd.com/programs/cme/obesity-and-comorbidities-strategies-for-effective-patient-management/35827/"
     },
     {
-      title: "Managing Comorbidities with GLP-1 Therapy",
-      category: "Part 3",
-      credits: "0.15",
-      image: "/tab2.png",
-      link: "https://example.com/part3"
+      title: "Treating Obesity: Lifelong Strategies from Lifestyle to Pharmacotherapy and Surgery",
+      category: "Episode",
+      credits: "",
+      image: "/im3.png",
+      link: "https://reachmd.com/programs/cme/treating-obesity-lifelong-strategies-from-lifestyle-to-pharmacotherapy-and-surgery-treating-obesity-lifelong-strategies-ffrom-lifestyle-to-pharmacotherapy-and-surgery/35828/"
+    },
+    {
+      title: "Beyond the Scale: How to Tackle Obesity's Comorbidities",
+      category: "Episode",
+      credits: "",
+      image: "/im4.png",
+      link: "https://reachmd.com/programs/cme/beyond-the-scale-how-to-tackle-obesitys-comorbidities/35829/"
+    },
+    {
+      title: "Practical Tips for GLP-1 RA Therapy Success",
+      category: "Episode",
+      credits: "",
+      image: "/im5.png",
+      link: "https://reachmd.com/programs/cme/practical-tips-for-glp-1-ra-therapy-success/35830/"
     }
   ];
 
