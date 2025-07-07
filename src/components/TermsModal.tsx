@@ -78,7 +78,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
             <div className="flex-1 overflow-y-auto p-6 space-y-6 text-gray-700 leading-relaxed">
               <div className="space-y-4">
                 <p>
-                  U.S. HealthConnect, Inc. ("USHC" or "us" or "we" or "our") owns and operates ReachMD, which includes ReachMD.com ("Sites"), as well as the ReachMD mobile applications ("Apps"). These Terms and Conditions of Use ("TCU") govern your access to and use of the Sites, Apps, and any other website or app where this Policy is posted or published. To the extent permitted by applicable law, this Policy also governs any interactions you may have with ReachMD.com, including through social media, over the phone, in writing, in person, through advertising services we help provide on our Sites, Apps, or through third-party websites or other online properties, or through any other interactions you may have with USHC (all of which will be referred to collectively, together with the Sites and Apps, as the "Services").
+                  U.S. HealthConnect, Inc. (&quot;USHC&quot; or &quot;us&quot; or &quot;we&quot; or &quot;our&quot;) owns and operates ReachMD, which includes ReachMD.com (&quot;Sites&quot;), as well as the ReachMD mobile applications (&quot;Apps&quot;). These Terms and Conditions of Use (&quot;TCU&quot;) govern your access to and use of the Sites, Apps, and any other website or app where this Policy is posted or published. To the extent permitted by applicable law, this Policy also governs any interactions you may have with ReachMD.com, including through social media, over the phone, in writing, in person, through advertising services we help provide on our Sites, Apps, or through third-party websites or other online properties, or through any other interactions you may have with USHC (all of which will be referred to collectively, together with the Sites and Apps, as the &quot;Services&quot;).
                 </p>
                 
                 <p>
@@ -86,7 +86,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 </p>
                 
                 <p>
-                  <strong>IMPORTANT, PLEASE READ CAREFULLY:</strong> By clicking "ACCEPT" or otherwise accessing or using the Services, you represent and warrant that you are eighteen (18) years of age or older and acknowledge that you have read, understood, and agree to be bound by these TCU without modification. If you do not accept these TCU and agree to be so bound, you are not authorized to use the Services. These TCU constitute a legal contract between you and USHC and govern your access to and use of the Services. Do not access or use the Services if you are unwilling or unable to be bound by these TCU. Your continued use constitutes your automatic agreement to the applicable provisions in these TCU. Your rights to use the Services are limited by applicable federal, state, and local laws and regulations.
+                  <strong>IMPORTANT, PLEASE READ CAREFULLY:</strong> By clicking &quot;ACCEPT&quot; or otherwise accessing or using the Services, you represent and warrant that you are eighteen (18) years of age or older and acknowledge that you have read, understood, and agree to be bound by these TCU without modification. If you do not accept these TCU and agree to be so bound, you are not authorized to use the Services. These TCU constitute a legal contract between you and USHC and govern your access to and use of the Services. Do not access or use the Services if you are unwilling or unable to be bound by these TCU. Your continued use constitutes your automatic agreement to the applicable provisions in these TCU. Your rights to use the Services are limited by applicable federal, state, and local laws and regulations.
                 </p>
                 
                 <p>
@@ -150,7 +150,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">User Communications on the Sites and Apps</h3>
                 
                 <p>
-                  The Sites, Apps, and certain other Services may utilize various methods for users to upload or post content on or through such Services and to communicate with other users, health care providers, vendors, and third parties, such as forums, chatrooms, messaging or electronic mail. The content created out of such interactions is referred to collectively as "user generated content" ("UGC"). Any and all UGC on our Sites, Apps or other Services are subject to these TCU.
+                  The Sites, Apps, and certain other Services may utilize various methods for users to upload or post content on or through such Services and to communicate with other users, health care providers, vendors, and third parties, such as forums, chatrooms, messaging or electronic mail. The content created out of such interactions is referred to collectively as &quot;user generated content&quot; (&quot;UGC&quot;). Any and all UGC on our Sites, Apps or other Services are subject to these TCU.
                 </p>
                 
                 <p>
@@ -194,7 +194,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">Intellectual and Other Property</h3>
                 
                 <p>
-                  Other than the exceptions referenced in these TCU or noted elsewhere, the major exception being UGC uploaded/posted by users of the Services which remains the property of the users, all other content on the Sites or Apps is the property of USHC including, but not limited to, all marks, logos, names, text, data, documents, messages, pictures, images, video, audio, graphics, links, software and its underlying code, domain names, or other electronic files (referred to hereafter as "USHC Content"). You may not use USHC Content from our Sites, Apps, or any related Services commercially without our express permission.
+                  Other than the exceptions referenced in these TCU or noted elsewhere, the major exception being UGC uploaded/posted by users of the Services which remains the property of the users, all other content on the Sites or Apps is the property of USHC including, but not limited to, all marks, logos, names, text, data, documents, messages, pictures, images, video, audio, graphics, links, software and its underlying code, domain names, or other electronic files (referred to hereafter as &quot;USHC Content&quot;). You may not use USHC Content from our Sites, Apps, or any related Services commercially without our express permission.
                 </p>
                 
                 <p>
@@ -218,7 +218,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">Copyright Violations</h3>
                 
                 <p>
-                  If you believe any content available on the Sites or Apps violates your copyright and you want the content removed from the Sites or Apps, please send a detailed message with the following information (under the Digital Millennium Copyright Act, the following information must be included in the message) to USHC's designated agent for notice of claims of copyright infringement:
+                  If you believe any content available on the Sites or Apps violates your copyright and you want the content removed from the Sites or Apps, please send a detailed message with the following information (under the Digital Millennium Copyright Act, the following information must be included in the message) to USHC&apos;s designated agent for notice of claims of copyright infringement:
                 </p>
                 
                 <ol className="list-decimal pl-6 space-y-2">
@@ -231,7 +231,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                   "Under penalty of perjury, and subject to the penalties of 18 Pa. Cons. Stat. §4904 relating to unsworn falsification to authorities, the information I have provided is accurate; I am the copyright owner or I am authorized to act on the copyright owner's behalf; and my signature and/or the authorized copyright holder's signature appears below."</li>
                 </ol>
                 
-                <p><strong>USHC's Designated Agent is:</strong></p>
+                <p><strong>USHC&apos;s Designated Agent is:</strong></p>
                 <p><strong>Copyright Agent</strong></p>
                 <p><strong>EMAIL:</strong> info@ushealthconnect.com</p>
                 <p><strong>PHONE:</strong> 215.358.0555</p>
@@ -265,8 +265,8 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Violate any federal, state, or local laws or regulations.</li>
-                  <li>Upload/post anything that imposes an unreasonable or disproportionately large strain on USHC's network or computer infrastructure.</li>
-                  <li>Engage in any behavior that is designed to hack into or gain unauthorized access to protected areas of the Services and/or USHC's computers, servers or networks, and/or any computers or systems used by other users of the Services.</li>
+                  <li>Upload/post anything that imposes an unreasonable or disproportionately large strain on USHC&apos;s network or computer infrastructure.</li>
+                  <li>Engage in any behavior that is designed to hack into or gain unauthorized access to protected areas of the Services and/or USHC&apos;s computers, servers or networks, and/or any computers or systems used by other users of the Services.</li>
                   <li>Upload/post anything that could destroy, damage, or impair any portion of the Services or any computers, systems, hardware, or software used by USHC or other users.</li>
                   <li>Make unauthorized attempts to modify any information stored on the Services.</li>
                   <li>Make attempts to defeat or circumvent security features, or to utilize the Services for any purpose other than its intended purposes.</li>
@@ -282,7 +282,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 </p>
                 
                 <p>
-                  By accepting these TCU, you waive and hold harmless USHC from any claims resulting from any action taken by USHC during or as a result of USHC's investigation and/or from any actions taken as a consequence of investigations by either USHC or law enforcement related to your use of the Services.
+                  By accepting these TCU, you waive and hold harmless USHC from any claims resulting from any action taken by USHC during or as a result of USHC&apos;s investigation and/or from any actions taken as a consequence of investigations by either USHC or law enforcement related to your use of the Services.
                 </p>
               </div>
 
@@ -290,7 +290,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">Indemnity</h3>
                 
                 <p>
-                  You agree to indemnify, defend and hold harmless USHC, its wholly owned subsidiaries, affiliates and suppliers, including their officers, directors, employees, agents, licensors, representatives, attorneys, and business partners ("Indemnified Parties"), from and against any and all claims, demands, losses, costs, damages, liabilities, judgments, awards, and expenses (including attorneys' fees, costs of defense, and direct, indirect, punitive, special, individual, consequential, or exemplary damages) USHC or any of the Indemnified Parties suffer in relation to, arising from, or for the purpose of avoiding, any claim or demand from a third party that relates to your use of the Sites, Apps and/or any products or Services offered or rendered on or through the Sites or Apps, any UGC you upload or post on or through the Services, your breach of these TCU, the use of the Services by any person using your username and password, or any violation of an applicable law or regulation by you. Your indemnification obligation shall survive the termination of these TCU.
+                  You agree to indemnify, defend and hold harmless USHC, its wholly owned subsidiaries, affiliates and suppliers, including their officers, directors, employees, agents, licensors, representatives, attorneys, and business partners (&quot;Indemnified Parties&quot;), from and against any and all claims, demands, losses, costs, damages, liabilities, judgments, awards, and expenses (including attorneys' fees, costs of defense, and direct, indirect, punitive, special, individual, consequential, or exemplary damages) USHC or any of the Indemnified Parties suffer in relation to, arising from, or for the purpose of avoiding, any claim or demand from a third party that relates to your use of the Sites, Apps and/or any products or Services offered or rendered on or through the Sites or Apps, any UGC you upload or post on or through the Services, your breach of these TCU, the use of the Services by any person using your username and password, or any violation of an applicable law or regulation by you. Your indemnification obligation shall survive the termination of these TCU.
                 </p>
               </div>
 
@@ -312,11 +312,11 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <p><strong>YOUR USE OF THE SITES, APPS, AND/OR ANY OTHER USHC SERVICES IS AT YOUR OWN RISK.</strong></p>
                 
                 <p>
-                  TO THE EXTENT PERMITTED BY LAW, THE SITES, APPS, OTHER USHC SERVICES AND ANY RELATED CONTENT, INCLUDING ANY PRODUCTS, INFORMATION OR MATERIALS PROVIDED ON OR THROUGH OUR SERVICES, ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS AND, TO THE EXTENT PERMITTED BY LAW, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+                  TO THE EXTENT PERMITTED BY LAW, THE SITES, APPS, OTHER USHC SERVICES AND ANY RELATED CONTENT, INCLUDING ANY PRODUCTS, INFORMATION OR MATERIALS PROVIDED ON OR THROUGH OUR SERVICES, ARE PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS.
                 </p>
                 
                 <p>
-                  TO THE EXTENT PERMITTED BY LAW, USHC, ITS WHOLLY OWNED SUBSIDIARIES, AFFILIATES AND SUPPLIERS, INCLUDING THEIR OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, REPRESENTATIVES, ATTORNEYS, BUSINESS PARTNERS, AND ANY THIRD-PARTY SUPPLIER OR SERVICE PROVIDER THAT PROVIDES OR ASSISTS USHC IN PROVIDING THE SITES, APPS, AND ANY RELATED SERVICES (COLLECTIVELY, THE "DISCLAIMING PARTIES") MAKE NO WARRANTIES, REPRESENTATIONS OR ENDORSEMENTS WHATSOEVER, WHETHER EXPRESSED OR IMPLIED, WITH RESPECT TO THE SERVICES OR ANY PRODUCTS, INFORMATION OR MATERIALS OFFERED ON OR THROUGH THE SERVICES.
+                  TO THE EXTENT PERMITTED BY LAW, USHC, ITS WHOLLY OWNED SUBSIDIARIES, AFFILIATES AND SUPPLIERS, INCLUDING THEIR OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, LICENSORS, REPRESENTATIVES, ATTORNEYS, BUSINESS PARTNERS, AND ANY THIRD-PARTY SUPPLIER OR SERVICE PROVIDER THAT PROVIDES OR ASSISTS USHC IN PROVIDING THE SITES, APPS, AND ANY RELATED SERVICES (COLLECTIVELY, THE &quot;DISCLAIMING PARTIES&quot;) MAKE NO WARRANTIES, REPRESENTATIONS OR ENDORSEMENTS WHATSOEVER, WHETHER EXPRESSED OR IMPLIED, WITH RESPECT TO THE SERVICES OR ANY PRODUCTS, INFORMATION OR MATERIALS OFFERED ON OR THROUGH THE SERVICES.
                 </p>
                 
                 <p>
@@ -336,7 +336,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">Limitations on Damages</h3>
                 
                 <p>
-                  YOU ASSUME THE ENTIRE COST OF ALL NECESSARY REPAIRS IN THE EVENT YOU EXPERIENCE ANY LOSS OR DAMAGE ARISING FROM THE USE OF THE SERVICES OR ANY PRODUCTS, INFORMATION AND MATERIALS OFFERED ON OR THROUGH THE SERVICES. ALTHOUGH WE INTEND TO TAKE REASONABLE STEPS TO PREVENT THE INTRODUCTION OF VIRUSES, WORMS, "TROJAN HORSES" OR OTHER DESTRUCTIVE MATERIALS TO THE SITES AND APPS, THE DISCLAIMING PARTIES DO NOT GUARANTEE OR WARRANT THAT THE SERVICES OR ANY MATERIALS THAT MAY BE DOWNLOADED FROM THE SERVICES DO NOT CONTAIN SUCH DESTRUCTIVE FEATURES. WE ARE NOT LIABLE FOR ANY DAMAGES OR HARM ATTRIBUTABLE TO SUCH FEATURES.
+                  YOU ASSUME THE ENTIRE COST OF ALL NECESSARY REPAIRS IN THE EVENT YOU EXPERIENCE ANY LOSS OR DAMAGE ARISING FROM THE USE OF THE SERVICES OR ANY PRODUCTS, INFORMATION AND MATERIALS OFFERED ON OR THROUGH THE SERVICES. ALTHOUGH WE INTEND TO TAKE REASONABLE STEPS TO PREVENT THE INTRODUCTION OF VIRUSES, WORMS, &quot;TROJAN HORSES&quot; OR OTHER DESTRUCTIVE MATERIALS TO THE SITES AND APPS, THE DISCLAIMING PARTIES DO NOT GUARANTEE OR WARRANT THAT THE SERVICES OR ANY MATERIALS THAT MAY BE DOWNLOADED FROM THE SERVICES DO NOT CONTAIN SUCH DESTRUCTIVE FEATURES. WE ARE NOT LIABLE FOR ANY DAMAGES OR HARM ATTRIBUTABLE TO SUCH FEATURES.
                 </p>
                 
                 <p>
@@ -424,7 +424,7 @@ export function TermsModal({ isOpen, onClose }: TermsModalProps) {
                 </p>
                 
                 <p>
-                  USHC's failure to enforce any portion of these TCU is not a waiver of such portion.
+                  USHC&apos;s failure to enforce any portion of these TCU is not a waiver of such portion.
                 </p>
                 
                 <p>

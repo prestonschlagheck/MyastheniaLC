@@ -78,7 +78,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
             <div className="flex-1 overflow-y-auto p-6 space-y-6 text-gray-700 leading-relaxed">
               <div className="space-y-4">
                 <p>
-                  The ReachMD.com website ("Site"), as well as the ReachMD mobile applications ("Apps"), are owned and operated by U.S. HealthConnect, Inc. doing business as ReachMD ("ReachMD" or "us" or "we" or "our"). This privacy policy ("Policy") governs the manner in which we collect, use, maintain and disclose information collected from users ("User" or "you") of the Site, Apps and any other website or mobile app where this Policy is posted or published, or if you interact with us through social media, by phone, in writing, in person or through any other interactions you may have with ReachMD (all of which will be referred to collectively, together with the Site and Apps, as the "Services"). This Policy also explains how you can exercise certain rights you may have in connection with your privacy and the information we collect from you.
+                  The ReachMD.com website (&quot;Site&quot;), as well as the ReachMD mobile applications (&quot;Apps&quot;), are owned and operated by U.S. HealthConnect, Inc. doing business as ReachMD (&quot;ReachMD&quot; or &quot;us&quot; or &quot;we&quot; or &quot;our&quot;). This privacy policy (&quot;Policy&quot;) governs the manner in which we collect, use, maintain and disclose information collected from users (&quot;User&quot; or &quot;you&quot;) of the Site, Apps and any other website or mobile app where this Policy is posted or published, or if you interact with us through social media, by phone, in writing, in person or through any other interactions you may have with ReachMD (all of which will be referred to collectively, together with the Site and Apps, as the &quot;Services&quot;). This Policy also explains how you can exercise certain rights you may have in connection with your privacy and the information we collect from you.
                 </p>
                 
                 <p>
@@ -110,7 +110,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">Collection of Personal Data</h3>
                 
                 <p>
-                  Personal data ("Personal Data") is generally defined as information that, by itself or in combination with other information, may be able to identify you or could reasonably be associated with you, your household or your accounts.
+                  Personal data (&quot;Personal Data&quot;) is generally defined as information that, by itself or in combination with other information, may be able to identify you or could reasonably be associated with you, your household or your accounts.
                 </p>
                 
                 <p>
