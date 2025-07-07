@@ -78,11 +78,11 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <div className="flex-1 overflow-y-auto p-6 space-y-6 text-gray-700 leading-relaxed">
               <div className="space-y-4">
                 <p>
-                  ReachMD is the nation's largest learning platform for physicians and other healthcare professionals. We are passionate about <strong>healthcare education</strong> and delivering the absolute best learning experience. Our ethos is to help our learners stay current, and that's why we developed a broadcast network that delivers award-winning content any time, any place, and on any device. The ReachMD medical broadcast network is accessible anywhere you are − online, on mobile, and on air.
+                  ReachMD is the nation&apos;s largest learning platform for physicians and other healthcare professionals. We are passionate about <strong>healthcare education</strong> and delivering the absolute best learning experience. Our ethos is to help our learners stay current, and that&apos;s why we developed a broadcast network that delivers award-winning content any time, any place, and on any device. The ReachMD medical broadcast network is accessible anywhere you are − online, on mobile, and in your automobile.
                 </p>
                 
                 <p>
-                  ReachMD's peer-to-peer content is the trusted source for certified education, editorial content, and industry-related features. Programs are consumed in short, easy-to-absorb formats.
+                  ReachMD&apos;s peer-to-peer content is the trusted source for certified education, editorial content, and industry-related features. Programs are consumed in short, easy-to-absorb formats.
                 </p>
                 
                 <p>
@@ -127,12 +127,12 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 <h3 className="text-xl font-bold text-gray-900">FAQs</h3>
                 
                 <p>
-                  Everything you want to know about ReachMD − it's all here. But if you still have a question, just give us a call or shoot over an email. We'll do our best to get you the answers you need.
+                  Everything you want to know about ReachMD − it&apos;s all here. But if you still have a question, just give us a call or shoot over an email. We&apos;ll do our best to get you the answers you need.
                 </p>
                 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-3">What makes you the nation's largest learning platform for physicians and other healthcare professionals?</h4>
+                    <h4 className="text-lg font-bold text-gray-900 mb-3">What makes you the nation&apos;s largest learning platform for physicians and other healthcare professionals?</h4>
                     <p>
                       Our content is delivered through a broadcast network that includes websites, mobile apps, and internet radio. Programming is delivered both on demand and through 24/7 streaming on ReachMD, iHeartRadio, Tunein, and iTunes digital platforms. In addition, we have partnerships with more than 25 medical societies and medical centers who partner with ReachMD to bring our content to their members daily. ReachMD and our collective partners make us the largest learning platform nationwide.
                     </p>
@@ -157,7 +157,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-3">How is your content navigation organized?</h4>
-                    <p className="mb-3">We've worked hard to make the learning experience easy. Users can quickly sift through areas of interest by accessing one of four key areas on the navigation bar:</p>
+                    <p className="mb-3">We&apos;ve worked hard to make the learning experience easy. Users can quickly sift through areas of interest by accessing one of four key areas on the navigation bar:</p>
                     <ul className="list-disc pl-6 space-y-2">
                       <li><strong>Clinical Practice</strong> segments content by specialty area, such as oncology, endocrinology, cardiology, and many more.</li>
                       <li><strong>Medical Interest</strong> showcases content related to the practice of medicine and general interest, such as the business of medicine, medical ethics, book club, health IT, and much more.</li>
@@ -174,7 +174,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-3">What media formats do you offer?</h4>
                     <p>
-                      That's a key benefit of ReachMD -- we have media formats that appeal to all learning styles including audio, video, and print. You're in control of the format that plays.
+                      That&apos;s a key benefit of ReachMD -- we have media formats that appeal to all learning styles including audio, video, and print. You&apos;re in control of the format that plays.
                     </p>
                   </div>
                   
@@ -208,7 +208,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-3">How do I listen to ReachMD in my car?</h4>
                     <p>
-                      There are two ways to listen to ReachMD in your car. If your Internet-enabled car carries iHeartRadio and/or Tunein radio stations, you can listen to ReachMD on those two stations. Just search for ReachMD and you'll find our 24/7 streaming content and podcasts. You can plug a smart phone into your car's audio system using USB or an audio jack cable and listen using the ReachMD mobile app or the apps available from iHeartRadio and Tunein.
+                      There are two ways to listen to ReachMD in your car. If your Internet-enabled car carries iHeartRadio and/or Tunein radio stations, you can listen to ReachMD on those two stations. Just search for ReachMD and you&apos;ll find our 24/7 streaming content and podcasts. You can plug a smart phone into your car&apos;s audio system using USB or an audio jack cable and listen using the ReachMD mobile app or the apps available from iHeartRadio and Tunein.
                     </p>
                   </div>
                   
@@ -219,13 +219,13 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     </p>
                     <ul className="list-disc pl-6 space-y-4">
                       <li>
-                        <strong>Playlists</strong> offer the unique ability for learners to add specific episodes to their own Playlists that they access anytime, anywhere from our Media Player. Each user's Media Player contains his or her selected podcasts, whether used online or on mobile. Users also can add other people's Playlists to their Media Player. For example, if they like a Playlist on women's health offered by Omnia Education, they can add that to their Media Player. If they create their own Playlist on cardiology, for example, and want to share it with a colleague, they can easily do that. The Media Player allows for "follows me" content -- if you start on the web and pick up later on the mobile app, the Media Player remembers where you left off.
+                        <strong>Playlists</strong> offer the unique ability for learners to add specific episodes to their own Playlists that they access anytime, anywhere from our Media Player. Each user&apos;s Media Player contains his or her selected podcasts, whether used online or on mobile. Users also can add other people&apos;s Playlists to their Media Player. For example, if they like a Playlist on women&apos;s health offered by Omnia Education, they can add that to their Media Player. If they create their own Playlist on cardiology, for example, and want to share it with a colleague, they can easily do that. The Media Player allows for &quot;follows me&quot; content -- if you start on the web and pick up later on the mobile app, the Media Player remembers where you left off.
                       </li>
                       <li>
                         <strong>Peer™</strong> is a social networking feature on ReachMD. Peers are other learners with whom you can connect inside the ReachMD community. Peers have the ability to join Groups to join discussions, pose questions, and learn from each other. We invite everyone to become a Peer of ReachMD and Be part of the knowledge.™
                       </li>
                       <li>
-                        <strong>Customized learning</strong> makes education relevant to our learners, and we encourage everyone to customize their experience. Registered users who provide basic information about profession, specialty, and areas of interest will experience a customized homepage, customized landing pages, and customized emails and eNewsletters. It's the smartest way to experience relevant content on ReachMD.
+                        <strong>Customized learning</strong> makes education relevant to our learners, and we encourage everyone to customize their experience. Registered users who provide basic information about profession, specialty, and areas of interest will experience a customized homepage, customized landing pages, and customized emails and eNewsletters. It&apos;s the smartest way to experience relevant content on ReachMD.
                       </li>
                     </ul>
                   </div>
@@ -233,7 +233,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-3">Who are your guests and hosts?</h4>
                     <p>
-                      ReachMD is a peer-to-peer platform. Our guests and hosts hail from the most prestigious centers of excellence across the world. Each guest and host is thoroughly vetted for medical knowledge, publication history, relevancy to the topic area, and experience with broadcast platforms. More than 3,000 guests and hosts have participated in ReachMD's learning network.
+                      ReachMD is a peer-to-peer platform. Our guests and hosts hail from the most prestigious centers of excellence across the world. Each guest and host is thoroughly vetted for medical knowledge, publication history, relevancy to the topic area, and experience with broadcast platforms. Since 2006, more than 6,000 physicians, pharmacists, nurses, and other healthcare professionals who are recognized as thought leaders and experts in their respective fields, have served as ReachMD guests and hosts have participated in ReachMD&apos;s learning network.
                     </p>
                   </div>
                   

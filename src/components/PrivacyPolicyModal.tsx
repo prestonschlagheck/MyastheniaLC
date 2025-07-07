@@ -98,7 +98,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">Changes to this Policy</h3>
                 
                 <p>
-                  We retain sole discretion to update this Policy from time to time. When we update this Policy, we will post a notification on the main page of our Site and Apps and update the Policy's effective date. You acknowledge and agree that it is your responsibility to review this Policy periodically and become aware of modifications. Your continued use of the Services after any changes are made to this Policy constitutes your acceptance of the changes. If any of the changes are unacceptable to you, you should cease using the Services.
+                  We reserve the right, at our sole discretion, to modify or revise this Policy at any time by posting an updated Policy to our Site and Apps and update the Policy&apos;s effective date. You acknowledge and agree that it is your responsibility to review this Policy periodically and become aware of modifications. Your continued use of the Services after any changes are posted to this Policy signifies your acceptance of the amended Policy.
                 </p>
                 
                 <p>
@@ -122,7 +122,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                   <li><strong>Communications Information</strong> such as any recorded communications you have with us through email, our online customer service chat bot or over the phone for quality assurance purposes;</li>
                   <li><strong>Professional Information</strong> like your practice name, office address, other business information or national provider identifier (NPI) number, area of expertise, and the professional education courses and other resources you use, attend or participate in through the Services; educational interests, state license number, medical school and year of graduation, and to the extent that you apply for an open position on our Site your resume and professional work experience;</li>
                   <li><strong>Log-in Information</strong> like your username and password when you log onto your account on our Site;</li>
-                  <li><strong>Device and Activity Information</strong> which may include your IP address and your activity when visiting our Site including the different webpages, articles, or videos you viewed or links you clicked (please see the "Device Information and Cookies" section below for further information);</li>
+                  <li><strong>Device and Activity Information</strong> which may include your IP address and your activity when visiting our Site including the different webpages, articles, or videos you viewed or links you clicked (please see the &quot;Device Information and Cookies&quot; section below for further information);</li>
                   <li><strong>Purchase and Attendance Information</strong> such as which education or training courses or events you purchased and/or completed through our Site or your use of the Services; and/or</li>
                   <li><strong>Payment Information</strong> including your credit/debit card number or other financial information.</li>
                 </ul>
@@ -180,7 +180,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  The Services may use "cookies" to enhance the User's experience. For example, cookies are placed on your hard drive when you visit the Site for record-keeping purposes to better understand how Users interact with the Services, optimize response times, remember what language you prefer, and sometimes to track authentication information to prevent unauthorized access to Users' accounts. A User may choose to set their web browser or mobile device to refuse or disable cookies. If cookies are blocked by Users, some parts of our Services may not function properly.
+                  The Services may use &quot;cookies&quot; to enhance the User&apos;s experience. For example, cookies are placed on your hard drive when you visit the Site for record-keeping purposes to better understand how Users interact with the Services, optimize response times, remember what language you prefer, and sometimes to track authentication information to prevent unauthorized access to Users&apos; accounts. A User may choose to set their web browser or mobile device to refuse or disable cookies. If cookies are blocked by Users, some parts of our Services may not function properly.
                 </p>
                 
                 <h4 className="text-lg font-semibold text-gray-900 italic">Google Analytics</h4>
@@ -190,7 +190,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  View an overview of Google's data privacy practices for Google Analytics at https://support.google.com/analytics/answer/6004245. For more information on Google's privacy practices generally, please review Google's privacy policy at https://policies.google.com/privacy. To opt-out of being tracked by Google Analytics, you may be able to download and install the Google Analytics Opt-out Browser Add-on at https://tools.google.com/dlpage/gaoptout. These Google services may also cause you to receive personalized ads based on your browsing behavior. You may be able to opt-out of receiving these personalized ads by using the settings at https://adssettings.google.com/
+                  View an overview of Google&apos;s data privacy practices for Google Analytics at https://support.google.com/analytics/answer/6004245. For more information on Google&apos;s privacy practices generally, please review Google&apos;s privacy policy at https://policies.google.com/privacy. To opt-out of being tracked by Google Analytics, you may be able to download and install the Google Analytics Opt-out Browser Add-on at https://tools.google.com/dlpage/gaoptout. These Google services may also cause you to receive personalized ads based on your browsing behavior. You may be able to opt-out of receiving these personalized ads by using the settings at https://adssettings.google.com/
                 </p>
                 
                 <h4 className="text-lg font-semibold text-gray-900 italic">Other third-party online tools</h4>
@@ -212,12 +212,12 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Facebook</td>
                         <td className="border border-gray-300 px-4 py-2">Go to interest based ads settings or Meta privacy control center</td>
-                        <td className="border border-gray-300 px-4 py-2">Facebook's Privacy Policy and Meta Cookie Policy</td>
+                        <td className="border border-gray-300 px-4 py-2">Facebook&apos;s Privacy Policy and Meta Cookie Policy</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">Instagram</td>
                         <td className="border border-gray-300 px-4 py-2">Go to privacy settings or Meta privacy control center</td>
-                        <td className="border border-gray-300 px-4 py-2">Instagram's Privacy Policy and Meta Cookie Policy</td>
+                        <td className="border border-gray-300 px-4 py-2">Instagram&apos;s Privacy Policy and Meta Cookie Policy</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">X (formerly Twitter)</td>
@@ -231,8 +231,8 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                       </tr>
                       <tr>
                         <td className="border border-gray-300 px-4 py-2">LinkedIn</td>
-                        <td className="border border-gray-300 px-4 py-2">Go to LinkedIn's advertising preferences</td>
-                        <td className="border border-gray-300 px-4 py-2">LinkedIn's Privacy Policy and Cookie Policy</td>
+                        <td className="border border-gray-300 px-4 py-2">Go to LinkedIn&apos;s advertising preferences</td>
+                        <td className="border border-gray-300 px-4 py-2">LinkedIn&apos;s Privacy Policy and Cookie Policy</td>
                       </tr>
                     </tbody>
                   </table>
@@ -241,17 +241,17 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h4 className="text-lg font-semibold text-gray-900 italic">Identification of site visitors through audience identification tool</h4>
                 
                 <p>
-                  We use an audience identification tool supplied by the Healthcare Communications Network℠, of which we are a member. More information on this Network is provided below under "Sharing your personal information." A digital tag (e.g. a pixel) may be embedded in emails to you from us or the Healthcare Communications Network℠ which allows us to identify you and your Personal Data, to the extent such Personal Data is in our possession or the Network's possession, when you visit or use our Services.
+                  We use an audience identification tool for our Services, which allows us to show you ads that are more relevant to you. The Network may use Data to identify particular visitors to the Site or Apps and show these individuals ads relevant to their interests. When Personal Data is in our possession or the Network&apos;s possession, when you visit or use our Services.
                 </p>
                 
                 <h4 className="text-lg font-semibold text-gray-900 italic">Mobile Data Collection</h4>
                 
                 <p>
-                  If you access our Services through one of our mobile apps, we may collect the following Personal Data about you: your device identifier, your mobile device's operating system type, your mobile carrier, and your geolocation (your location while you are using the app). This information may be used and shared with third parties for advertising purposes. Depending on how you interact with our mobile app, we may also collect additional information that you provide to us including contact information, log in credentials, credit/debit or other payment card information, items that you add to your "favorites" and/or "interests" lists, any posts or communications you make on our mobile app, and your browsing/activity within and when using the mobile app.
+                  Through the app, we may obtain your location data, your device identifier, your mobile device&apos;s operating system type, your mobile carrier, and your geolocation (your location while you are using the app). This information may be used and shared with third parties for advertising purposes. Depending on your device, you may be able to opt-out using the Digital Advertising Alliance&apos;s free mobile application AppChoices for each device you use (for more information, see https://youradchoices.com/appchoices). ReachMD cannot guarantee that these industry-provided opt-out tools will work properly on all mobile devices and operating systems.
                 </p>
                 
                 <p>
-                  To opt out of certain data collection and sharing please go to your mobile device settings and following the instructions for your particular device (see instructions for Apple & Android). To opt out of targeted ads while using the mobile app, you also may opt out using the Digital Advertising Alliance's free mobile application AppChoices for each device you use (for more information, see https://youradchoices.com/appchoices). ReachMD cannot guarantee that these industry-provided opt-out tools will prevent all targeted ads.
+                  To protect against the collection and use of Personal Data for online behavioral advertising purposes, or to opt-out of this type of advertising for participating companies, you may visit the DAA Webchoices tool (http://www.aboutads.info/choices) or the NAI Opt-Out page (http://www.networkadvertising.org/managing/opt_out.asp). You may also be able to download the DAA AppChoices tool at www.aboutads.info/appchoices for opting out of interest-based mobile app advertising. You can also configure your web browser settings to send a &quot;Do Not Track&quot; request; however, we currently do not respond to such requests. Please keep in mind that without cookies, you may not have access to certain features on our Services, including access to your profile/account and certain personalized content. The Network provides an opt-out mechanism to unsubscribe from the Network&apos;s emails and from ReachMD&apos;s use of the Network&apos;s tools to track and analyze your visits to and use of our Services.
                 </p>
                 
                 <p>
@@ -262,7 +262,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
               <div className="space-y-4">
                 <h3 className="text-xl font-bold text-gray-900">How We Use Collected Information</h3>
                 
-                <p>We may collect and use Users' Personal Data for the following purposes:</p>
+                <p>We may collect and use Users&apos; Personal Data for the following purposes:</p>
                 
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>To improve customer service:</strong> Information you provide helps us respond to your customer service requests and support needs more efficiently.</li>
@@ -304,7 +304,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  We participate in the Healthcare Communications Network℠ which is owned and operated by IQVIA. Participation in the Healthcare Communications Network provides us with tools to better understand and analyze who is using our Services, and to personalize User experiences through the Services. We share certain of your Personal Data with the operators of the Healthcare Communications Network. This information includes your email address, your name, your NPI number and other information we obtain when you register to use the Services, or visit the Healthcare Communications Network. HealthCare Communications Network will use this information primarily to send you emails with information specifically tailored to your medical interest. You will receive an email providing you with a mechanism to unsubscribe from the Network's emails and from ReachMD's use of the Network's tools to track and analyze your visits to and use of our Services.
+                  We participate in the Healthcare Communications Network℠ which is owned and operated by IQVIA. Participation in the Healthcare Communications Network provides us with tools to better understand and analyze who is using our Services, and to personalize User experiences through the Services. We share certain of your Personal Data with the operators of the Healthcare Communications Network. This information includes your email address, your name, your NPI number and other information we obtain when you register to use the Services, or visit the Healthcare Communications Network. HealthCare Communications Network will use this information primarily to send you emails with information specifically tailored to your medical interest. You will receive an email providing you with a mechanism to unsubscribe from the Network&apos;s emails and from ReachMD&apos;s use of the Network&apos;s tools to track and analyze your visits to and use of our Services.
                 </p>
                 
                 <p>
@@ -316,7 +316,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  As described in the "Online Tracking Technologies" section, above, the Services may allow you to share information, including Personal Data, with other third-party services and social networking websites, such as Twitter, Facebook, Instagram and LinkedIn when you click on the respective social media button on our Site. We do not share your Personal Data with these social media providers unless you direct the Services to do so. Their use of the information will be governed by their privacy policies, and you may be able to modify your privacy settings with these entities. Links to the respective social media policies and information on how you may opt out of certain sharing that occurs through these social media services are located in the "Other Third-Party Online Tools" section, above. Please consult these third parties' privacy policies before using their platforms to make sure you are comfortable with the level of sharing.
+                  As described in the &quot;Online Tracking Technologies&quot; section, above, the Services may allow you to share information, including Personal Data, with other third-party services and social networking websites, such as Twitter, Facebook, Instagram and LinkedIn when you click on the respective social media button on our Site. We do not share your Personal Data with these social media providers unless you direct the Services to do so. Their use of the information will be governed by their privacy policies, and you may be able to modify your privacy settings with these entities. Links to the respective social media policies and information on how you may opt out of certain sharing that occurs through these social media services are located in the &quot;Other Third-Party Online Tools&quot; section, above. Please consult these third parties&apos; privacy policies before using their platforms to make sure you are comfortable with the level of sharing.
                 </p>
                 
                 <p>
@@ -328,7 +328,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">Disclosures for Investigation and Regulatory Purposes</h3>
                 
                 <p>
-                  We may share User information with governmental agencies or other companies assisting us in fraud prevention or investigation if we: (1) reasonably believe we are permitted or required to do so by law; (2) are investigating actual or potential fraud or unauthorized transactions; or (3) believe that a User's actions violate our Terms and Condition of Use or threaten the rights, property or safety of our company, our Users, or others. We may also disclose User information if required or requested by law enforcement or a governmental body, to the extent permitted under applicable law.
+                  We may share User information with governmental agencies or other companies assisting us in fraud prevention or investigation if we: (1) reasonably believe we are permitted or required to do so by law; (2) are investigating actual or potential fraud or unauthorized transactions; or (3) believe that a User&apos;s actions violate our Terms and Condition of Use or threaten the rights, property or safety of our company, our Users, or others. We may also disclose User information if required or requested by law enforcement or a governmental body, to the extent permitted under applicable law.
                 </p>
               </div>
 
@@ -340,7 +340,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  In connection with ReachMD's collection and use of your Personal Data, and depending on where you reside, you may have a right to:
+                  In connection with ReachMD&apos;s collection and use of your Personal Data, and depending on where you reside, you may have a right to:
                 </p>
                 
                 <ul className="list-disc pl-6 space-y-2">
@@ -365,7 +365,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h4 className="text-lg font-semibold text-gray-900 italic">Verifying Your Identity</h4>
                 
                 <p>
-                  ReachMD is required to verify the identity of any person or entity that requests the disclosure or deletion of Personal Data. Making a verifiable consumer request does not require you to create an account with us, but if you have a password-protected account, we will use our existing authentication procedures to verify your identity. For most other requests, ReachMD will ask you to provide information that matches at least two pieces of Personal Data we store about you before responding to your request. If you would like to request the specific pieces of your Personal Data that ReachMD has collected, or if you would like us to delete highly sensitive information, you will need to match at least three pieces of information we store about you, and you must provide a signed declaration under penalty of perjury that you are the consumer whose Personal Data you are requesting. We will only use Personal Data provided in a verifiable consumer request to verify the requestor's identity or authority to make the request.
+                  ReachMD is required to verify the identity of any person or entity that requests the disclosure or deletion of Personal Data. Making a verifiable consumer request does not require you to create an account with us, but if you have a password-protected account, we will use our existing authentication procedures to verify your identity. For most other requests, ReachMD will ask you to provide information that matches at least two pieces of Personal Data we store about you before responding to your request. If you would like to request the specific pieces of your Personal Data that ReachMD has collected, or if you would like us to delete highly sensitive information, you will need to match at least three pieces of information we store about you, and you must provide a signed declaration under penalty of perjury that you are the consumer whose Personal Data you are requesting. We will only use Personal Data provided in a verifiable consumer request to verify the requestor&apos;s identity or authority to make the request.
                 </p>
                 
                 <p>
@@ -385,15 +385,15 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h4 className="text-lg font-semibold text-gray-900 italic">How to Exercise Your Opt Out Rights / Do Not Track</h4>
                 
                 <p>
-                  As previously described above, when you visit and interact with the Services, certain third parties may get access to certain information about you as referenced above, such as your device information, professional information and PLD, for the purpose of providing you online advertising personalized to your interests based on your browsing behavior. To the extent any of this sharing or third-party access may be considered a "sale" of your Personal Data under applicable privacy laws and regulations or if you otherwise have the right to opt-out of sharing for targeted advertising purposes, you may exercise choices regarding such sharing or third-party access by clicking here, or by using the email address or toll-free phone number provided in the previous paragraph.
+                  As previously described above, when you visit and interact with the Services, certain third parties may get access to certain information about you as referenced above, such as your device information, professional information and PLD, for the purpose of providing you online advertising personalized to your interests based on your browsing behavior. To the extent any of this sharing or third-party access may be considered a &quot;sale&quot; of your Personal Data under applicable privacy laws and regulations or if you otherwise have the right to opt-out of sharing for targeted advertising purposes, you may exercise choices regarding such sharing or third-party access by clicking here, or by using the email address or toll-free phone number provided in the previous paragraph.
                 </p>
                 
                 <p>
-                  Some browsers have a "Do Not Track" feature or similar privacy controls or settings that lets you tell websites that you do not want to have your online activities tracked. The Services are not currently configured to recognize or respond to "Do Not Track" signals or similar technical requests sent by a User's browser or other device settings. To learn more about other ways to possibly opt-out of certain kinds of tracking that could result in you receiving targeted advertising based on your behavior online, visit the Network Advertising Initiative website and the Digital Advertising Alliance website. You can also change your browser cookie settings to block/delete the cookies by going to the browser settings page (see Chrome, Safari, Firefox, & Internet Explorer).
+                  Some browsers have a &quot;Do Not Track&quot; feature that lets you tell websites that you do not want to have your online activities tracked. Our Services do not currently respond to browser &quot;Do Not Track&quot; signals, but we honor similar technical requests sent by a User&apos;s browser or other device settings. To learn more about other ways to possibly opt-out of certain kinds of tracking that could result in you receiving targeted advertising based on your behavior online, you can visit the Network Advertising Initiative&apos;s opt-out page (http://www.networkadvertising.org/choices/) or the Digital Advertising Alliance&apos;s opt-out page (http://www.aboutads.info/choices/).
                 </p>
                 
                 <p>
-                  Options you select through these third-party services are browser- and device-specific, and there is no guarantee that these industry-provided opt-out tools will prevent all targeted advertising. As noted previously in this Policy, it is possible that third parties may collect or receive information through the Services. Since it is possible that some of these third parties may respond differently than ReachMD to "do not track" requests, you should consult the applicable privacy policies of those third parties for that information.
+                  Options you select through these third-party services are browser- and device-specific, and there is no guarantee that these industry-provided opt-out tools will prevent all targeted advertising. As noted previously in this Policy, it is possible that third parties may collect or receive information through the Services. Since it is possible that some of these third parties may respond differently than ReachMD to &quot;do not track&quot; requests, you should consult the applicable privacy policies of those third parties for that information.
                 </p>
                 
                 <p>
@@ -405,7 +405,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">How We Protect Your Information</h3>
                 
                 <p>
-                  As to Personal Data we collect, ReachMD's Services use, implement and maintain industry standard security measures to protect against unauthorized access, alteration, disclosure or destruction of your Personal Data and other data stored on or through our Services, both in storage and in transmission.
+                  As to Personal Data we collect, ReachMD&apos;s Services use, implement and maintain industry standard security measures to protect against unauthorized access, alteration, disclosure or destruction of your Personal Data and other data stored on or through our Services, both in storage and in transmission.
                 </p>
                 
                 <p>
@@ -429,7 +429,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">How We Handle E.U. Data</h3>
                 
                 <p>
-                  If you are a User residing within the European Economic Area (the "EEA," which includes the 27 European Union Member States, Iceland, Norway and Liechtenstein), Switzerland or the United Kingdom (collectively, the "EU"), then ReachMD handles your Personal Data according to the terms of this Policy, unless the exceptions in this section apply, pursuant to the General Data Protection Regulation ("GDPR").
+                  If you are a User residing within the European Economic Area (the &quot;EEA,&quot; which includes the 27 European Union Member States, Iceland, Norway and Liechtenstein), Switzerland or the United Kingdom (collectively, the &quot;EU&quot;), then ReachMD handles your Personal Data according to the terms of this Policy, unless the exceptions in this section apply, pursuant to the General Data Protection Regulation (&quot;GDPR&quot;).
                 </p>
                 
                 <p>
@@ -437,30 +437,16 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  ReachMD's Services may use "cookies" to enhance the User's experience. If you are a User residing within the EU, you can find out more about cookies and how to manage them by viewing and exercising the options available to you in our Cookie Policy, which can be found at https://reachmd.com/privacy/cookielist/.
+                  ReachMD&apos;s Services may use &quot;cookies&quot; to enhance the User&apos;s experience. If you are a User residing within the EU, you can find out more about cookies and how to manage them by viewing and exercising the options available to you in our Cookie Policy, which can be found at: https://reachmd.com/pages/cookie-policy/. GDPR gives Users in the EU certain rights with respect to their Personal Data. EU Users have the following rights:
                 </p>
-                
-                <p>
-                  If you are a User residing within the EU, we will seek your consent before using your Personal Data to serve you relevant information, content and educational materials based on your personal preferences, interests, location and other information that you provide to ReachMD in connection with your account for the Services.
-                </p>
-                
-                <p>
-                  We may share certain portions of Personal Data and other information with any member of our group of companies as reasonably necessary for the purposes set out in this Policy to help us operate our business and Services. You can learn more about our group of companies by visiting USHealthConnect.com.
-                </p>
-                
-                <p>
-                  The Healthcare Communications Network℠ owned and operated by IQVIA is not available to Users in the EU.
-                </p>
-                
-                <p>Under the GDPR, Users in the EU have the following rights regarding your Personal Data:</p>
                 
                 <ul className="list-disc pl-6 space-y-2">
                   <li>the right to request details on the Personal Data we hold about you at any time;</li>
                   <li>the right to update and correct any inaccurate Personal Data ReachMD holds about you;</li>
                   <li>the right to withdraw any consent for marketing activities or processing of Personal Data that you might have provided to ReachMD;</li>
                   <li>the right to request erasure of Personal Data;</li>
-                  <li>the right to request restriction of ReachMD's processing of your Personal Data;</li>
-                  <li>the right to object at any time to ReachMD's processing of Personal Data concerning you; and</li>
+                  <li>the right to request restriction of ReachMD&apos;s processing of your Personal Data;</li>
+                  <li>the right to object at any time to ReachMD&apos;s processing of Personal Data concerning you; and</li>
                   <li>the right to request the portability of Personal Data that you have provided to ReachMD.</li>
                 </ul>
                 
@@ -469,19 +455,19 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 </p>
                 
                 <p>
-                  Under the GDPR, Users in the EU also have the right to lodge a complaint about ReachMD's processing of your Personal Data with a supervisory authority. In particular, such Users may lodge a complaint in the Member State where the User lives or works or where the alleged violation took place.
+                  Under the GDPR, Users in the EU also have the right to lodge a complaint about ReachMD&apos;s processing of your Personal Data with a supervisory authority. In particular, such Users may lodge a complaint in the Member State where the User lives or works or where the alleged violation took place. You can contact us to make your request using the information in the &quot;Contact Us&quot; section below.
                 </p>
                 
                 <p>
-                  To protect your Personal Data, ReachMD's Services use appropriate technical and organizational security measures to protect against unauthorized access, alteration, disclosure or destruction of your Personal Data and other information stored on or through our Services.
+                  To protect your Personal Data, ReachMD&apos;s Services use appropriate technical and organizational security measures to protect against unauthorized access, alteration, disclosure or destruction of your Personal Data and other information stored on our servers.
                 </p>
                 
                 <p>
-                  ReachMD retains Personal Data only for as long as necessary to fulfill the stated purpose for which the Personal Data was collected or otherwise processed, and thereafter for a variety of legitimate legal or business purposes. These may include retention periods that are: (i) mandated by law, contract or similar obligations applicable to ReachMD's business operations; (ii) for preserving, resolving, defending or enforcing our legal/contractual rights; or (iii) needed to maintain adequate and accurate business and financial records. We will delete your Personal Data as soon as the respective purpose of use is not applicable anymore and no legal obligation to retain such data exists. If you have any questions about the security or retention of your Personal Data, you can contact us at privacy@ushealthconnect.com.
+                  We will generally retain Personal Data we collect for as long as reasonably necessary to fulfill the purpose for which it was collected, unless: (i) a longer retention period is required by law and/or other legal obligations or similar obligations applicable to ReachMD&apos;s business operations; (ii) for preserving, resolving, defending or enforcing our legal/contractual rights; or (iii) needed to maintain adequate and accurate business and financial records. We will delete Personal Data when it is no longer necessary for the stated purpose for which it was originally collected, unless a longer retention period is required or permitted by law.
                 </p>
                 
                 <p>
-                  Your Personal Data may be disclosed to and processed by staff operating in the United States. Disclosure will be to individuals who work for ReachMD, our subsidiaries, related companies, and companies with which we have contracted to process or store this data on ReachMD's behalf. The individuals and organizations that receive Personal Data as a result of international transfers out of the EU are obligated to use and protect your Personal Data in accordance with requirements under the GDPR and they must comply with appropriate security measures to protect your information.
+                  Other than as expressly stated in this Policy, ReachMD does not currently transfer Personal Data outside of the United States. However, if Personal Data is transferred outside of the United States, we will ensure that there are appropriate safeguards in place to protect your Personal Data. Some countries may have data protection laws that are different (and potentially not as protective) as the laws of your own country. In certain situations, courts, law enforcement agencies, regulatory agencies or security authorities in other countries may be entitled to access your Personal Data. ReachMD may use third party companies to process or store this data on ReachMD&apos;s behalf. The individuals and organizations that receive Personal Data as a result of international transfers out of the EU are obligated to use and protect your Personal Data in accordance with requirements under applicable laws, including the GDPR.
                 </p>
               </div>
 
@@ -525,7 +511,7 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
                 <h3 className="text-xl font-bold text-gray-900">Information on Our Services</h3>
                 
                 <p>
-                  Need some information or assistance? We're close by, just reach out and we will get back to you as soon as possible.
+                  Need some information or assistance? We&apos;re close by, just reach out and we will get back to you as soon as possible.
                 </p>
                 
                 <p>
