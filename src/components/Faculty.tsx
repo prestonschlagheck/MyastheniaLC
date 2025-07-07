@@ -7,12 +7,11 @@ import Image from 'next/image'
 
 interface FacultyCardProps {
   name: string
-  title: string
   image?: string
   index: number
 }
 
-function FacultyCard({ name, title, image, index }: FacultyCardProps) {
+function FacultyCard({ name, image, index }: FacultyCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -40,14 +39,9 @@ function FacultyCard({ name, title, image, index }: FacultyCardProps) {
         {/* Text Content */}
         <div className="flex-1 flex flex-col justify-center">
           {/* Name */}
-          <h3 className="font-semibold text-gray-900 text-sm leading-tight mb-1 line-clamp-2">
+          <h3 className="font-semibold text-gray-900 text-sm leading-tight line-clamp-2">
             {name}
           </h3>
-          
-          {/* Title */}
-          <p className="text-xs text-gray-600 line-clamp-2">
-            {title}
-          </p>
         </div>
       </div>
     </motion.div>
@@ -59,19 +53,19 @@ export function Faculty() {
   const isInView = useInView(ref, { once: true })
 
   const facultyMembers = [
-    { name: "Michael Crotty, MB, BCh, BAO", title: "Physician", image: "/mike.png" },
-    { name: "Sarah Le Brocq", title: "Obesity Advocate, Public Speaker & Patient Leader", image: "/sarah.png" },
-    { name: "Ana Maria Cebrián Cuenca, MD, PhD", title: "Physician", image: "/ana.png" },
-    { name: "Barbara McGowan, PhD, MBBS", title: "Physician", image: "/barb.png" },
-    { name: "Donna H. Ryan, MD", title: "Physician", image: "/donna.jpeg" },
-    { name: "Nasreen Alfaris, MD, MPH", title: "Physician", image: "/nas.png" },
-    { name: "Andreea Ciudin, MD, PhD", title: "Physician" }, // No image available
-    { name: "Ricardo Cohen, MD, PhD", title: "Physician", image: "/ric.png" },
-    { name: "Marta Comas Martinez", title: "Nutritionist", image: "/marta.png" },
-    { name: "Walmir Coutinho, MD", title: "Physician", image: "/wal.png" },
-    { name: "Linong Ji, MD", title: "Physician", image: "/lin.png" },
-    { name: "Rita Nawar, MD", title: "Physician", image: "/rita.png" },
-    { name: "Charles P. Vega, MD", title: "Physician", image: "/char.png" }
+    { name: "Michael Crotty, MB, BCh, BAO", image: "/mike.png" },
+    { name: "Sarah Le Brocq", image: "/sarah.png" },
+    { name: "Ana Maria Cebrián Cuenca, MD, PhD", image: "/ana.png" },
+    { name: "Barbara McGowan, PhD, MBBS", image: "/barb.png" },
+    { name: "Donna H. Ryan, MD", image: "/donna.jpeg" },
+    { name: "Nasreen Alfaris, MD, MPH", image: "/nas.png" },
+    { name: "Andreea Ciudin, MD, PhD" }, // No image available
+    { name: "Ricardo Cohen, MD, PhD", image: "/ric.png" },
+    { name: "Marta Comas Martinez", image: "/marta.png" },
+    { name: "Walmir Coutinho, MD", image: "/wal.png" },
+    { name: "Linong Ji, MD", image: "/lin.png" },
+    { name: "Rita Nawar, MD", image: "/rita.png" },
+    { name: "Charles P. Vega, MD", image: "/char.png" }
   ]
 
   return (
@@ -101,7 +95,6 @@ export function Faculty() {
             >
               <FacultyCard 
                 name={faculty.name}
-                title={faculty.title}
                 image={faculty.image}
                 index={index} 
               />

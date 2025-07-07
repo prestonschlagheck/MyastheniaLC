@@ -2,7 +2,6 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Play } from 'lucide-react'
 
 export function VideoIntroduction() {
   const ref = useRef(null)
@@ -13,24 +12,26 @@ export function VideoIntroduction() {
       <div className="max-w-full mx-auto px-4 lg:px-8">
         {/* Two-Column Layout */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Video Section - Left Column */}
+          {/* Image Section - Left Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="w-full h-[300px] lg:h-[350px] bg-gray-900 rounded-2xl shadow-2xl flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-indigo-900/90"></div>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative z-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-6 hover:bg-white/30 transition-all"
-              >
-                <Play className="w-12 h-12 text-white fill-white" />
-              </motion.button>
-              <div className="absolute bottom-3 left-3 text-white/80 text-xs">
-                Video Placeholder - Introduction Content
-              </div>
+            <div className="w-full h-[300px] lg:h-[350px] flex items-center justify-center" style={{ border: 'none', outline: 'none', boxShadow: 'none' }}>
+              <img
+                src="/obesity.png"
+                alt="Obesity Education"
+                className="max-w-full max-h-full object-contain"
+                style={{ 
+                  border: 'none', 
+                  outline: 'none', 
+                  boxShadow: 'none',
+                  margin: 0,
+                  padding: 0,
+                  display: 'block'
+                }}
+              />
             </div>
           </motion.div>
 
@@ -43,7 +44,7 @@ export function VideoIntroduction() {
           >
             {/* Header - Aligned with top of video */}
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight text-center">
                 Your Comprehensive Hub for Excellence in Obesity Education
               </h2>
             </div>
@@ -61,8 +62,8 @@ export function VideoIntroduction() {
 
             {/* Call to Action - Aligned with bottom of video */}
             <div className="text-center">
-              <p className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent leading-tight">
-                Together, we advance obesity care worldwide!
+              <p className="text-lg lg:text-xl font-bold text-black leading-tight">
+                Together, we can advance the standard of obesity care worldwide!
               </p>
             </div>
           </motion.div>

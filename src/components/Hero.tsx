@@ -1,19 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section className="relative h-[45vh] bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 overflow-hidden">
+    <section className="relative h-[45vh] overflow-hidden">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0">
+        <Image
+          src="/fat.jpg"
+          alt="Background"
+          fill
+          className="object-cover filter blur-sm scale-100"
+          priority
+        />
+      </div>
+      
+      {/* Purple Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-blue-900/75 to-indigo-900/80"></div>
+      
+      {/* Additional Dark Overlay for Better Text Readability */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
       {/* Animated Background Gradients */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
             background: [
-              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.4) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 20%, rgba(120,119,198,0.4) 0%, transparent 50%)",
-              "radial-gradient(circle at 40% 70%, rgba(120,119,198,0.4) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.4) 0%, transparent 50%)"
+              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 80% 20%, rgba(120,119,198,0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 40% 70%, rgba(120,119,198,0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.3) 0%, transparent 50%)"
             ]
           }}
           transition={{
@@ -26,10 +44,10 @@ export function Hero() {
         <motion.div
           animate={{
             background: [
-              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 30% 60%, rgba(99,102,241,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 60% 20%, rgba(99,102,241,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.3) 0%, transparent 50%)"
+              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 30% 60%, rgba(99,102,241,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 60% 20%, rgba(99,102,241,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.2) 0%, transparent 50%)"
             ]
           }}
           transition={{
