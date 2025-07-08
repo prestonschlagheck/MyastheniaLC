@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <>
-      <footer ref={ref} className="bg-gray-900 text-white py-12">
+      <footer ref={ref} className="bg-gray-200 text-gray-700 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -24,7 +24,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-between gap-8"
           >
-            {/* ReachMD Logo */}
+            {/* GLC Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -32,17 +32,11 @@ export function Footer() {
               className="flex items-center"
             >
               <Image
-                src="/reach.png"
-                alt="ReachMD Logo"
-                width={160}
-                height={50}
-                className="h-16 w-auto object-cover object-center"
-                style={{ 
-                  clipPath: 'inset(30% 0 30% 0)',
-                  transform: 'scale(1.8)',
-                  marginTop: '-8px',
-                  marginBottom: '-8px'
-                }}
+                src="/glc.png"
+                alt="Global Learning Collaborative Logo"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain"
               />
             </motion.div>
 
@@ -55,19 +49,19 @@ export function Footer() {
             >
               <button
                 onClick={() => setIsPrivacyModalOpen(true)}
-                className="text-gray-300 hover:text-cyan-300 transition-colors font-medium"
+                className="text-gray-600 hover:text-cyan-600 transition-colors font-medium"
               >
                 Privacy
               </button>
               <button
                 onClick={() => setIsTermsModalOpen(true)}
-                className="text-gray-300 hover:text-cyan-300 transition-colors font-medium"
+                className="text-gray-600 hover:text-cyan-600 transition-colors font-medium"
               >
                 Terms
               </button>
               <button
                 onClick={() => setIsAboutModalOpen(true)}
-                className="text-gray-300 hover:text-cyan-300 transition-colors font-medium"
+                className="text-gray-600 hover:text-cyan-600 transition-colors font-medium"
               >
                 About
               </button>
@@ -93,9 +87,12 @@ export function Footer() {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 pt-8 border-t border-gray-800 text-center"
+            className="mt-8 pt-8 border-t border-gray-300 text-center"
           >
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-sm">
+              This curriculum is provided by Global Learning Collaborative.
+            </p>
+            <p className="text-gray-500 text-sm mt-1">
               © 2025 ReachMD. All rights reserved.
             </p>
           </motion.div>

@@ -59,7 +59,7 @@ export function Faculty() {
     { name: "Barbara McGowan, PhD, MBBS", image: "/barb.png" },
     { name: "Donna H. Ryan, MD", image: "/donna.jpeg" },
     { name: "Nasreen Alfaris, MD, MPH", image: "/nas.png" },
-    { name: "Andreea Ciudin, MD, PhD" }, // No image available
+    { name: "Andreea Ciudin, MD, PhD", image: "/andreea.jpg" },
     { name: "Ricardo Cohen, MD, PhD", image: "/ric.png" },
     { name: "Marta Comas Martinez", image: "/marta.png" },
     { name: "Walmir Coutinho, MD", image: "/wal.png" },
