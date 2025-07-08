@@ -20,7 +20,7 @@ export function VideoIntroduction() {
           >
             <div className="w-full h-[300px] lg:h-[350px] flex items-center justify-center" style={{ border: 'none', outline: 'none', boxShadow: 'none' }}>
               <img
-                src="/obesity.png"
+                src="/scale.png"
                 alt="Obesity Education"
                 className="max-w-full max-h-full object-contain"
                 style={{ 
