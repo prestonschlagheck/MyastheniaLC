@@ -70,14 +70,10 @@ export function Login({ onLogin }: LoginProps) {
             <div className="flex justify-center mb-6">
               <div className="relative h-20 w-48">
                 <Image
-                  src="/reach.png"
+                  src="/rmd.svg"
                   alt="ReachMD"
                   fill
                   className="object-contain"
-                  style={{
-                    clipPath: 'inset(30% 0 30% 0)',
-                    transform: 'scale(1.8)',
-                  }}
                 />
               </div>
             </div>

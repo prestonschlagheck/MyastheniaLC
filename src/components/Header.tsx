@@ -9,9 +9,9 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-lg py-3"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-full mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* ReachMD Logo */}
           <motion.div
@@ -21,17 +21,11 @@ export function Header() {
             className="flex items-center"
           >
             <Image
-              src="/reach.png"
+              src="/rmd.svg"
               alt="ReachMD Logo"
-              width={320}
-              height={100}
-              className="h-28 w-auto object-cover object-center"
-              style={{ 
-                clipPath: 'inset(30% 0 30% 0)',
-                transform: 'scale(1.8)',
-                marginTop: '-16px',
-                marginBottom: '-16px'
-              }}
+              width={110}
+              height={32}
+              className="h-8 w-auto object-contain"
               priority
             />
           </motion.div>
@@ -46,9 +40,9 @@ export function Header() {
             <Image
               src="/glc.png"
               alt="GLC Logo"
-              width={200}
-              height={60}
-              className="h-14 w-auto object-contain"
+              width={160}
+              height={50}
+              className="h-12 w-auto object-contain"
               priority
             />
           </motion.div>
