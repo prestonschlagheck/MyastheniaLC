@@ -22,7 +22,7 @@ export function VideoIntroduction() {
               <img
                 src="/scale.png"
                 alt="Obesity Education"
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full object-contain rounded-lg"
                 style={{ 
                   border: 'none', 
                   outline: 'none', 
@@ -44,7 +44,7 @@ export function VideoIntroduction() {
           >
             {/* Header - Aligned with top of video */}
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight text-center">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight text-left">
                 Your Comprehensive Hub for Excellence in Obesity Education
               </h2>
             </div>
@@ -61,7 +61,7 @@ export function VideoIntroduction() {
             </div>
 
             {/* Call to Action - Aligned with bottom of video */}
-            <div className="text-center">
+            <div className="text-left">
               <p className="text-lg lg:text-xl font-bold text-black leading-tight">
                 Together, we can advance the standard of obesity care worldwide!
               </p>
