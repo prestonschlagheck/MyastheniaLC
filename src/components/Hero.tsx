@@ -1,137 +1,211 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Heart, Activity, Users, Award, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section className="relative h-[45vh] overflow-hidden">
-      {/* Background Image with Blur */}
+    <section className="relative h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      {/* Sophisticated Background Patterns */}
       <div className="absolute inset-0">
-        <Image
-          src="/fat.jpg"
-          alt="Background"
-          fill
-          className="object-cover filter blur-sm scale-100"
-          priority
-        />
-      </div>
-      
-      {/* Purple Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-blue-900/75 to-indigo-900/80"></div>
-      
-      {/* Additional Dark Overlay for Better Text Readability */}
-      <div className="absolute inset-0 bg-black/30"></div>
+        {/* Medical Grid Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="grid grid-cols-12 h-full">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="border-r border-blue-300/20 h-full" />
+            ))}
+          </div>
+          <div className="absolute inset-0 grid grid-rows-8">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="border-b border-blue-300/20 w-full" />
+            ))}
+          </div>
+        </div>
 
-      {/* Animated Background Gradients */}
-      <div className="absolute inset-0">
+        {/* Animated Molecular Structures */}
         <motion.div
           animate={{
-            background: [
-              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 20%, rgba(120,119,198,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 40% 70%, rgba(120,119,198,0.3) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 30%, rgba(120,119,198,0.3) 0%, transparent 50%)"
-            ]
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-20 right-20 opacity-20"
+        >
+          <div className="relative w-32 h-32">
+            <div className="absolute top-0 left-1/2 w-3 h-3 bg-blue-400 rounded-full -translate-x-1/2" />
+            <div className="absolute top-1/2 right-0 w-3 h-3 bg-teal-400 rounded-full -translate-y-1/2" />
+            <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-cyan-400 rounded-full -translate-x-1/2" />
+            <div className="absolute top-1/2 left-0 w-3 h-3 bg-blue-300 rounded-full -translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
+          </div>
+        </motion.div>
+
+        {/* Floating Medical Icons */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 10, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-32 left-20 opacity-30"
+        >
+          <Heart size={24} className="text-blue-300" />
+        </motion.div>
+
+        <motion.div
+          animate={{
+            y: [0, -15, 0],
+            x: [0, -8, 0]
           }}
           transition={{
             duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-32 right-32 opacity-30"
+        >
+          <Activity size={28} className="text-teal-300" />
+        </motion.div>
+
+        {/* Dynamic Gradient Overlays */}
+        <motion.div
+          animate={{
+            background: [
+              "radial-gradient(circle at 20% 30%, rgba(0, 102, 204, 0.3) 0%, transparent 60%)",
+              "radial-gradient(circle at 80% 20%, rgba(0, 166, 184, 0.3) 0%, transparent 60%)",
+              "radial-gradient(circle at 40% 70%, rgba(0, 212, 229, 0.3) 0%, transparent 60%)",
+              "radial-gradient(circle at 20% 30%, rgba(0, 102, 204, 0.3) 0%, transparent 60%)"
+            ]
+          }}
+          transition={{
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
           className="absolute inset-0"
         />
-        <motion.div
-          animate={{
-            background: [
-              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 30% 60%, rgba(99,102,241,0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 60% 20%, rgba(99,102,241,0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 70% 80%, rgba(99,102,241,0.2) 0%, transparent 50%)"
-            ]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute inset-0"
-        />
-        <motion.div
-          animate={{
-            background: [
-              "linear-gradient(45deg, rgba(59,130,246,0.1) 0%, transparent 70%)",
-              "linear-gradient(135deg, rgba(59,130,246,0.1) 0%, transparent 70%)",
-              "linear-gradient(225deg, rgba(59,130,246,0.1) 0%, transparent 70%)",
-              "linear-gradient(315deg, rgba(59,130,246,0.1) 0%, transparent 70%)",
-              "linear-gradient(45deg, rgba(59,130,246,0.1) 0%, transparent 70%)"
-            ]
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute inset-0"
-        />
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-start min-h-full px-6 lg:px-12">
-        <div className="text-left space-y-6 max-w-5xl">
-          {/* Main Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-3"
-          >
-            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-              Obesity Learning Center
-            </h1>
-            <h2 className="text-2xl lg:text-3xl font-light text-cyan-300">
-              ADVANCING CARE IN OBESITY
-            </h2>
-          </motion.div>
 
-          {/* CTA Button - Only Explore Activities, made smaller */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex justify-start pt-4"
-          >
-            <button 
-              onClick={() => document.getElementById('educational-activities')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-white/30 hover:border-white/50 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:bg-white/10 text-base"
+
+      {/* Main Content */}
+      <div className="relative z-10 flex items-center h-full px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Text Content */}
+          <div className="text-left space-y-8">
+
+
+            {/* Main Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+              className="space-y-4"
             >
-              Explore Activities
-            </button>
+              <h1 className="heading-font text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
+                Advancing Care in{' '}
+                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
+                  Pulmonary Arterial Hypertension
+                </span>
+              </h1>
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full" />
+                <h2 className="text-xl lg:text-2xl font-light text-blue-200 tracking-wide">
+                  COMMITTED TO IMPACTING PRACTICE CARE
+                </h2>
+              </div>
+            </motion.div>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2, delay: 0.15 }}
+              className="text-base lg:text-lg text-blue-100 leading-relaxed max-w-xl"
+            >
+              For more than 15 years, the IMPACT PH Program—powered by a distinguished, multidisciplinary faculty—has driven measurable improvements in patient outcomes through a curriculum that champions early diagnosis and evidence-based treatment, fundamentally transforming pulmonary hypertension care worldwide.
+            </motion.p>
+
+
+
+            {/* CTA Button & Achievement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              className="flex items-center gap-4 pt-4"
+            >
+              <button 
+                onClick={() => document.getElementById('educational-activities')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+              >
+                Explore Activities
+              </button>
+              
+              {/* Achievement Badge */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+                className="flex items-center space-x-2 bg-gradient-to-r from-yellow-400/20 to-amber-400/20 backdrop-blur-sm rounded-lg px-3 py-1.5 text-yellow-100 text-xs border-l-4 border-yellow-400"
+              >
+                <Award size={14} className="text-yellow-400" />
+                <span className="font-medium">Global Leaders in PAH Education</span>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Visual Element Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.25 }}
+            className="relative"
+          >
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Image Placeholder */}
+              <div className="relative bg-white/90 backdrop-blur-sm border border-white/30 rounded-3xl p-6 shadow-2xl">
+                <div className="relative w-full h-64 flex items-center justify-center bg-slate-100 rounded-2xl">
+                  <p className="text-slate-500 font-medium">Image Placeholder</p>
+                </div>
+              </div>
+
+              {/* Floating Elements */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
+              >
+                <Users className="text-blue-300" size={24} />
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, -3, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
+              >
+                <Activity className="text-teal-300" size={24} />
+              </motion.div>
+
+
+
+
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-white/70 rounded-full mt-2"
-          />
-        </motion.div>
-      </motion.div>
+
     </section>
   )
 } 

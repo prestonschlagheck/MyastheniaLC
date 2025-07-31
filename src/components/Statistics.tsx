@@ -1,128 +1,89 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
-import { TrendingUp, Users, Globe } from 'lucide-react'
+import { useRef } from 'react'
+import { Heart, Users, Activity } from 'lucide-react'
+import Image from 'next/image'
 
-interface StatCardProps {
-  icon: React.ReactNode
-  statValue: string
-  animatedNumber: number
-  suffix: string
-  description: string
-  delay: number
-}
 
-function StatCard({ icon, statValue, animatedNumber, suffix, description, delay }: StatCardProps) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    if (isInView) {
-      const timer = setTimeout(() => {
-        const duration = 2000
-        const steps = 60
-        const increment = animatedNumber / steps
-        let current = 0
-        
-        const counter = setInterval(() => {
-          current += increment
-          if (current >= animatedNumber) {
-            setCount(animatedNumber)
-            clearInterval(counter)
-          } else {
-            setCount(Math.floor(current))
-          }
-        }, duration / steps)
-        
-        return () => clearInterval(counter)
-      }, delay)
-      
-      return () => clearTimeout(timer)
-    }
-  }, [isInView, animatedNumber, delay])
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: delay / 1000 }}
-      className="group h-full"
-    >
-      <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 group-hover:scale-105 h-full flex flex-col">
-        <div className="flex flex-col items-center text-center space-y-6 flex-1">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: (delay + 200) / 1000 }}
-            className="p-4 rounded-full bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300"
-          >
-            {icon}
-          </motion.div>
-          
-          <div className="space-y-3 flex-1 flex flex-col justify-center">
-            <motion.div
-              className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
-            >
-              {statValue.includes('in') ? (
-                <>1 in {count}</>
-              ) : statValue.includes('million') ? (
-                <>{count} million</>
-              ) : (
-                <>{count}{suffix}</>
-              )}
-            </motion.div>
-            
-            <p className="text-gray-600 leading-relaxed max-w-xs">
-              {description}
-            </p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
 
 export function Statistics() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const stats = [
-    {
-      icon: <Globe className="w-8 h-8 text-red-500" />,
-      statValue: "1 in 8",
-      animatedNumber: 8,
-      suffix: "",
-      description: "people in the world are living with obesity",
-      delay: 200
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-blue-500" />,
-      statValue: "16%",
-      animatedNumber: 16,
-      suffix: "%",
-      description: "of adults aged 18+ were living with obesity in 2022",
-      delay: 400
-    },
-    {
-      icon: <Users className="w-8 h-8 text-orange-500" />,
-      statValue: "35 million",
-      animatedNumber: 35,
-      suffix: "",
-      description: "children under the age of 5 were overweight in 2024",
-      delay: 600
-    }
-  ]
+
 
   return (
-    <section ref={ref} className="py-8 lg:py-12 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {stats.map((stat, index) => (
-            <StatCard key={index} {...stat} />
-          ))}
+    <section ref={ref} id="associated-diseases" className="py-8 bg-gradient-to-br from-white via-blue-50/30 to-slate-50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>
+        <div className="absolute top-40 right-20 w-32 h-32 bg-teal-100 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>
+        <div className="absolute bottom-20 left-1/3 w-32 h-32 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-40"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+          {/* Header and Text - Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 text-blue-700 text-sm font-medium">
+              <Heart size={16} />
+              <span>Understanding Disease Complexity</span>
+            </div>
+            <h2 className="heading-font text-3xl lg:text-4xl font-bold text-slate-900">
+              Associated Diseases and{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                Conditions of PH
+              </span>
+            </h2>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              Pulmonary Arterial Hypertension (PAH) is a progressive and potentially fatal condition that can be associated with various underlying conditions.
+            </p>
+          </motion.div>
+
+          {/* Masterclass Image - Right Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative h-[500px] flex items-center justify-center overflow-hidden"
+          >
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* Central Masterclass Image */}
+              <div className="relative bg-white/90 backdrop-blur-sm border border-white/30 rounded-3xl p-6 shadow-2xl">
+                <div className="relative w-full h-64">
+                  <Image
+                    src="/masterclass.png"
+                    alt="PAH Masterclass"
+                    fill
+                    className="object-contain rounded-2xl"
+                  />
+                </div>
+              </div>
+
+              {/* Floating Elements */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
+              >
+                <Users className="text-blue-300" size={24} />
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, -3, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
+              >
+                <Activity className="text-teal-300" size={24} />
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

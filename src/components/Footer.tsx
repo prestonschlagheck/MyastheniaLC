@@ -24,7 +24,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="flex flex-col md:flex-row items-center justify-between gap-8"
           >
-            {/* GLC Logo */}
+            {/* ReachMD Logo */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -33,10 +33,10 @@ export function Footer() {
             >
               <Image
                 src="/glc.png"
-                alt="Global Learning Collaborative Logo"
-                width={200}
-                height={60}
-                className="h-12 w-auto object-contain"
+                alt="Global Learning Collaborative"
+                width={120}
+                height={36}
+                className="h-9 w-auto object-contain"
               />
             </motion.div>
 
