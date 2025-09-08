@@ -113,17 +113,11 @@ export function Hero() {
               className="space-y-4"
             >
               <h1 className="heading-font text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
-                Advancing Care in{' '}
+                IMPACT T1D: Patient Journey-Driven Approach for{' '}
                 <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
-                  Pulmonary Arterial Hypertension
+                  Optimizing T1D care
                 </span>
               </h1>
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full" />
-                <h2 className="text-xl lg:text-2xl font-light text-blue-200 tracking-wide">
-                  COMMITTED TO IMPACTING PRACTICE CARE
-                </h2>
-              </div>
             </motion.div>
 
             {/* Description */}
@@ -133,7 +127,7 @@ export function Hero() {
               transition={{ duration: 0.2, delay: 0.15 }}
               className="text-base lg:text-lg text-blue-100 leading-relaxed max-w-xl"
             >
-              For more than 15 years, the IMPACT PH Program—powered by a distinguished, multidisciplinary faculty—has driven measurable improvements in patient outcomes through a curriculum that champions early diagnosis and evidence-based treatment, fundamentally transforming pulmonary hypertension care worldwide.
+              IMPACT T1D seeks to redefine Type 1 Diabetes care by advancing healthcare professional education across the entire patient journey — from early risk identification to long-term outcome optimization.
             </motion.p>
 
 
@@ -160,7 +154,7 @@ export function Hero() {
                 className="flex items-center space-x-2 bg-gradient-to-r from-yellow-400/20 to-amber-400/20 backdrop-blur-sm rounded-lg px-3 py-1.5 text-yellow-100 text-xs border-l-4 border-yellow-400"
               >
                 <Award size={14} className="text-yellow-400" />
-                <span className="font-medium">Global Leaders in PAH Education</span>
+                <span className="font-medium">Global Leaders in T1D Education</span>
               </motion.div>
             </motion.div>
           </div>
@@ -172,12 +166,15 @@ export function Hero() {
             transition={{ duration: 0.3, delay: 0.25 }}
             className="relative"
           >
-            <div className="relative w-full max-w-lg mx-auto">
-              {/* Image Placeholder */}
-              <div className="relative bg-white/90 backdrop-blur-sm border border-white/30 rounded-3xl p-6 shadow-2xl">
-                <div className="relative w-full h-64 flex items-center justify-center bg-slate-100 rounded-2xl">
-                  <p className="text-slate-500 font-medium">Image Placeholder</p>
-                </div>
+            <div className="relative w-full max-w-xl mx-auto">
+              {/* T1D Graphic */}
+              <div className="relative w-full h-80">
+                <Image
+                  src="/graphic.png"
+                  alt="T1D Impact Graphic"
+                  fill
+                  className="object-contain"
+                />
               </div>
 
               {/* Floating Elements */}

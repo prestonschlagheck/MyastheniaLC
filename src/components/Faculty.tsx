@@ -3,48 +3,36 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { User, Users } from 'lucide-react'
-import Image from 'next/image'
 
-interface FacultyCardProps {
-  name: string
-  credentials: string
-  image?: string
+interface FacultyPlaceholderProps {
   index: number
 }
 
-function FacultyCard({ name, credentials, image, index }: FacultyCardProps) {
+function FacultyPlaceholder({ index }: FacultyPlaceholderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.2, delay: index * 0.01 }}
+      transition={{ duration: 0.2, delay: index * 0.05 }}
     >
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4">
+      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 h-32">
         {/* Profile Photo */}
-        <div className="flex flex-col items-center text-center">
-          <div className="relative w-16 h-16 mb-3">
+        <div className="flex flex-col items-center text-center h-full justify-center">
+          <div className="relative w-16 h-16 mb-2">
             <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-3 border-white shadow-md">
-              {image ? (
-                <Image
-                  src={`/headshot/${image}`}
-                  alt={name}
-                  width={64}
-                  height={64}
-                  className="w-full h-full object-cover rounded-full"
-                />
-              ) : (
-                <User className="w-8 h-8 text-slate-400" />
-              )}
+              <User className="w-8 h-8 text-slate-400" />
             </div>
           </div>
           
-          {/* Name & Credentials */}
-          <h3 className="heading-font font-semibold text-slate-900 text-sm text-center leading-tight mb-1">
-            {name}
-          </h3>
-          <div className="text-xs font-medium text-blue-600 text-center">
-            {credentials}
+          {/* Placeholder Text */}
+          <div className="text-center">
+            <h3 className="heading-font font-semibold text-slate-400 text-sm leading-tight mb-1">
+              Expert Placeholder
+            </h3>
+            <div className="text-xs font-medium text-slate-300">
+              To Be Added
+            </div>
           </div>
         </div>
       </div>
@@ -56,26 +44,8 @@ export function Faculty() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const facultyMembers = [
-    { name: "Vallerie V. McLaughlin", credentials: "MD", image: "val.png" },
-    { name: "Richard N. Channick", credentials: "MD", image: "rich.png" },
-    { name: "Ioana Preston", credentials: "MD", image: "iona.png" },
-    { name: "Kelly Chin", credentials: "MD, MSCA", image: "kelly.png" },
-    { name: "Marsha Burks", credentials: "BSN, RN", image: "marsha.png" },
-    { name: "Rajan Saggar", credentials: "MD", image: "raj.png" },
-    { name: "Richard Krasuski", credentials: "MD", image: "richard.png" },
-    { name: "Marc Humbert", credentials: "MD, PhD", image: "marc.png" },
-    { name: "Martha Kingman", credentials: "DNP, FNP-C", image: "mart.png" },
-    { name: "Susanne McDevitt", credentials: "DNP, ACNP-BC", image: "sus.png" },
-    { name: "Jean M. Elwing", credentials: "MD", image: "jean.png" },
-    { name: "Victor Moles", credentials: "MD", image: "vic.png" },
-    { name: "H. James Ford", credentials: "MD", image: "hj.png" },
-    { name: "Hilary M. DuBrock", credentials: "MD", image: "hill.png" },
-    { name: "Oksana A. Shlobin", credentials: "MD", image: "ok.png" },
-    { name: "Gustavo A. Heresi", credentials: "MD, MS", image: "gust.png" },
-    { name: "Lucilla Piccari", credentials: "MD, PhD", image: "luc.png" },
-    { name: "Gergely Meszaros", credentials: "JD, MSc", image: "gerg.png" }
-  ]
+  // Create 12 placeholder slots
+  const placeholderSlots = Array.from({ length: 12 }, (_, index) => index)
 
   return (
     <section ref={ref} id="faculty" className="pt-16 pb-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
@@ -131,7 +101,10 @@ export function Faculty() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-
+          <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-sm rounded-full px-4 py-2 text-blue-200 text-sm font-medium mb-6">
+            <Users size={16} />
+            <span>Expert Faculty</span>
+          </div>
           
           <h2 className="heading-font text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
             Leading Global{' '}
@@ -142,24 +115,30 @@ export function Faculty() {
           
           <div className="max-w-4xl mx-auto space-y-6">
             <p className="text-xl text-blue-100 leading-relaxed">
-              Our distinguished multidisciplinary faculty represents the pinnacle of expertise in pulmonary arterial hypertension, bringing together renowned clinicians, researchers, and thought leaders from the world&apos;s most prestigious medical institutions.
+              Our distinguished multidisciplinary faculty represents the pinnacle of expertise in Type 1 Diabetes, bringing together renowned clinicians, researchers, and thought leaders from the world&apos;s most prestigious medical institutions.
             </p>
             
-
+            {/* Coming Soon Notice */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+            >
+              <p className="text-lg text-white/90 leading-relaxed">
+                Our expert faculty profiles will be announced soon. We are assembling a world-class team of T1D specialists committed to advancing education and improving patient outcomes.
+              </p>
+            </motion.div>
           </div>
         </motion.div>
 
-
-
-        {/* Faculty Grid */}
+        {/* Faculty Placeholder Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-          {facultyMembers.map((faculty, index) => (
-            <FacultyCard key={index} {...faculty} index={index} />
+          {placeholderSlots.map((index) => (
+            <FacultyPlaceholder key={index} index={index} />
           ))}
         </div>
-
-
       </div>
     </section>
   )
-} 
+}

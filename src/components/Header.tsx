@@ -18,10 +18,11 @@ export function Header() {
   };
 
   const navigationItems = [
-    { id: 'comprehensive-hub', label: 'PAH Education Hub' },
-    { id: 'associated-diseases', label: 'Associated Diseases' },
-    { id: 'educational-activities', label: 'Educational Activities' },
+    { id: 'comprehensive-hub', label: 'T1D Education Hub' },
+    { id: 't1d-statistics', label: 'T1D Statistics' },
+    { id: 'educational-activities', label: 'Educational Programs' },
     { id: 'resource-center', label: 'Resource Center' },
+    { id: 'partners', label: 'Partners' },
     { id: 'faculty', label: 'Faculty' }
   ];
 
