@@ -1,107 +1,54 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { FileText, ExternalLink, Calendar, TrendingUp, Award, Beaker, Database, ArrowRight, ChevronRight, Download } from 'lucide-react'
+import { useRef } from 'react'
+import { FileText, ExternalLink, Award, Beaker, Database, Download } from 'lucide-react'
 
-interface ResourcePlaceholderProps {
-  title: string
-  description: string
-  index: number
-  icon: React.ReactNode
-}
-
-function ResourcePlaceholder({ title, description, index, icon }: ResourcePlaceholderProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group cursor-pointer"
-    >
-      <div className="relative p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-xl h-[320px] flex flex-col bg-white border-slate-200 hover:border-blue-300">
-        
-        {/* Header Row */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-              {icon}
-            </div>
-            <div>
-              <div className="text-sm font-bold text-blue-600">Coming Soon</div>
-              <div className="text-xs text-slate-500">T1D Resource</div>
-            </div>
-          </div>
-          <div className="flex items-center space-x-2 text-xs text-slate-400">
-            <Database size={14} />
-            <span className="uppercase tracking-wide font-medium">TBD</span>
-          </div>
-        </div>
-
-        {/* Title */}
-        <h3 className="font-bold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors text-lg">
-          {title}
-        </h3>
-
-        {/* Description */}
-        <div className="bg-slate-50 rounded-xl p-4 mb-4 border border-slate-100 flex-1">
-          <div className="flex items-start space-x-2">
-            <TrendingUp size={16} className="text-green-600 mt-0.5 flex-shrink-0" />
-            <p className="text-sm text-slate-700 leading-relaxed">
-              {description}
-            </p>
-          </div>
-        </div>
-
-        {/* Action Row */}
-        <div className="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
-          <div className="text-xs text-slate-500">
-            Resource will be available soon
-          </div>
-          <div className="flex items-center space-x-1 text-blue-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-            <span>Coming Soon</span>
-            <ChevronRight size={16} />
-          </div>
-        </div>
-
-        {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-teal-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-      </div>
-    </motion.div>
-  )
-}
+interface ResourceLink { title: string; href: string }
+interface ResourceGroup { title: string; icon: React.ReactNode; items: ResourceLink[] }
 
 export function ResourceCenter() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [showResources, setShowResources] = useState(false)
 
-  const resourcePlaceholders = [
+  const resources: ResourceGroup[] = [
     {
-      title: "T1D Research Database",
-      description: "Comprehensive collection of latest research papers, clinical trials, and evidence-based studies in Type 1 Diabetes management and care.",
-      icon: <FileText size={20} className="text-blue-600" />
+      title: 'Guidelines & Consensus',
+      icon: <Award size={18} className="text-blue-700" />,
+      items: [
+        { title: 'AACE 2025 Clinical Practice Guideline for Dyslipidemia', href: 'https://pro.aace.com/clinical-guidance/2025-clinical-practice-guideline-pharmacologic-management-adults-dyslipidemia' },
+        { title: 'NLA: Managing Hypercholesterolemia in Adults >75 without ASCVD', href: 'https://www.lipid.org/nla/managing-hypercholesterolemia-adults-older-75-years-without-history-atherosclerotic' },
+      ]
     },
     {
-      title: "Clinical Guidelines & Protocols",
-      description: "Evidence-based clinical guidelines, treatment protocols, and best practice recommendations for T1D patient care and management.",
-      icon: <Award size={20} className="text-blue-600" />
+      title: 'Lp(a) & Risk',
+      icon: <Beaker size={18} className="text-teal-700" />,
+      items: [
+        { title: 'EHJ: Lp(a) as causal ASCVD risk factor', href: 'https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf190/8234482' },
+        { title: 'NEJM: Trials and updates', href: 'https://www.nejm.org/doi/full/10.1056/NEJMoa2415820' },
+      ]
     },
     {
-      title: "Patient Journey Tools",
-      description: "Interactive tools and resources to support healthcare providers in optimizing patient care across the entire T1D journey.",
-      icon: <Beaker size={20} className="text-blue-600" />
+      title: 'Hypercholesterolemia & Population Data',
+      icon: <Database size={18} className="text-indigo-700" />,
+      items: [
+        { title: 'Lancet: Global hypercholesterolemia prevalence', href: 'https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)00721-4/abstract' },
+        { title: 'Eur J Prev Cardiol: Dyslipidemia updates', href: 'https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwaf313/8152583' },
+      ]
     },
     {
-      title: "Educational Materials",
-      description: "Downloadable educational content, infographics, and patient education materials for T1D care providers.",
-      icon: <Download size={20} className="text-blue-600" />
-    }
+      title: 'Trials & Reviews',
+      icon: <FileText size={18} className="text-slate-700" />,
+      items: [
+        { title: 'NEJM: Cardiovascular outcomes updates', href: 'https://www.nejm.org/doi/10.1056/NEJMoa2409368' },
+        { title: 'J Clin Lipidol: 2025 featured articles', href: 'https://www.lipidjournal.com/article/S1933-2874(25)00317-4/fulltext' },
+        { title: 'PMC: Review articles', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12186734/' },
+      ]
+    },
   ]
 
   return (
-    <section ref={ref} id="resource-center" className="pt-16 pb-4 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
+    <section ref={ref} id="resource-center" className="pt-16 pb-16 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -122,46 +69,42 @@ export function ResourceCenter() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 text-blue-700 text-sm font-medium mb-6">
-            <Database size={16} />
-            <span>Knowledge Repository</span>
-          </div>
-
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Resource{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-              Center
-            </span>
+          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            Resource <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Center</span>
           </h2>
-          <p className="text-xl text-slate-700 max-w-4xl mx-auto leading-relaxed mb-8">
-            Your comprehensive hub for T1D research, clinical guidelines, and educational resources to support evidence-based patient care.
+          <p className="text-base lg:text-lg text-slate-700 max-w-4xl mx-auto leading-relaxed">
+            Curated links to guidelines, population data, Lp(a) insights, and trial updates. Links open in a new tab.
           </p>
-          
-          {/* View Resources Button */}
-          <motion.button
-            onClick={() => setShowResources(!showResources)}
-            className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
-          >
-            {showResources ? 'Hide Resources' : 'View Resources'}
-          </motion.button>
         </motion.div>
 
-        {/* Resource Placeholders - Collapsible Grid */}
-        {showResources && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mt-12"
-          >
-            {resourcePlaceholders.map((resource, index) => (
-              <ResourcePlaceholder key={index} {...resource} index={index} />
-            ))}
-          </motion.div>
-        )}
+        {/* Grouped Resources */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {resources.map((group, gi) => (
+            <motion.div
+              key={gi}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: gi * 0.05 }}
+              className="bg-white rounded-2xl border border-slate-200 p-5"
+            >
+              <div className="flex items-center space-x-2 mb-3">
+                <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">{group.icon}</div>
+                <div className="text-slate-900 font-semibold">{group.title}</div>
+              </div>
+              <ul className="space-y-2">
+                {group.items.map((item, ii) => (
+                  <li key={ii} className="flex items-center justify-between">
+                    <span className="text-slate-800 text-sm leading-snug pr-3">{item.title}</span>
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 inline-flex items-center text-xs">Open <ExternalLink size={14} className="ml-1" /></a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

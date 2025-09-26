@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "bash scripts/dev-clean.sh",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rm -rf .next node_modules/.cache && npm cache clean --force"
   },
   "dependencies": {
     "framer-motion": "^11.3.31",

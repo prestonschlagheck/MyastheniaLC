@@ -4,7 +4,8 @@ import { Statistics } from '../components/Statistics'
 import { EducationalPrograms } from '../components/EducationalPrograms'
 import { ResourceCenter } from '../components/ResourceCenter'
 import { Partners } from '../components/Partners'
-import { Faculty } from '../components/Faculty'
+import { TherapeuticTracks } from '../components/TherapeuticTracks'
+import { NewsPrograms } from '../components/NewsPrograms'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 
@@ -17,9 +18,10 @@ export default function Home() {
         <VideoIntroduction />
         <Statistics />
         <EducationalPrograms />
+        <TherapeuticTracks />
         <ResourceCenter />
         <Partners />
-        <Faculty />
+        <NewsPrograms />
         <Footer />
       </div>
     </main>

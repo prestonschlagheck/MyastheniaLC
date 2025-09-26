@@ -1,24 +1,37 @@
 import "./globals.css";
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
-  title: 'PAH Learning Center | Pulmonary Arterial Hypertension Education',
-  description: 'The world\'s leading educational initiative for pulmonary arterial hypertension (PAH). Access expert-led CME activities, cutting-edge research, and comprehensive resources from renowned global faculty.',
-  keywords: 'PAH, pulmonary arterial hypertension, medical education, CME, continuing education, cardiology, pulmonary medicine',
-  authors: [{ name: 'PAH Learning Center' }],
-  viewport: 'width=device-width, initial-scale=1',
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+  title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
+  description: 'Your comprehensive hub for advancing evidence-based care in lipid management. Explore expert interviews, interactive cases, multidisciplinary panels, and patient perspectives across LDL-C, Lp(a), severe hypertriglyceridemia, and rare genetic disorders.',
+  keywords: 'lipids, dyslipidemia, LDL-C, Lp(a), hypertriglyceridemia, familial chylomicronemia syndrome, FCS, ASCVD, cardiology, endocrinology, CME',
+  authors: [{ name: 'Lipid 360° Learning Center' }],
   robots: 'index, follow',
   openGraph: {
-    title: 'PAH Learning Center | Leading Global Excellence in PAH Education',
-    description: 'Transform your expertise with world-class PAH education from the #1 global learning initiative.',
+    title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
+    description: 'Advancing evidence-based care in lipid management with expert insights and practical strategies.',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/output (1).png',
+        width: 1200,
+        height: 630,
+        alt: 'Lipid 360 visual'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PAH Learning Center | Pulmonary Arterial Hypertension Education',
-    description: 'The world\'s leading educational initiative for PAH. Expert-led CME activities and cutting-edge research.',
+    title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
+    description: 'Your comprehensive hub for advancing evidence-based care in lipid management.',
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

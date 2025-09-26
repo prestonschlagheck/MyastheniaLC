@@ -18,12 +18,13 @@ export function Header() {
   };
 
   const navigationItems = [
-    { id: 'comprehensive-hub', label: 'T1D Education Hub' },
-    { id: 't1d-statistics', label: 'T1D Statistics' },
-    { id: 'educational-activities', label: 'Educational Programs' },
+    { id: 'comprehensive-hub', label: 'Lipid 360°' },
+    { id: 'lipid-statistics', label: 'Lipid Statistics' },
+    { id: 'activities', label: 'Activities' },
+    { id: 'tracks', label: 'Tracks' },
     { id: 'resource-center', label: 'Resource Center' },
-    { id: 'partners', label: 'Partners' },
-    { id: 'faculty', label: 'Faculty' }
+    { id: 'faculty', label: 'Key Faculty' },
+    { id: 'news', label: 'News' }
   ];
 
   return (
@@ -35,30 +36,30 @@ export function Header() {
     >
       <div className="w-full px-4 lg:px-8">
         <div className="flex items-center h-20 relative">
-          {/* Logo - Far Left with extra margin */}
+          {/* Logo / Placeholder - Far Left */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.2, delay: 0.05 }}
             className="flex items-center absolute left-4"
           >
-                                    <Image
-                          src="/glc.png"
-                          alt="Global Learning Collaborative"
-                          width={120}
-                          height={36}
-                          className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
-                          priority
-                          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        />
+            <Image
+              src="/glc.png"
+              alt="GLC Logo"
+              width={120}
+              height={36}
+              className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+              priority
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            />
           </motion.div>
 
-          {/* Navigation Tabs - Perfectly Centered */}
+          {/* Navigation Tabs - Right Aligned */}
           <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="hidden lg:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2"
+            className="hidden lg:flex items-center space-x-4 absolute right-4 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent"
           >
             {navigationItems.map((item, index) => (
               <motion.button
@@ -67,7 +68,7 @@ export function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 0.1 + index * 0.05 }}
                 onClick={() => scrollToSection(item.id)}
-                className="px-3 py-2 text-sm font-semibold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent hover:from-blue-700 hover:to-teal-700 transition-all duration-300 cursor-pointer hover:scale-105"
+                className="px-2 py-2 text-sm font-semibold hover:scale-105 transition-all duration-300 cursor-pointer"
               >
                 {item.label}
               </motion.button>

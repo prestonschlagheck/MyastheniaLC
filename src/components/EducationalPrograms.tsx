@@ -2,61 +2,46 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { BookOpen, Users, Award } from 'lucide-react'
+import { BookOpen, ExternalLink, Heart, Beaker } from 'lucide-react'
 
-interface PlaceholderCardProps {
-  title: string
-  description: string
-  index: number
-  icon: React.ReactNode
-  color: string
-}
+interface ActivityLink { title: string; href?: string; comingSoon?: boolean }
+interface ActivityGroup { title: string; description: string; icon: React.ReactNode; items: ActivityLink[] }
 
-function PlaceholderCard({ title, description, index, icon, color }: PlaceholderCardProps) {
+function ActivityCard({ group, index }: { group: ActivityGroup; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
-      className="group cursor-pointer"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group"
     >
-      <div className={`${color} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-white/20 group-hover:scale-[1.02] h-80 flex flex-col justify-center items-center text-center`}>
-        {/* Icon */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-          className="mb-6"
-        >
-          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-            {icon}
+      <div className="rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 bg-white h-full flex flex-col overflow-hidden">
+        <div className="px-5 pt-4 pb-3 bg-gradient-to-r from-blue-50 to-teal-50 border-b border-slate-200 rounded-t-3xl">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+              {group.icon}
+            </div>
+            <h3 className="text-lg font-bold text-slate-900">{group.title}</h3>
           </div>
-        </motion.div>
-
-        {/* Content */}
-        <div className="space-y-4">
-          <h3 className="text-2xl lg:text-3xl font-bold text-white">
-            {title}
-          </h3>
-          <p className="text-white/90 text-lg leading-relaxed">
-            {description}
-          </p>
+          <div className="text-slate-600 text-sm mt-1">{group.description}</div>
         </div>
-
-        {/* Coming Soon Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: index * 0.2 + 0.6 }}
-          className="mt-6"
-        >
-          <div className="bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white/80 text-sm font-medium">
-            Coming Soon
-          </div>
-        </motion.div>
+        <ul className="space-y-2 mt-1 px-5 py-4">
+          {group.items.map((item, i) => (
+            <li key={i} className="flex items-start justify-between">
+              <span className="text-slate-800 text-sm leading-snug pr-3">
+                {item.title}
+              </span>
+              {item.comingSoon ? (
+                <span className="text-xs text-slate-400">Coming soon</span>
+              ) : (
+                <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 inline-flex items-center text-xs">
+                  Open <ExternalLink size={14} className="ml-1" />
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </motion.div>
   )
@@ -66,29 +51,50 @@ export function EducationalPrograms() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const placeholders = [
+  const groups: ActivityGroup[] = [
     {
-      title: "T1D Masterclass",
-      description: "Comprehensive educational program covering the latest in T1D management and care strategies",
-      icon: <BookOpen size={40} className="text-white" />,
-      color: "bg-gradient-to-br from-blue-500 to-blue-600"
+      title: 'FCS & Severe Hypertriglyceridemia',
+      description: 'Therapeutic advances and unmet needs in APOC3 inhibition and FCS/SHTG.',
+      icon: <Beaker size={20} className="text-blue-700" />,
+      items: [
+        { title: 'Phase 3 study results of plozasiran in patients with FCS (Arrowhead)', comingSoon: true },
+        { title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG (CME)', href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/' },
+        { title: 'FCS & SHTG: Are we meeting the need? (CME)', href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/' },
+        { title: 'Transforming cardiovascular care', comingSoon: true },
+      ]
     },
     {
-      title: "Clinical Resources",
-      description: "Evidence-based tools and resources for healthcare professionals managing T1D patients",
-      icon: <Award size={40} className="text-white" />,
-      color: "bg-gradient-to-br from-teal-500 to-teal-600"
+      title: 'CETP Inhibition & Obicetrapib (ESC 2025)',
+      description: 'Efficacy and implications of CETP inhibition across diverse backgrounds.',
+      icon: <Heart size={20} className="text-blue-700" />,
+      items: [
+        { title: 'Efficacy of obicetrapib across diverse regimens (BROOKLYN/BROADWAY pooled)', href: 'https://reachmd.com/clinical-practice/cardiology/efficacy-of-obicetrapib-across-diverse-background-lipid-lowering-regimens-pooled-broadway-brooklyn-analyses/36582/' },
+        { title: 'CETP inhibition & obicetrapib: A new era in lipid management', href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-and-obicetrapib-a-new-era-in-lipid-management/37123/' },
+        { title: 'CETP inhibition: Implications for cardiovascular event prevention', href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-with-obicetrapib-implications-for-cardiovascular-event-prevention/37124/' },
+      ]
     },
     {
-      title: "Community Hub",
-      description: "Interactive platform connecting T1D care providers for knowledge sharing and collaboration",
-      icon: <Users size={40} className="text-white" />,
-      color: "bg-gradient-to-br from-purple-500 to-purple-600"
-    }
+      title: 'LDL-C: Novel Therapies & Clinical Choices',
+      description: 'Placing novel agents in the LDL-C treatment landscape.',
+      icon: <BookOpen size={20} className="text-blue-700" />,
+      items: [
+        { title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in? (CME)', href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/' },
+        { title: 'Exploring CETP as a therapeutic target (CME)', href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/' },
+        { title: 'Transforming cardiovascular care', comingSoon: true },
+      ]
+    },
+    {
+      title: "Women's Heart Health",
+      description: 'Focused lipid education for cardiovascular health in women.',
+      icon: <Heart size={20} className="text-blue-700" />,
+      items: [
+        { title: 'LOVE STORY: Lipid Education for Women’s Heart Health (CME)', href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/' },
+      ]
+    },
   ]
 
   return (
-    <section ref={ref} id="educational-activities" className="py-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
+    <section ref={ref} id="activities" className="py-16 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-pulse"></div>
@@ -104,26 +110,19 @@ export function EducationalPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 text-blue-700 text-sm font-medium mb-6">
-            <BookOpen size={16} />
-            <span>Educational Excellence</span>
-          </div>
-          
           <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Educational{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-              Programs
-            </span>
+            Curated{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Activities</span>
           </h2>
-          <p className="text-xl text-slate-700 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive T1D education programs designed to advance healthcare professional knowledge and improve patient outcomes through evidence-based learning.
+          <p className="text-base lg:text-lg text-slate-700 max-w-6xl mx-auto leading-relaxed text-center">
+            Explore CME and clinical practice programs across FCS/SHTG, CETP/obicetrapib, LDL-C therapies, and women’s heart health.
           </p>
         </motion.div>
 
-        {/* Placeholders Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {placeholders.map((placeholder, index) => (
-            <PlaceholderCard key={index} {...placeholder} index={index} />
+        {/* Activity Groups */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {groups.map((group, index) => (
+            <ActivityCard key={index} group={group} index={index} />
           ))}
         </div>
       </div>

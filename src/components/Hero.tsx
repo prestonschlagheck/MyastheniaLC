@@ -1,10 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Activity, Users, Award, ChevronDown } from 'lucide-react'
-import Image from 'next/image'
+import { Heart, Activity } from 'lucide-react'
 
 export function Hero() {
+  const scrollToWithOffset = (id: string) => {
+    const el = document.getElementById(id)
+    if (!el) return
+    const headerHeight = 88 // fixed header (~h-20 plus extra spacing)
+    const y = el.getBoundingClientRect().top + window.pageYOffset - headerHeight
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
   return (
     <section className="relative h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sophisticated Background Patterns */}
@@ -57,7 +63,7 @@ export function Hero() {
           }}
           className="absolute top-32 left-20 opacity-30"
         >
-          <Heart size={24} className="text-blue-300" />
+          <Heart size={24} className="text-blue-700" />
         </motion.div>
 
         <motion.div
@@ -99,7 +105,7 @@ export function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center h-full px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12 items-center">
           
           {/* Text Content */}
           <div className="text-left space-y-8">
@@ -113,9 +119,10 @@ export function Hero() {
               className="space-y-4"
             >
               <h1 className="heading-font text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
-                IMPACT T1D: Patient Journey-Driven Approach for{' '}
-                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
-                  Optimizing T1D care
+                Lipid 360° Learning Center:
+                <br />
+                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent whitespace-nowrap">
+                  Advancing Evidence-Based Care in Lipid Management
                 </span>
               </h1>
             </motion.div>
@@ -125,14 +132,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.15 }}
-              className="text-base lg:text-lg text-blue-100 leading-relaxed max-w-xl"
+              className="text-base lg:text-lg text-blue-100 leading-relaxed max-w-4xl font-sans"
             >
-              IMPACT T1D seeks to redefine Type 1 Diabetes care by advancing healthcare professional education across the entire patient journey — from early risk identification to long-term outcome optimization.
+              Through expert interviews, interactive case discussions, multidisciplinary panels, and patient perspectives, leading global experts in cardiovascular medicine, lipidology, and endocrinology share the latest evidence alongside real-world clinical insights. Empower your team with practical strategies across LDL-C, lipoprotein(a), severe hypertriglyceridemia, and rare disorders like familial chylomicronemia syndrome.
             </motion.p>
 
 
 
-            {/* CTA Button & Achievement */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -140,65 +147,19 @@ export function Hero() {
               className="flex items-center gap-4 pt-4"
             >
               <button 
-                onClick={() => document.getElementById('educational-activities')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToWithOffset('activities')}
                 className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
               >
                 Explore Activities
               </button>
-              
-              {/* Achievement Badge */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.6 }}
-                className="flex items-center space-x-2 bg-gradient-to-r from-yellow-400/20 to-amber-400/20 backdrop-blur-sm rounded-lg px-3 py-1.5 text-yellow-100 text-xs border-l-4 border-yellow-400"
+              <button 
+                onClick={() => scrollToWithOffset('resource-center')}
+                className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/60 text-white/90 hover:bg-white/10 hover:shadow-xl"
               >
-                <Award size={14} className="text-yellow-400" />
-                <span className="font-medium">Global Leaders in T1D Education</span>
-              </motion.div>
+                Explore Resources
+              </button>
             </motion.div>
           </div>
-
-          {/* Visual Element Placeholder */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.25 }}
-            className="relative"
-          >
-            <div className="relative w-full max-w-xl mx-auto">
-              {/* T1D Graphic */}
-              <div className="relative w-full h-80">
-                <Image
-                  src="/graphic.png"
-                  alt="T1D Impact Graphic"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
-              >
-                <Users className="text-blue-300" size={24} />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -8, 0], rotate: [0, -3, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4"
-              >
-                <Activity className="text-teal-300" size={24} />
-              </motion.div>
-
-
-
-
-            </div>
-          </motion.div>
         </div>
       </div>
 

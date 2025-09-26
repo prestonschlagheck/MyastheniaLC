@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Prevent white page issues
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+  // Improve build stability
+  webpack: (config, { dev, isServer }) => {
+    if (dev) {
+      config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
