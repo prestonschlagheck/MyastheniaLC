@@ -125,32 +125,22 @@ export function InteractiveCircle({ onHoverChange }: { onHoverChange?: (info: { 
   const getActiveSegment = useCallback(() => {
     if (hovered) return segments.find(s => s.key === hovered)
     
-    // Find which segment contains the top-right position (45 degrees) after rotation
-    const targetAngle = 45 // Top-right position
+    // Calculate which segment should be active based on rotation
+    // We want the segment that's currently at the top-right (45 degrees)
+    const targetAngle = 45
     
-    // Since the SVG rotates clockwise, we need to subtract the rotation angle
-    // to find what was originally at the target position
-    const originalAngle = (targetAngle - rotationAngle + 360) % 360
+    // Normalize the rotation angle and calculate which segment index should be active
+    const normalizedRotation = ((rotationAngle % 360) + 360) % 360
     
-    // Find which segment contains this angle
-    for (const segment of segments) {
-      // Handle wraparound case where the segment spans across 0 degrees
-      if (segment.startAngle > segment.endAngle) {
-        // Segment wraps around (e.g., 350° to 10°)
-        if (originalAngle >= segment.startAngle || originalAngle < segment.endAngle) {
-          return segment
-        }
-      } else {
-        // Normal segment (e.g., 10° to 30°)
-        if (originalAngle >= segment.startAngle && originalAngle < segment.endAngle) {
-          return segment
-        }
-      }
-    }
+    // Calculate which segment index should be at the target position
+    // Since we rotate clockwise, we need to find which original segment is now at 45°
+    const segmentAtTarget = Math.floor(((targetAngle - normalizedRotation + 360) % 360) / sliceAngle)
     
-    // Fallback to first segment if no match found
-    return segments[0]
-  }, [hovered, segments, rotationAngle])
+    // Ensure the index is within bounds
+    const activeIndex = segmentAtTarget % segments.length
+    
+    return segments[activeIndex] || segments[0]
+  }, [hovered, segments, rotationAngle, sliceAngle])
 
   // Update info box when active segment changes
   useEffect(() => {

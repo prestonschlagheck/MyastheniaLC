@@ -42,56 +42,66 @@ function FacultyPlaceholder({ index }: FacultyPlaceholderProps) {
 
 export function Faculty() {
   const ref = useRef(null)
+  const ref2 = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const isInView2 = useInView(ref2, { once: true })
 
   // Create 12 placeholder slots
   const placeholderSlots = Array.from({ length: 12 }, (_, index) => index)
 
   return (
-    <section ref={ref} id="faculty" className="pt-16 pb-4 bg-gradient-to-br from-slate-50 to-white relative overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Enhanced Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          
-          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-            Leading Global{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-              Experts
-            </span>
-          </h2>
-          
-          <div className="max-w-4xl mx-auto space-y-6">
-            <p className="text-xl text-slate-700 leading-relaxed">
-              Our distinguished multidisciplinary faculty represents the pinnacle of expertise in Type 1 Diabetes, bringing together renowned clinicians, researchers, and thought leaders from the world&apos;s most prestigious medical institutions.
+    <>
+      {/* First Faculty Directory Section */}
+      <section ref={ref} id="faculty" className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={isInView ? { opacity: 1, y: 0 } : {}} 
+            transition={{ duration: 0.5 }} 
+            className="text-center mb-8"
+          >
+            <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
+              Faculty <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Directory</span>
+            </h2>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              Placeholder grid for all faculty from included activities. Replace with names, titles, affiliations, and photos.
             </p>
-            
-            {/* Coming Soon Notice */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200"
-            >
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Our expert faculty profiles will be announced soon. We are assembling a world-class team of T1D specialists committed to advancing education and improving patient outcomes.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Faculty Placeholder Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-          {placeholderSlots.map((index) => (
-            <FacultyPlaceholder key={index} index={index} />
-          ))}
+          {/* Faculty Placeholder Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            {placeholderSlots.map((index) => (
+              <FacultyPlaceholder key={`first-${index}`} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Second Faculty Directory Section - White Background */}
+      <section ref={ref2} className="py-14 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={isInView2 ? { opacity: 1, y: 0 } : {}} 
+            transition={{ duration: 0.5 }} 
+            className="text-center mb-8"
+          >
+            <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
+              Faculty <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Directory</span>
+            </h2>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              Placeholder grid for all faculty from included activities. Replace with names, titles, affiliations, and photos.
+            </p>
+          </motion.div>
+
+          {/* Faculty Placeholder Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+            {placeholderSlots.map((index) => (
+              <FacultyPlaceholder key={`second-${index}`} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
