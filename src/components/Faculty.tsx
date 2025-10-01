@@ -42,66 +42,35 @@ function FacultyPlaceholder({ index }: FacultyPlaceholderProps) {
 
 export function Faculty() {
   const ref = useRef(null)
-  const ref2 = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const isInView2 = useInView(ref2, { once: true })
 
   // Create 12 placeholder slots
   const placeholderSlots = Array.from({ length: 12 }, (_, index) => index)
 
   return (
-    <>
-      {/* First Faculty Directory Section */}
-      <section ref={ref} id="faculty" className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={isInView ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.5 }} 
-            className="text-center mb-8"
-          >
-            <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
-              Faculty <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Directory</span>
-            </h2>
-            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
-              Placeholder grid for all faculty from included activities. Replace with names, titles, affiliations, and photos.
-            </p>
-          </motion.div>
+    <section ref={ref} id="faculty" className="py-14 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={isInView ? { opacity: 1, y: 0 } : {}} 
+          transition={{ duration: 0.5 }} 
+          className="text-center mb-8"
+        >
+          <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
+            Leading <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Global Experts</span>
+          </h2>
+          <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+            Placeholder grid for all faculty from included activities. Replace with names, titles, affiliations, and photos.
+          </p>
+        </motion.div>
 
-          {/* Faculty Placeholder Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {placeholderSlots.map((index) => (
-              <FacultyPlaceholder key={`first-${index}`} index={index} />
-            ))}
-          </div>
+        {/* Faculty Placeholder Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+          {placeholderSlots.map((index) => (
+            <FacultyPlaceholder key={index} index={index} />
+          ))}
         </div>
-      </section>
-
-      {/* Second Faculty Directory Section - White Background */}
-      <section ref={ref2} className="py-14 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={isInView2 ? { opacity: 1, y: 0 } : {}} 
-            transition={{ duration: 0.5 }} 
-            className="text-center mb-8"
-          >
-            <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
-              Faculty <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Directory</span>
-            </h2>
-            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
-              Placeholder grid for all faculty from included activities. Replace with names, titles, affiliations, and photos.
-            </p>
-          </motion.div>
-
-          {/* Faculty Placeholder Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            {placeholderSlots.map((index) => (
-              <FacultyPlaceholder key={`second-${index}`} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

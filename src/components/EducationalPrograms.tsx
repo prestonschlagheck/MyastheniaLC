@@ -57,10 +57,8 @@ export function EducationalPrograms() {
       description: 'Therapeutic advances and unmet needs in APOC3 inhibition and FCS/SHTG.',
       icon: <Beaker size={20} className="text-blue-700" />,
       items: [
-        { title: 'Phase 3 study results of plozasiran in patients with FCS (Arrowhead)', comingSoon: true },
-        { title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG (CME)', href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/' },
-        { title: 'FCS & SHTG: Are we meeting the need? (CME)', href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/' },
-        { title: 'Transforming cardiovascular care', comingSoon: true },
+        { title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG', href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/' },
+        { title: 'FCS & SHTG: Are we meeting the need?', href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/' },
       ]
     },
     {
@@ -78,9 +76,8 @@ export function EducationalPrograms() {
       description: 'Placing novel agents in the LDL-C treatment landscape.',
       icon: <BookOpen size={20} className="text-blue-700" />,
       items: [
-        { title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in? (CME)', href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/' },
-        { title: 'Exploring CETP as a therapeutic target (CME)', href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/' },
-        { title: 'Transforming cardiovascular care', comingSoon: true },
+        { title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in?', href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/' },
+        { title: 'Exploring CETP as a therapeutic target', href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/' },
       ]
     },
     {
@@ -88,7 +85,7 @@ export function EducationalPrograms() {
       description: 'Focused lipid education for cardiovascular health in women.',
       icon: <Heart size={20} className="text-blue-700" />,
       items: [
-        { title: 'LOVE STORY: Lipid Education for Women’s Heart Health (CME)', href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/' },
+        { title: 'LOVE STORY: Lipid Education for Women\'s Heart Health', href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/' },
       ]
     },
   ]

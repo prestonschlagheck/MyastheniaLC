@@ -60,6 +60,13 @@ export function Statistics() {
 
   const statistics = [
     {
+      icon: <Globe2 size={28} className="text-blue-700" />,
+      value: "24.1%",
+      description: "prevalence of hypercholesterolemia in adults (meta-analysis).",
+      color: "bg-gradient-to-br from-blue-50 to-teal-50",
+      cite: { label: "Lancet 2025", href: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)00721-4/abstract" }
+    },
+    {
       icon: <TrendingUp size={28} className="text-blue-700" />,
       value: "~50%",
       description: "of high-risk patients fail to achieve LDL-C targets despite statin therapy.",
@@ -67,16 +74,9 @@ export function Statistics() {
       cite: { label: "AACE 2025", href: "https://pro.aace.com/clinical-guidance/2025-clinical-practice-guideline-pharmacologic-management-adults-dyslipidemia" }
     },
     {
-      icon: <Globe2 size={28} className="text-blue-700" />,
-      value: "24.1%",
-      description: "global prevalence of hypercholesterolemia in adults (meta-analysis).",
-      color: "bg-gradient-to-br from-blue-50 to-teal-50",
-      cite: { label: "Lancet 2025", href: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)00721-4/abstract" }
-    },
-    {
       icon: <Heart size={28} className="text-blue-700" />,
       value: "20–25%",
-      description: "of the global population has elevated Lp(a), an independent causal ASCVD risk factor.",
+      description: "of the population has elevated Lp(a), an independent causal ASCVD risk factor.",
       color: "bg-gradient-to-br from-teal-50 to-teal-100",
       cite: { label: "EHJ 2025", href: "https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf190/8234482" }
     }
