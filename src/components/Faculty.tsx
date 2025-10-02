@@ -30,42 +30,40 @@ function FacultyCard({ faculty, index }: FacultyCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.2, delay: index * 0.05 }}
     >
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 h-32">
+      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-5 h-40">
         {/* Profile Photo */}
         <div className="flex flex-col items-center text-center h-full justify-center">
-          <div className="relative w-16 h-16 mb-2">
-            <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-2 border-slate-200 shadow-md">
+          <div className="relative w-[74px] h-[74px] mb-3 flex-shrink-0">
+            <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-slate-200 shadow-md bg-gradient-to-br from-blue-100 to-teal-100">
               {faculty.imageUrl ? (
                 <Image
                   src={faculty.imageUrl}
                   alt={faculty.name}
-                  fill
-                  className={`object-cover rounded-full ${
-                    faculty.name === 'Pasquale Perrone-Filardi' 
-                      ? 'scale-125 -translate-y-1 object-top' 
-                      : faculty.name === 'Julia Brandts'
-                      ? 'scale-[1.573] translate-y-3 object-top'
-                      : faculty.name === 'Pam R. Taub'
-                      ? 'scale-[1.375] object-center'
-                      : faculty.name === 'Christie Ballantyne'
-                      ? 'scale-[1.265] object-center'
-                      : faculty.name === 'Ira J. Goldberg'
-                      ? 'scale-[1.265] translate-y-2 object-top'
-                      : faculty.name === 'Stephen Nicholls'
-                      ? 'scale-[1.21] object-center'
-                      : 'scale-110 object-center'
+                  width={74}
+                  height={74}
+                  className={`object-cover object-top w-full h-full ${
+                    faculty.name === 'Julia Brandts' ||
+                    faculty.name === 'Pasquale Perrone-Filardi' ||
+                    faculty.name === 'Ira J. Goldberg' ||
+                    faculty.name === 'Christie Ballantyne' ||
+                    faculty.name === 'Pam R. Taub'
+                      ? 'scale-125'
+                      : ''
                   }`}
-                  sizes="64px"
+                  quality={100}
+                  priority={index < 6}
                 />
               ) : (
-                <User className="w-8 h-8 text-slate-400" />
+                <div className="w-full h-full flex items-center justify-center">
+                  <User className="w-8 h-8 text-slate-400" />
+                </div>
               )}
             </div>
           </div>
           
           {/* Faculty Info */}
           <div className="text-center">
-            <h3 className="heading-font font-semibold text-slate-900 text-sm leading-tight mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
+            <h3 className="font-semibold text-slate-900 text-sm leading-tight mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
               {faculty.name}
             </h3>
             <div className="text-xs font-medium text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis">

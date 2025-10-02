@@ -36,14 +36,16 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
               alt={activity.title}
               fill
               className={`object-cover group-hover:scale-110 transition-transform duration-300 ${
-                // Move all images except the last two up in positioning
-                activity.title !== 'Exploring CETP as a therapeutic target' && 
-                activity.title !== 'LOVE STORY: Lipid Education for Women\'s Heart Health'
-                  ? 'object-top' 
-                  : 'object-center'
+                // Special positioning for FCS image to focus on bottom right person
+                activity.title === 'FCS & SHTG: Are we meeting the need?'
+                  ? 'object-bottom object-right'
+                  // Move all other images except the last two up in positioning
+                  : activity.title !== 'Exploring CETP as a therapeutic target' && 
+                    activity.title !== 'LOVE STORY: Lipid Education for Women\'s Heart Health'
+                    ? 'object-top' 
+                    : 'object-center'
               } ${
                 // Brighten images to match others - different levels for different images
-                activity.title === 'FCS & SHTG: Are we meeting the need?' || 
                 activity.title === 'Clinical choices in managing LDL-C: Where do novel therapies fit in?'
                   ? 'brightness-150' 
                   : activity.title === 'Exploring CETP as a therapeutic target'
@@ -97,7 +99,7 @@ export function EducationalPrograms() {
       icon: <Beaker size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/',
       category: 'FCS & Severe Hypertriglyceridemia',
-      imageUrl: '/faculty/activity thumbnails/FCS.png'
+      imageUrl: '/faculty/activity thumbnails/FCS2.png'
     },
     {
       title: 'Efficacy of obicetrapib across diverse regimens (BROOKLYN/BROADWAY pooled)',
