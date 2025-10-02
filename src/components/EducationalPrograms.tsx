@@ -3,11 +3,17 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { BookOpen, ExternalLink, Heart, Beaker } from 'lucide-react'
+import Image from 'next/image'
 
-interface ActivityLink { title: string; href?: string; comingSoon?: boolean }
-interface ActivityGroup { title: string; description: string; icon: React.ReactNode; items: ActivityLink[] }
+interface Activity { 
+  title: string; 
+  icon: React.ReactNode; 
+  href: string;
+  category: string;
+  imageUrl?: string;
+}
 
-function ActivityCard({ group, index }: { group: ActivityGroup; index: number }) {
+function ActivityCard({ activity, index }: { activity: Activity; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -16,33 +22,60 @@ function ActivityCard({ group, index }: { group: ActivityGroup; index: number })
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group"
     >
-      <div className="rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 bg-white h-full flex flex-col overflow-hidden">
-        <div className="px-5 pt-4 pb-3 bg-gradient-to-r from-blue-50 to-teal-50 border-b border-slate-200 rounded-t-3xl">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-              {group.icon}
-            </div>
-            <h3 className="text-lg font-bold text-slate-900">{group.title}</h3>
-          </div>
-          <div className="text-slate-600 text-sm mt-1">{group.description}</div>
+      <a 
+        href={activity.href} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 bg-white h-full overflow-hidden group-hover:scale-105"
+      >
+        {/* Image Section */}
+        <div className="relative h-44 overflow-hidden rounded-t-3xl bg-gray-100 flex items-center justify-center">
+          {activity.imageUrl ? (
+            <Image
+              src={activity.imageUrl}
+              alt={activity.title}
+              fill
+              className={`object-cover group-hover:scale-110 transition-transform duration-300 ${
+                // Move all images except the last two up in positioning
+                activity.title !== 'Exploring CETP as a therapeutic target' && 
+                activity.title !== 'LOVE STORY: Lipid Education for Women\'s Heart Health'
+                  ? 'object-top' 
+                  : 'object-center'
+              } ${
+                // Brighten images to match others - different levels for different images
+                activity.title === 'FCS & SHTG: Are we meeting the need?' || 
+                activity.title === 'Clinical choices in managing LDL-C: Where do novel therapies fit in?'
+                  ? 'brightness-150' 
+                  : activity.title === 'Exploring CETP as a therapeutic target'
+                  ? 'brightness-125'
+                  : ''
+              }`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <span className="text-gray-500 text-sm font-medium">Image Needed</span>
+          )}
         </div>
-        <ul className="space-y-2 mt-1 px-5 py-4">
-          {group.items.map((item, i) => (
-            <li key={i} className="flex items-start justify-between">
-              <span className="text-slate-800 text-sm leading-snug pr-3">
-                {item.title}
-              </span>
-              {item.comingSoon ? (
-                <span className="text-xs text-slate-400">Coming soon</span>
-              ) : (
-                <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 inline-flex items-center text-xs">
-                  Open <ExternalLink size={14} className="ml-1" />
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
+        
+        {/* Content Section */}
+        <div className="p-5">
+          {/* Category */}
+          <div className="flex items-center space-x-2 mb-3">
+            <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center">
+              {activity.icon}
+            </div>
+            <span className="text-slate-500 text-xs font-medium uppercase tracking-wide">
+              {activity.category}
+            </span>
+          </div>
+          
+          {/* Title */}
+          <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+            {activity.title}
+          </h3>
+          
+        </div>
+      </a>
     </motion.div>
   )
 }
@@ -51,42 +84,62 @@ export function EducationalPrograms() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const groups: ActivityGroup[] = [
+  const activities: Activity[] = [
     {
-      title: 'FCS & Severe Hypertriglyceridemia',
-      description: 'Therapeutic advances and unmet needs in APOC3 inhibition and FCS/SHTG.',
-      icon: <Beaker size={20} className="text-blue-700" />,
-      items: [
-        { title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG', href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/' },
-        { title: 'FCS & SHTG: Are we meeting the need?', href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/' },
-      ]
+      title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG',
+      icon: <Beaker size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/',
+      category: 'FCS & Severe Hypertriglyceridemia',
+      imageUrl: '/faculty/activity thumbnails/bddedfeecc7ef1edb30881ea7047a38f.png'
     },
     {
-      title: 'CETP Inhibition & Obicetrapib (ESC 2025)',
-      description: 'Efficacy and implications of CETP inhibition across diverse backgrounds.',
-      icon: <Heart size={20} className="text-blue-700" />,
-      items: [
-        { title: 'Efficacy of obicetrapib across diverse regimens (BROOKLYN/BROADWAY pooled)', href: 'https://reachmd.com/clinical-practice/cardiology/efficacy-of-obicetrapib-across-diverse-background-lipid-lowering-regimens-pooled-broadway-brooklyn-analyses/36582/' },
-        { title: 'CETP inhibition & obicetrapib: A new era in lipid management', href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-and-obicetrapib-a-new-era-in-lipid-management/37123/' },
-        { title: 'CETP inhibition: Implications for cardiovascular event prevention', href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-with-obicetrapib-implications-for-cardiovascular-event-prevention/37124/' },
-      ]
+      title: 'FCS & SHTG: Are we meeting the need?',
+      icon: <Beaker size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/',
+      category: 'FCS & Severe Hypertriglyceridemia',
+      imageUrl: '/faculty/activity thumbnails/FCS.png'
     },
     {
-      title: 'LDL-C: Novel Therapies & Clinical Choices',
-      description: 'Placing novel agents in the LDL-C treatment landscape.',
-      icon: <BookOpen size={20} className="text-blue-700" />,
-      items: [
-        { title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in?', href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/' },
-        { title: 'Exploring CETP as a therapeutic target', href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/' },
-      ]
+      title: 'Efficacy of obicetrapib across diverse regimens (BROOKLYN/BROADWAY pooled)',
+      icon: <Heart size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/clinical-practice/cardiology/efficacy-of-obicetrapib-across-diverse-background-lipid-lowering-regimens-pooled-broadway-brooklyn-analyses/36582/',
+      category: 'CETP Inhibition & Obicetrapib',
+      imageUrl: '/faculty/activity thumbnails/efficacy.png'
     },
     {
-      title: "Women's Heart Health",
-      description: 'Focused lipid education for cardiovascular health in women.',
-      icon: <Heart size={20} className="text-blue-700" />,
-      items: [
-        { title: 'LOVE STORY: Lipid Education for Women\'s Heart Health', href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/' },
-      ]
+      title: 'CETP inhibition & obicetrapib: A new era in lipid management',
+      icon: <Heart size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-and-obicetrapib-a-new-era-in-lipid-management/37123/',
+      category: 'CETP Inhibition & Obicetrapib',
+      imageUrl: '/faculty/activity thumbnails/efficacy.png'
+    },
+    {
+      title: 'CETP inhibition: Implications for cardiovascular event prevention',
+      icon: <Heart size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-with-obicetrapib-implications-for-cardiovascular-event-prevention/37124/',
+      category: 'CETP Inhibition & Obicetrapib',
+      imageUrl: '/faculty/activity thumbnails/CETP.png'
+    },
+    {
+      title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in?',
+      icon: <BookOpen size={16} className="text-blue-700" />,
+      href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/',
+      category: 'LDL-C Novel Therapies',
+      imageUrl: '/faculty/activity thumbnails/clinical.png'
+    },
+    {
+      title: 'Exploring CETP as a therapeutic target',
+      icon: <BookOpen size={16} className="text-blue-700" />,
+      href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/',
+      category: 'LDL-C Novel Therapies',
+      imageUrl: '/faculty/activity thumbnails/innovating.png'
+    },
+    {
+      title: 'LOVE STORY: Lipid Education for Women\'s Heart Health',
+      icon: <Heart size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/',
+      category: 'Women\'s Heart Health',
+      imageUrl: '/faculty/activity thumbnails/love.png'
     },
   ]
 
@@ -116,10 +169,10 @@ export function EducationalPrograms() {
           </p>
         </motion.div>
 
-        {/* Activity Groups */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {groups.map((group, index) => (
-            <ActivityCard key={index} group={group} index={index} />
+        {/* Activities Grid - 2 columns, wider boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {activities.map((activity, index) => (
+            <ActivityCard key={index} activity={activity} index={index} />
           ))}
         </div>
       </div>

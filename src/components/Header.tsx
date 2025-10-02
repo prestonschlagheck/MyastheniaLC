@@ -3,8 +3,44 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Heart, Award } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export function Header() {
+  const [isOverBlueSection, setIsOverBlueSection] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the hero section (blue background)
+      const heroSection = document.querySelector('section')
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect()
+        const headerHeight = 80
+        
+        // Check if the blue hero section is overlapping with the header area
+        // Hero section is considered overlapping if:
+        // 1. Its top is above the header bottom (heroRect.top < headerHeight)
+        // 2. Its bottom is below the header top (heroRect.bottom > 0)
+        // 3. We're not at the very top of the page (to account for white header area)
+        const scrollY = window.scrollY
+        const isOverBlue = scrollY > 50 && heroRect.top < headerHeight && heroRect.bottom > 0
+        
+        setIsOverBlueSection(isOverBlue)
+      } else {
+        // Fallback to blue styling if hero section not found
+        setIsOverBlueSection(false)
+      }
+    }
+
+    // Initial check
+    handleScroll()
+    
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll)
+    
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -48,7 +84,11 @@ export function Header() {
               alt="GLC Logo"
               width={120}
               height={36}
-              className="h-9 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity cursor-pointer"
+            className={`h-9 w-auto object-contain hover:opacity-100 transition-all duration-300 cursor-pointer opacity-90 ${
+              isOverBlueSection 
+                ? 'brightness-0 invert' 
+                : ''
+            }`}
               priority
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
@@ -59,7 +99,11 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
-            className="hidden lg:flex items-center space-x-4 absolute right-4 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent"
+            className={`hidden lg:flex items-center space-x-4 absolute right-4 transition-all duration-300 ${
+              isOverBlueSection 
+                ? 'text-white' 
+                : 'bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent'
+            }`}
           >
             {navigationItems.map((item, index) => (
               <motion.button
@@ -82,7 +126,11 @@ export function Header() {
             transition={{ duration: 0.2, delay: 0.15 }}
             className="lg:hidden absolute right-4"
           >
-            <button className="p-2 text-slate-800 hover:text-slate-900 transition-colors">
+            <button className={`p-2 transition-colors duration-300 ${
+              isOverBlueSection 
+                ? 'text-white hover:text-gray-200' 
+                : 'text-slate-800 hover:text-slate-900'
+            }`}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

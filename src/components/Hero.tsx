@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Activity } from 'lucide-react'
+import Image from 'next/image'
 
 export function Hero() {
   const scrollToWithOffset = (id: string) => {
@@ -12,7 +12,7 @@ export function Hero() {
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
   return (
-    <section className="relative h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section className="relative min-h-[calc(100vh-4rem)] lg:h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sophisticated Background Patterns */}
       <div className="absolute inset-0">
         {/* Medical Grid Pattern */}
@@ -29,58 +29,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Animated Molecular Structures */}
-        <motion.div
-          animate={{
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-20 right-20 opacity-20"
-        >
-          <div className="relative w-32 h-32">
-            <div className="absolute top-0 left-1/2 w-3 h-3 bg-blue-400 rounded-full -translate-x-1/2" />
-            <div className="absolute top-1/2 right-0 w-3 h-3 bg-teal-400 rounded-full -translate-y-1/2" />
-            <div className="absolute bottom-0 left-1/2 w-3 h-3 bg-cyan-400 rounded-full -translate-x-1/2" />
-            <div className="absolute top-1/2 left-0 w-3 h-3 bg-blue-300 rounded-full -translate-y-1/2" />
-            <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
-          </div>
-        </motion.div>
-
-        {/* Floating Medical Icons */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-32 left-20 opacity-30"
-        >
-          <Heart size={24} className="text-blue-700" />
-        </motion.div>
-
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-            x: [0, -8, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-32 right-32 opacity-30"
-        >
-          <Activity size={28} className="text-teal-300" />
-        </motion.div>
 
         {/* Dynamic Gradient Overlays */}
         <motion.div
@@ -104,11 +52,11 @@ export function Hero() {
 
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center h-full px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12 items-center">
+      <div className="relative z-10 flex items-center h-full px-6 lg:px-12 py-8 lg:py-0">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
           
           {/* Text Content */}
-          <div className="text-left space-y-8">
+          <div className="text-left space-y-8 lg:space-y-8 flex flex-col justify-start lg:justify-center pt-8 lg:pt-0">
 
 
             {/* Main Title */}
@@ -118,13 +66,32 @@ export function Hero() {
               transition={{ duration: 0.2, delay: 0.1 }}
               className="space-y-4"
             >
-              <h1 className="heading-font text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
+              <h1 className="heading-font text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
                 Lipid 360° Learning Center:
-                <br />
-                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent whitespace-nowrap">
-                  Advancing Evidence-Based Care in Lipid Management
+                <br className="hidden sm:block" />
+                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
+                  {' '}Advancing Evidence-Based Care in Lipid Management
                 </span>
               </h1>
+            </motion.div>
+
+            {/* Mobile Image - Only visible on mobile */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:hidden flex justify-center items-center"
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-xl border-2 border-white/20 backdrop-blur-sm w-full max-w-sm mx-auto h-[200px]">
+                <Image
+                  src="/lipidmainimage.jpg"
+                  alt="Lipid Management Visualization"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 384px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
             </motion.div>
 
             {/* Description */}
@@ -132,9 +99,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.15 }}
-              className="text-base lg:text-lg text-blue-100 leading-relaxed max-w-4xl font-sans"
+              className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed max-w-4xl font-sans"
             >
-              Through expert interviews, interactive case discussions, multidisciplinary panels, and patient perspectives, leading global experts in cardiovascular medicine, lipidology, and endocrinology share the latest evidence alongside real-world clinical insights. Empower your team with practical strategies across LDL-C, lipoprotein(a), severe hypertriglyceridemia, and rare disorders like familial chylomicronemia syndrome.
+              Through expert interviews, interactive case discussions, multidisciplinary panels, and patient perspectives, leading global experts in cardiovascular medicine, lipidology, and endocrinology share the latest evidence alongside real-world clinical insights. Empower clinicians with practical strategies for optimizing lipid management across the spectrum of dyslipidemias from elevated LDL-C and lipoprotein(a) to severe hypertriglyceridemia and rare genetic disorders such as familial chylomicronemia syndrome (FCS).
             </motion.p>
 
 
@@ -158,6 +125,27 @@ export function Hero() {
               >
                 Explore Resources
               </button>
+            </motion.div>
+          </div>
+
+          {/* Image Content */}
+          <div className="hidden lg:flex justify-center items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative w-full flex justify-center"
+            >
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full max-w-lg h-[400px]">
+                <Image
+                  src="/lipidmainimage.jpg"
+                  alt="Lipid Management Visualization"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 512px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
+              </div>
             </motion.div>
           </div>
         </div>

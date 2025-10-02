@@ -1,24 +1,24 @@
-# IMPACT T1D: Patient Journey-Driven Approach for Optimizing T1D Care
+# GLC Learning Center
 
-A comprehensive educational website focused on Type 1 Diabetes care optimization, featuring evidence-based therapies, cutting-edge technologies, and authentic patient voice integration.
+A modern, responsive web application for the Global Lipid Center (GLC) Learning Center, built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- **Patient Journey Optimization**: Comprehensive T1D education across the entire patient journey
-- **Evidence-Based Content**: Integration of the latest research and clinical guidelines
-- **Global Statistics**: Interactive displays of T1D impact data worldwide
-- **Educational Programs**: Placeholder sections for upcoming T1D training modules
-- **Resource Center**: Repository for T1D research and clinical tools
-- **Expert Faculty**: Profiles of leading T1D specialists (coming soon)
-- **Partner Network**: Collaborative relationships in T1D care (coming soon)
+- **Responsive Design**: Optimized for all devices from mobile to desktop
+- **Modern UI/UX**: Clean, professional design with smooth animations
+- **Faculty Showcase**: Interactive faculty grid with detailed profiles
+- **Educational Programs**: Curated activities with thumbnail images
+- **Interactive Elements**: Hover effects, smooth scrolling, and dynamic content
+- **Performance Optimized**: Built with Next.js Image optimization and best practices
 
-## Technology Stack
+## Tech Stack
 
-- **Framework**: Next.js 14 with TypeScript
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Deployment**: Vercel
+- **Deployment**: Vercel-ready
 
 ## Getting Started
 
@@ -31,8 +31,8 @@ A comprehensive educational website focused on Type 1 Diabetes care optimization
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/dylancobb2525/t1d.git
-cd t1d
+git clone <repository-url>
+cd glc-learning-center
 ```
 
 2. Install dependencies:
@@ -47,43 +47,82 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deployment
+## Available Scripts
 
-This project is optimized for deployment on Vercel:
-
-1. Push to GitHub
-2. Connect your GitHub repository to Vercel
-3. Deploy automatically
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run clean` - Clean build cache
 
 ## Project Structure
 
 ```
 src/
-├── app/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── components/
-│   ├── EducationalPrograms.tsx
-│   ├── Faculty.tsx
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── Partners.tsx
-│   ├── ResourceCenter.tsx
-│   ├── Statistics.tsx
-│   └── VideoIntroduction.tsx
+├── app/                 # Next.js App Router
+│   ├── globals.css     # Global styles
+│   ├── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── components/         # React components
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Hero section
+│   ├── Faculty.tsx     # Faculty showcase
+│   ├── EducationalPrograms.tsx # Activities grid
+│   └── ...
 public/
-├── glc.png (logo)
-├── graphic.png (patient journey diagram)
-├── next.svg
-└── vercel.svg
+├── faculty/            # Faculty images
+│   ├── activity thumbnails/ # Activity images
+│   └── ...
+└── ...
 ```
+
+## Key Components
+
+### Header
+- Dynamic color-changing navigation based on scroll position
+- Responsive mobile menu
+- Smooth scroll navigation
+
+### Faculty
+- Alphabetically organized faculty grid
+- Custom image positioning and scaling
+- Responsive layout (2-6 columns based on screen size)
+
+### Educational Programs
+- Activity cards with thumbnail images
+- Category-based organization
+- External link integration
+
+## Deployment
+
+This project is optimized for Vercel deployment:
+
+1. Push to GitHub
+2. Connect repository to Vercel
+3. Deploy automatically
+
+## Performance Features
+
+- Next.js Image optimization
+- Static generation where possible
+- Optimized bundle size
+- Responsive images with proper sizing
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
 ## Contributing
 
-This project is part of the IMPACT T1D initiative. For contributions or questions, please contact the development team.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
 ## License
 
-© 2025 IMPACT T1D. All rights reserved.
+This project is proprietary and confidential.

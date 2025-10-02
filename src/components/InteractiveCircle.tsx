@@ -58,23 +58,23 @@ export function InteractiveCircle({ onHoverChange }: { onHoverChange?: (info: { 
   
   const segments: SegmentDef[] = useMemo(() => {
     const defs: { label: string; shortLabel: string; mechanism: string; color: SegmentDef['color'] }[] = [
-      { label: 'CETP Inhibitor (Obicetrapib) – Novel Pathways', shortLabel: 'Obicetrapib', mechanism: 'Novel Pathways', color: 'blue' },
-      { label: 'HMG-CoA Reductase Inhibitors (Statins) – LDL-C Lowering', shortLabel: 'Statins', mechanism: 'LDL-C Lowering', color: 'orange' },
-      { label: 'NPC1L1 Inhibitor (Ezetimibe) – LDL-C Lowering', shortLabel: 'Ezetimibe', mechanism: 'LDL-C Lowering', color: 'purple' },
+      { label: 'Obicetrapib (CETP Inhibitor) – Novel Pathway', shortLabel: 'Obicetrapib', mechanism: 'Novel Pathway', color: 'blue' },
+      { label: 'Statins (HMG-CoA Reductase Inhibitors) – LDL-C Lowering', shortLabel: 'Statins', mechanism: 'LDL-C Lowering', color: 'orange' },
+      { label: 'Ezetimibe (NPC1L1 Inhibitor) – LDL-C Lowering', shortLabel: 'Ezetimibe', mechanism: 'LDL-C Lowering', color: 'purple' },
       { label: 'PCSK9 Monoclonal Antibodies – LDL-C Lowering', shortLabel: 'PCSK9 mAb', mechanism: 'LDL-C Lowering', color: 'green' },
-      { label: 'PCSK9 siRNA (Inclisiran) – LDL-C Lowering', shortLabel: 'Inclisiran', mechanism: 'LDL-C Lowering', color: 'blue' },
-      { label: 'Oral PCSK9 Inhibitor (Enlicidite) – LDL-C Lowering', shortLabel: 'Enlicidite', mechanism: 'LDL-C Lowering', color: 'orange' },
+      { label: 'Inclisiran (PCSK9 siRNA) – LDL-C Lowering', shortLabel: 'Inclisiran', mechanism: 'LDL-C Lowering', color: 'blue' },
+      { label: 'Enlicitide (Oral PCSK9 inhibitor) – LDL-C Lowering', shortLabel: 'Enlicidite', mechanism: 'LDL-C Lowering', color: 'orange' },
       { label: 'In vivo Gene Editing (PCSK9 Targeting) – LDL-C Lowering', shortLabel: 'Gene Editing', mechanism: 'LDL-C Lowering', color: 'purple' },
-      { label: 'Apo(a) Antisense Oligonucleotide (Pelacarsen) – Lp(a) Lowering', shortLabel: 'Pelacarsen', mechanism: 'Lp(a) Lowering', color: 'green' },
-      { label: 'Apo(a) siRNA (Olpasiran) – Lp(a) Lowering', shortLabel: 'Olpasiran', mechanism: 'Lp(a) Lowering', color: 'blue' },
-      { label: 'Apo(a) siRNA (Lepodisiran) – Lp(a) Lowering', shortLabel: 'Lepodisiran', mechanism: 'Lp(a) Lowering', color: 'orange' },
-      { label: 'Oral Small Molecule Lp(a) Inhibitor (Muvalaplin) – Lp(a) Lowering', shortLabel: 'Muvalaplin', mechanism: 'Lp(a) Lowering', color: 'purple' },
-      { label: 'PPARα Agonists (Fibrates) – Triglyceride/Remnant Lowering', shortLabel: 'Fibrates', mechanism: 'Triglyceride/Remnant Lowering', color: 'green' },
+      { label: 'Pelacarsen (Apo(a) Antisense Oligonucleotide) – Lp(a) Lowering', shortLabel: 'Pelacarsen', mechanism: 'Lp(a) Lowering', color: 'green' },
+      { label: 'Olpasiran (Apo(a) siRNA) – Lp(a) Lowering', shortLabel: 'Olpasiran', mechanism: 'Lp(a) Lowering', color: 'blue' },
+      { label: 'Lepodisiran (Apo(a) siRNA) – Lp(a) Lowering', shortLabel: 'Lepodisiran', mechanism: 'Lp(a) Lowering', color: 'orange' },
+      { label: 'Muvalaplin (Oral Small Molecule Lp(a) Inhibitor) – Lp(a) Lowering', shortLabel: 'Muvalaplin', mechanism: 'Lp(a) Lowering', color: 'purple' },
+      { label: 'Fibrates (PPARα Agonists) – Triglyceride/Remnant Lowering', shortLabel: 'Fibrates', mechanism: 'Triglyceride/Remnant Lowering', color: 'green' },
       { label: 'Omega-3 Fatty Acids – Triglyceride/Remnant Lowering', shortLabel: 'Omega-3', mechanism: 'Triglyceride/Remnant Lowering', color: 'purple' },
-      { label: 'APOC3 Antisense Oligonucleotide (Olezarsen) – Triglyceride/Remnant Lowering', shortLabel: 'Olezarsen', mechanism: 'Triglyceride/Remnant Lowering', color: 'green' },
-      { label: 'APOC3 siRNA (Plozasiran) – Triglyceride/Remnant Lowering', shortLabel: 'Plozasiran', mechanism: 'Triglyceride/Remnant Lowering', color: 'blue' },
-      { label: 'APOC3 Antisense Oligonucleotide (Volanesorsen) – Triglyceride/Remnant Lowering', shortLabel: 'Volanesorsen', mechanism: 'Triglyceride/Remnant Lowering', color: 'orange' },
-      { label: 'ANGPTL3 Monoclonal Antibody (Evinacumab) – Novel Pathways', shortLabel: 'Evinacumab', mechanism: 'Novel Pathways', color: 'purple' },
+      { label: 'Olezarsen (APOC3 Antisense Oligonucleotide) – Triglyceride/Remnant Lowering', shortLabel: 'Olezarsen', mechanism: 'Triglyceride/Remnant Lowering', color: 'green' },
+      { label: 'Plozasiran (APOC3 siRNA) – Triglyceride/Remnant Lowering', shortLabel: 'Plozasiran', mechanism: 'Triglyceride/Remnant Lowering', color: 'blue' },
+      { label: 'Volanesorsen (APOC3 Antisense Oligonucleotide) – Triglyceride/Remnant Lowering', shortLabel: 'Volanesorsen', mechanism: 'Triglyceride/Remnant Lowering', color: 'orange' },
+      { label: 'Evinacumab (ANGPTL3 Monoclonal Antibody) – Novel Pathways', shortLabel: 'Evinacumab', mechanism: 'Novel Pathways', color: 'purple' },
       { label: 'ANGPTL4 Inhibitors – Novel Pathways', shortLabel: 'ANGPTL4', mechanism: 'Novel Pathways', color: 'green' },
     ]
     
@@ -90,13 +90,30 @@ export function InteractiveCircle({ onHoverChange }: { onHoverChange?: (info: { 
   }, [sliceAngle])
 
   const summaries: Record<string, string> = useMemo(() => {
+    const summaryMap: Record<string, string> = {
+      'Obicetrapib': 'An investigational, highly selective cholesteryl ester transfer protein (CETP) inhibitor being studied for the treatment of elevated levels of low-density lipoprotein cholesterol (LDL-C).',
+      'Statins': 'Used adjunctively to diet and exercise to treat hypercholesterolemia by lowering total cholesterol (TC), LDL-C, and triglycerides (TG) concentrations while increasing high-density lipoprotein cholesterol (HDL-C) concentrations, generally indicated for the treatment and/or prevention of primary and secondary prevention clinical atherosclerotic cardiovascular disease (ASCVD).',
+      'Ezetimibe': 'Selective cholesterol-absorption inhibitor used in the management and treatment of hypercholesterolemia. It is indicated to reduce total cholesterol, low-density lipoprotein (LDL), apolipoprotein B (apo B), and non-high-density lipoprotein (HDL) in patients with primary hyperlipidemia, mixed hyperlipidemia, familial hypercholesterolemia (HoFH), and homozygous sitosterolemia (phytosterolemia).',
+      'PCSK9 mAb': 'Injectable medications that treat high cholesterol by inhibiting the PCSK9 protein, which normally breaks down LDL receptors. By blocking PCSK9, these antibodies allow more LDL receptors to remain on liver cells, leading to increased clearance of LDL cholesterol (LDL-C) from the blood. They are used for patients with familial hypercholesterolemia (FH) or established cardiovascular disease who may not achieve their LDL-C goals with other treatments.',
+      'Inclisiran': 'Small interfering RNA therapy that inhibits the production of the PCSK9 protein. Currently approved as an adjunct to statin therapy in patients with clinical ASCVD or heterozygous FH who require additional LDL-lowering.',
+      'Enlicidite': 'Investigational, oral PCSK9 inhibitor designed to lower LDL-C via the same biological mechanism as currently approved monoclonal antibody injectable PCSK9 inhibitors but in a daily pill form, which is an oral macrocyclic peptide that binds to PCSK9 and inhibits the interaction of PCSK9 with LDL receptors.',
+      'Gene Editing': 'Targets the PCSK9 gene and disrupts PCSK9 protein production, which may lead to durable reductions in low-density lipoprotein cholesterol (LDL-C).',
+      'Pelacarsen': 'Experimental antisense oligonucleotide drug designed to lower lipoprotein(a) (Lp(a)) levels in patients with cardiovascular disease, targeting the LPA gene that encodes apolipoprotein(a).',
+      'Olpasiran': 'Experimental siRNA therapy designed to lower the level of lipoprotein(a), which is believed to be a causal factor in the development of cardiovascular disease.',
+      'Lepodisiran': 'Small interfering RNA that was developed to reduce lipoprotein(a) in people at risk of cardiovascular disease.',
+      'Muvalaplin': 'Small molecule inhibitor that prevents the bonding of the two protein components that combine to make Lp(a).',
+      'Fibrates': 'Type of amphipathic carboxylic acids belonging to the class of drugs used to lower serum cholesterol levels. They help to reduce serum LDL, total cholesterol, triglycerides, apolipoprotein B (Apo-B) and increase high-density lipoprotein cholesterol (HDL), along with as an adjunct to dietary modifications in adults with severe hypertriglyceridemia.',
+      'Omega-3': 'Polyunsaturated fatty acids characterized by the presence of a double bond three atoms away from the terminal methyl group in their chemical structure. They are widely distributed in nature, are important constituents of animal lipid metabolism, and play an important role in the human diet and in human physiology.',
+      'Olezarsen': 'Used in the treatment of familial chylomicronemia syndrome, administered subcutaneously. It inhibits the formation of apolipoprotein C3, which regulates both triglyceride metabolism and liver clearance of chylomicrons and other triglyceride-rich lipoproteins, which is indicated as an adjunct to diet to reduce triglycerides in adults with familial chylomicronemia syndrome.',
+      'Plozasiran': 'Investigational RNA interference (RNAi) therapeutic drug designed to treat conditions characterized by dangerously high levels of triglycerides in the blood, such as familial chylomicronemia syndrome (FCS) and severe hypertriglyceridemia (SHTG). It targets and reduces the production of APOC3; by silencing the gene that produces APOC3, plozasiran allows the body to more effectively clear TRLs from the bloodstream, leading to a significant reduction in triglyceride levels.',
+      'Volanesorsen': 'Is a second-generation antisense oligonucleotide that selectively binds to apoC-III messenger RNA, inhibiting its translation and leading to decreased plasma apoC-III and triglyceride levels.',
+      'Evinacumab': 'Monoclonal antibody approved for adjunctive therapy for patients aged 5 years and older with homozygous familial hypercholesterolemia whose LDL cholesterol remains elevated despite traditional interventions. It is an angiopoietin-like protein 3 (ANGPTL3) inhibitor administered via intravenous infusion.',
+      'ANGPTL4': 'Potential therapeutic approach designed to block the activity of Angiopoietin-like 4 (ANGPTL4), a protein that normally raises triglyceride levels by inhibiting lipoprotein lipase. By inhibiting ANGPTL4, these drugs aim to improve lipid profiles by promoting triglyceride clearance and reducing high levels of triglycerides and other lipids associated with cardiovascular disease.'
+    }
+    
     const m: Record<string, string> = {}
     segments.forEach((s) => {
-      if (s.mechanism.includes('LDL-C')) m[s.key] = 'Therapies targeting LDL-C reduction to achieve guideline-aligned goals.'
-      else if (s.mechanism.includes('Lp(a)')) m[s.key] = 'Investigational and emerging options to reduce lipoprotein(a) levels.'
-      else if (s.mechanism.includes('Triglyceride')) m[s.key] = 'Approaches to lower triglycerides and remnants to mitigate pancreatitis and ASCVD risk.'
-      else if (s.mechanism.includes('Novel Pathways')) m[s.key] = 'Mechanism-based innovations exploring nontraditional lipid targets and pathways.'
-      else m[s.key] = 'Mechanism-based intervention within the lipid therapeutic landscape.'
+      m[s.key] = summaryMap[s.shortLabel] || 'Mechanism-based intervention within the lipid therapeutic landscape.'
     })
     return m
   }, [segments])
@@ -277,16 +294,16 @@ export function InteractiveCircle({ onHoverChange }: { onHoverChange?: (info: { 
 
       {/* Information Display Box - Fit to content */}
       <div className="w-full max-w-xl mx-auto lg:mx-0">
-        <div className="bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col">
+        <div className="bg-white rounded-xl border border-slate-200 shadow-sm">
           {/* Top Section - Hover Content */}
-          <div className={`p-6 flex flex-col justify-start rounded-t-xl ${
+          <div className={`p-6 flex flex-col justify-start rounded-xl ${
             hovered || (isRotating && getActiveSegment()) 
               ? colorMap[segments.find(s => s.key === (hovered || getActiveSegment()?.key))?.color || 'blue'].bgClass
               : 'bg-slate-50'
           }`}>
             {hovered || (isRotating && getActiveSegment()) ? (
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-slate-900 leading-tight">
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-slate-900 leading-tight">
                   {(() => {
                     const label = hovered ? segments.find(s => s.key === hovered)?.label : getActiveSegment()?.label
                     if (label && label.includes(' – ')) {
@@ -296,31 +313,19 @@ export function InteractiveCircle({ onHoverChange }: { onHoverChange?: (info: { 
                     return label
                   })()}
                 </h3>
-                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/80 text-slate-700 border border-white/50">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/80 text-slate-700 border border-white/50">
                   {hovered ? segments.find(s => s.key === hovered)?.mechanism : getActiveSegment()?.mechanism}
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed">
+                <p className="text-base text-slate-700 leading-relaxed">
                   {hovered ? summaries[hovered] : summaries[getActiveSegment()?.key || '']}
                 </p>
               </div>
             ) : (
               <div className="text-center text-slate-500">
                 <div className="text-4xl mb-3">💊</div>
-                <p className="text-sm">Hover over a segment to learn more about each therapeutic approach</p>
+                <p className="text-base">Hover over a segment to learn more about each therapeutic approach</p>
               </div>
             )}
-          </div>
-          
-          {/* Bottom Section - Body Paragraphs */}
-          <div className="p-6 border-t border-slate-100">
-            <div className="space-y-4">
-              <p className="text-sm text-slate-700 leading-relaxed">
-                This Learning Center empowers practicing clinicians with practical strategies for optimizing lipid management across dyslipidemias—from elevated LDL-C and lipoprotein(a) to severe hypertriglyceridemia and rare genetic disorders such as familial chylomicronemia syndrome (FCS).
-              </p>
-              <p className="text-sm text-slate-700 leading-relaxed">
-                Join our international community of cardiologists, lipidologists, primary care physicians, and endocrinologists by exploring curated educational resources and bringing this knowledge back to your teams to advance patient care and improve outcomes.
-              </p>
-            </div>
           </div>
         </div>
       </div>

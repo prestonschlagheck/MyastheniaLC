@@ -64,7 +64,7 @@ export function Statistics() {
       value: "24.1%",
       description: "prevalence of hypercholesterolemia in adults (meta-analysis).",
       color: "bg-gradient-to-br from-blue-50 to-teal-50",
-      cite: { label: "Lancet 2025", href: "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(25)00721-4/abstract" }
+      cite: { label: "JHPN 2025", href: "https://jhpn.biomedcentral.com/articles/10.1186/s41043-025-01054-3" }
     },
     {
       icon: <TrendingUp size={28} className="text-blue-700" />,

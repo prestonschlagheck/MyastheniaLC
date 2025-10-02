@@ -37,7 +37,7 @@ export function VideoIntroduction() {
             </span>
           </h2>
           <p className="text-base lg:text-lg text-slate-700 max-w-6xl mx-auto leading-relaxed text-center">
-            Through expert interviews, interactive case discussions, multidisciplinary panels, and patient perspectives, leading global experts share the latest evidence alongside real-world clinical insights.
+            Join our international community of cardiologists, lipidologists, primary care physicians, and endocrinologists by exploring curated educational resources and bringing this knowledge back to your teams to advance patient care and improve outcomes.
           </p>
         </motion.div>
 
