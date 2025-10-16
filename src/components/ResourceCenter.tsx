@@ -26,14 +26,6 @@ export function ResourceCenter() {
 
   const resources: ResourceLink[] = [
     {
-      title: 'AACE 2025 Clinical Practice Guideline for Dyslipidemia',
-      href: 'https://pro.aace.com/clinical-guidance/2025-clinical-practice-guideline-pharmacologic-management-adults-dyslipidemia',
-      category: 'Guidelines & Consensus',
-      author: 'AACE Guidelines Committee',
-      date: '2025 Jan',
-      organization: 'American Association of Clinical Endocrinology'
-    },
-    {
       title: 'NLA: Managing Hypercholesterolemia in Adults >75 without ASCVD',
       href: 'https://www.lipid.org/nla/managing-hypercholesterolemia-adults-older-75-years-without-history-atherosclerotic',
       category: 'Guidelines & Consensus',

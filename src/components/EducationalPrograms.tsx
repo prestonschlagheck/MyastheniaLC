@@ -39,6 +39,9 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
                 // Special positioning for FCS image to focus on bottom right person
                 activity.title === 'FCS & SHTG: Are we meeting the need?'
                   ? 'object-bottom object-right'
+                  // Special positioning for CETP activity to shift image up by 30%
+                  : activity.title === 'CETP inhibition & obicetrapib: A new era in lipid management'
+                  ? 'object-top'
                   // Move all other images except the last two up in positioning
                   : activity.title !== 'Exploring CETP as a therapeutic target' && 
                     activity.title !== 'LOVE STORY: Lipid Education for Women\'s Heart Health'
@@ -50,6 +53,11 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
                   ? 'brightness-150' 
                   : activity.title === 'Exploring CETP as a therapeutic target'
                   ? 'brightness-125'
+                  : ''
+              } ${
+                // Custom positioning for CETP activity
+                activity.title === 'CETP inhibition & obicetrapib: A new era in lipid management'
+                  ? 'object-[center_30%]'
                   : ''
               }`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -113,7 +121,7 @@ export function EducationalPrograms() {
       icon: <Heart size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-and-obicetrapib-a-new-era-in-lipid-management/37123/',
       category: 'CETP Inhibition & Obicetrapib',
-      imageUrl: '/faculty/activity thumbnails/efficacy.png'
+      imageUrl: '/CETPthumb.png'
     },
     {
       title: 'CETP inhibition: Implications for cardiovascular event prevention',
