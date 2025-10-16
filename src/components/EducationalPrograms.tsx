@@ -57,7 +57,7 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
               } ${
                 // Custom positioning for CETP activity
                 activity.title === 'CETP inhibition & obicetrapib: A new era in lipid management'
-                  ? 'object-[center_30%]'
+                  ? 'object-[center_35%]'
                   : ''
               }`}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

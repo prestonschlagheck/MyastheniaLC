@@ -84,7 +84,7 @@ export function Hero() {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-xl border-2 border-white/20 backdrop-blur-sm w-full max-w-sm mx-auto h-[200px]">
                 <Image
-                  src="/lipidmainimage.jpg"
+                  src="/hearthero.jpeg"
                   alt="Lipid Management Visualization"
                   fill
                   className="object-cover"
@@ -138,7 +138,7 @@ export function Hero() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full max-w-lg h-[400px]">
                 <Image
-                  src="/lipidmainimage.jpg"
+                  src="/hearthero.jpeg"
                   alt="Lipid Management Visualization"
                   fill
                   className="object-cover"
