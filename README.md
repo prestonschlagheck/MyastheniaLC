@@ -1,128 +1,258 @@
-# GLC Learning Center
+# Myasthenia Matters: Navigating a New Era of Treatment
 
-A modern, responsive web application for the Global Lipid Center (GLC) Learning Center, built with Next.js 14, TypeScript, and Tailwind CSS.
+> A comprehensive 12-month thematic learning center for clinicians and care teams managing generalized Myasthenia Gravis (gMG)
 
-## Features
+![Next.js](https://img.shields.io/badge/Next.js-14-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8) ![License](https://img.shields.io/badge/License-Proprietary-red)
 
-- **Responsive Design**: Optimized for all devices from mobile to desktop
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Faculty Showcase**: Interactive faculty grid with detailed profiles
-- **Educational Programs**: Curated activities with thumbnail images
-- **Interactive Elements**: Hover effects, smooth scrolling, and dynamic content
-- **Performance Optimized**: Built with Next.js Image optimization and best practices
+## 🎯 Overview
 
-## Tech Stack
+Myasthenia Matters is an immersive digital learning platform designed to empower healthcare professionals managing generalized Myasthenia Gravis (gMG). This platform bridges critical knowledge gaps through curated education, expert insights, and real-world practice tools, powered by ReachMD's Connected Insights Ecosystem.
 
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
+### Key Features
+
+- 📚 **Curated Educational Programs** - CME/CE activities focused on gMG management
+- 📊 **Comprehensive Disease Statistics** - Interactive data visualization with 6 thematic categories
+- 👨‍⚕️ **Expert Faculty** - 10-member steering committee of leading gMG specialists
+- 📖 **Clinical Resource Center** - Core guidelines, consensus statements, and safety monitoring resources
+- 🗓️ **Global Conference Calendar** - Upcoming conferences and congresses focused on MG research
+- 🎨 **Modern, Accessible Design** - Responsive, professional UI optimized for all devices
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Image Optimization**: Next.js Image component
 - **Deployment**: Vercel-ready
 
-## Getting Started
+## 📋 Prerequisites
 
-### Prerequisites
+- Node.js 18.x or higher
+- npm 9.x or higher (or yarn/pnpm)
 
-- Node.js 18+ 
-- npm or yarn
+## 🛠️ Installation & Setup
 
-### Installation
+### 1. Clone the Repository
 
-1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd glc-learning-center
+cd lipid360LC
 ```
 
-2. Install dependencies:
+### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
-3. Run the development server:
+### 3. Run Development Server
+
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-## Available Scripts
+### 4. Build for Production
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run clean` - Clean build cache
-
-## Project Structure
-
-```
-src/
-├── app/                 # Next.js App Router
-│   ├── globals.css     # Global styles
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Home page
-├── components/         # React components
-│   ├── Header.tsx      # Navigation header
-│   ├── Hero.tsx        # Hero section
-│   ├── Faculty.tsx     # Faculty showcase
-│   ├── EducationalPrograms.tsx # Activities grid
-│   └── ...
-public/
-├── faculty/            # Faculty images
-│   ├── activity thumbnails/ # Activity images
-│   └── ...
-└── ...
+```bash
+npm run build
+npm run start
 ```
 
-## Key Components
+## 📜 Available Scripts
 
-### Header
-- Dynamic color-changing navigation based on scroll position
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server on port 3000 |
+| `npm run build` | Create optimized production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint for code quality |
+| `npm run dev:clean` | Clean Next.js cache and restart dev server |
+
+## 📁 Project Structure
+
+```
+lipid360LC/
+├── src/
+│   ├── app/
+│   │   ├── globals.css          # Global styles & Tailwind directives
+│   │   ├── layout.tsx           # Root layout with metadata & SEO
+│   │   └── page.tsx             # Main landing page
+│   └── components/
+│       ├── Header.tsx           # Dynamic navigation header
+│       ├── Hero.tsx             # Landing hero section
+│       ├── Statistics.tsx       # Interactive disease statistics
+│       ├── EducationalPrograms.tsx  # CME activity cards
+│       ├── Faculty.tsx          # Steering committee showcase
+│       ├── ResourceCenter.tsx   # Clinical guidance resources
+│       ├── ConferenceCalendar.tsx   # Upcoming events table
+│       └── Footer.tsx           # Site footer with links
+├── public/
+│   ├── faculty/                 # Faculty member images
+│   ├── robots.txt               # SEO crawler instructions
+│   └── *.png                    # Activity thumbnails & logos
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+└── next.config.mjs
+```
+
+## 🎨 Key Components
+
+### Header Navigation
+- Smooth scroll navigation to all major sections
+- Dynamic color adaptation (white text over blue hero, gradient over light backgrounds)
 - Responsive mobile menu
-- Smooth scroll navigation
+- "Myasthenia Matters" home link
 
-### Faculty
-- Alphabetically organized faculty grid
-- Custom image positioning and scaling
-- Responsive layout (2-6 columns based on screen size)
+### Hero Section
+- Two-column layout with balanced visual flow
+- Animated gradient backgrounds
+- Direct CTAs to Activities and Resources
+- Responsive image placeholders
+
+### Disease Statistics
+- 6 interactive categories (Epidemiology, Subtypes, Clinical Course, Outcomes, Care Gaps, Demographics)
+- Tabbed navigation with smooth transitions
+- Comprehensive gMG data with source notes
+- Gradient-styled active states
 
 ### Educational Programs
-- Activity cards with thumbnail images
-- Category-based organization
-- External link integration
+- Real CME activity cards with titles and thumbnails
+- Direct links to ReachMD and partner platforms
+- Category badges (SF# identification)
+- Hover effects and responsive grid
 
-## Deployment
+### Expert Faculty
+- 10-member steering committee
+- Fixed positioning for consistent layout
+- Credentials badges (MD, MD/MPH, MD/MHS, MD/FRCPC)
+- Institution details with proper text wrapping
 
-This project is optimized for Vercel deployment:
+### Resource Center
+- Collapsible table view for clinical guidance
+- Core guidelines (AAN, MGFA, AANEM, CDC)
+- Organized by category with external links
+- Professional table formatting
 
-1. Push to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically
+### Conference Calendar
+- Placeholder table for upcoming conferences
+- US vs International type badges
+- Date, location, and link columns
+- Expandable for future events
 
-## Performance Features
+## 🌐 SEO Optimization
 
-- Next.js Image optimization
-- Static generation where possible
-- Optimized bundle size
-- Responsive images with proper sizing
+### Metadata
+- Comprehensive title, description, and keywords
+- Open Graph tags for social sharing
+- Twitter Card integration
+- Canonical URLs
+- Image alt attributes
+- Semantic HTML structure
 
-## Browser Support
+### Technical SEO
+- `robots.txt` configured for optimal crawling
+- Responsive viewport settings
+- Optimized meta tags for medical education keywords
+- Structured content hierarchy
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+### Keywords Targeted
+- Myasthenia Gravis, gMG, neuromuscular disorders
+- MG treatment, neurology, autoimmune disease
+- Complement inhibitors, thymectomy, CME
+- AChR antibodies, MuSK antibodies, myasthenic crisis
+- Medical education, ReachMD
 
-## Contributing
+## 🚢 Deployment
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+### Vercel (Recommended)
 
-## License
+1. Push code to GitHub repository
+2. Import project in [Vercel Dashboard](https://vercel.com/new)
+3. Configure environment variables (if needed)
+4. Deploy automatically
 
-This project is proprietary and confidential.
+### Build Optimization
+
+The project includes:
+- Automatic image optimization
+- Static generation for performance
+- CSS purging for minimal bundle size
+- Tree-shaking for unused code elimination
+
+## 🎯 Content Sections
+
+1. **Hero** - Main value proposition and CTAs
+2. **Disease Statistics** - 6 thematic categories of gMG data
+3. **Educational Programs** - 3 published CME activities
+4. **Expert Faculty** - 10 steering committee members
+5. **Resource Center** - 5 core clinical guidance documents
+6. **Conference Calendar** - Upcoming event listings
+7. **Footer** - Contact and additional links
+
+## 🧪 Testing
+
+### Manual Testing Checklist
+- ✅ Responsive design (mobile, tablet, desktop)
+- ✅ Smooth scroll navigation
+- ✅ Interactive statistics tabs
+- ✅ External links open in new tabs
+- ✅ Image loading and optimization
+- ✅ Faculty credentials display correctly
+- ✅ Resource center toggle functionality
+
+### Browser Compatibility
+- ✅ Chrome (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Edge (latest)
+
+## 📊 Performance Metrics
+
+- Lighthouse Score: 95+ (target)
+- First Contentful Paint: < 1.5s
+- Time to Interactive: < 3.5s
+- Cumulative Layout Shift: < 0.1
+
+## 🤝 Contributing
+
+This is a proprietary project developed by GLC Learning Center. For internal contributions:
+
+1. Create a feature branch from `main`
+2. Make changes with clear commit messages
+3. Test thoroughly across devices
+4. Submit PR with detailed description
+5. Request code review
+
+## 📝 Content Updates
+
+### Adding Faculty Members
+1. Add image to `/public/faculty/`
+2. Update `facultyMembers` array in `Faculty.tsx`
+3. Include: name, credentials, institution, imageUrl
+
+### Adding Educational Programs
+1. Add thumbnail to `/public/`
+2. Update `activities` array in `EducationalPrograms.tsx`
+3. Include: title, category (SF#), href, imageUrl
+
+### Updating Statistics
+1. Edit `categories` array in `Statistics.tsx`
+2. Maintain structure: metric, value, notes
+3. Update sources in footer if needed
+
+## 📄 License
+
+This project is proprietary and confidential. © 2025 GLC Learning Center. All rights reserved.
+
+## 📧 Contact
+
+For questions or support, contact the GLC Learning Center development team.
+
+---
+
+**Built with ❤️ for advancing gMG clinical education**

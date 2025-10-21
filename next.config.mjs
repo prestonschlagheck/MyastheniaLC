@@ -1,51 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Prevent white page issues
+  // Optimize package imports for better performance
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
-  // Improve build stability
-  webpack: (config, { dev, isServer }) => {
-    if (dev) {
-      config.watchOptions = {
-        poll: 1000,
-        aggregateTimeout: 300,
-      };
-    }
-    return config;
-  },
+  
+  // Image optimization configuration
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "placehold.co",
-        port: "",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "replicate.com",
-      },
-      {
-        protocol: "https",
-        hostname: "replicate.delivery",
-      },
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-      },
+      // Add external image domains here if needed
+      // Example: ReachMD thumbnails, faculty images from external sources
     ],
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://api.openai.com/:path*",
-      },
-    ];
-  },
+
+  // Production optimizations
+  compress: true,
+  poweredByHeader: false,
+  
+  // Strict mode for better development experience
+  reactStrictMode: true,
+
+  // Trailing slash configuration
+  trailingSlash: false,
+
+  // Output configuration for Vercel
+  output: 'standalone',
 };
 
 export default nextConfig;

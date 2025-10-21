@@ -29,41 +29,23 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
         className="block rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-200 bg-white h-full overflow-hidden group-hover:scale-105"
       >
         {/* Image Section */}
-        <div className="relative h-44 overflow-hidden rounded-t-3xl bg-gray-100 flex items-center justify-center">
+        <div className="relative h-44 overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-100 to-slate-100">
           {activity.imageUrl ? (
             <Image
               src={activity.imageUrl}
               alt={activity.title}
               fill
-              className={`object-cover group-hover:scale-110 transition-transform duration-300 ${
-                // Special positioning for FCS image to focus on bottom right person
-                activity.title === 'FCS & SHTG: Are we meeting the need?'
-                  ? 'object-bottom object-right'
-                  // Special positioning for CETP activity to shift image up by 30%
-                  : activity.title === 'CETP inhibition & obicetrapib: A new era in lipid management'
-                  ? 'object-top'
-                  // Move all other images except the last two up in positioning
-                  : activity.title !== 'Exploring CETP as a therapeutic target' && 
-                    activity.title !== 'LOVE STORY: Lipid Education for Women\'s Heart Health'
-                    ? 'object-top' 
-                    : 'object-center'
-              } ${
-                // Brighten images to match others - different levels for different images
-                activity.title === 'Clinical choices in managing LDL-C: Where do novel therapies fit in?'
-                  ? 'brightness-150' 
-                  : activity.title === 'Exploring CETP as a therapeutic target'
-                  ? 'brightness-125'
-                  : ''
-              } ${
-                // Custom positioning for CETP activity
-                activity.title === 'CETP inhibition & obicetrapib: A new era in lipid management'
-                  ? 'object-[center_35%]'
-                  : ''
-              }`}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              quality={100}
+              priority={index < 4}
             />
           ) : (
-            <span className="text-gray-500 text-sm font-medium">Image Needed</span>
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center text-slate-500 p-6">
+                <div className="text-4xl mb-2">📋</div>
+                <p className="text-xs font-medium">Image Placeholder</p>
+              </div>
+            </div>
           )}
         </div>
         
@@ -96,60 +78,25 @@ export function EducationalPrograms() {
 
   const activities: Activity[] = [
     {
-      title: 'APOC3 inhibition: New frontiers in managing patients with FCS & SHTG',
-      icon: <Beaker size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/programs/cme/apoc3-inhibition-new-frontiers-managing-patients-with-fcs-shtg/20307/',
-      category: 'FCS & Severe Hypertriglyceridemia',
-      imageUrl: '/faculty/activity thumbnails/bddedfeecc7ef1edb30881ea7047a38f.png'
-    },
-    {
-      title: 'FCS & SHTG: Are we meeting the need?',
-      icon: <Beaker size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/programs/cme/fcs-and-shtg-are-we-meeting-need/20306/',
-      category: 'FCS & Severe Hypertriglyceridemia',
-      imageUrl: '/faculty/activity thumbnails/FCS2.png'
-    },
-    {
-      title: 'Efficacy of obicetrapib across diverse regimens (BROOKLYN/BROADWAY pooled)',
-      icon: <Heart size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/clinical-practice/cardiology/efficacy-of-obicetrapib-across-diverse-background-lipid-lowering-regimens-pooled-broadway-brooklyn-analyses/36582/',
-      category: 'CETP Inhibition & Obicetrapib',
-      imageUrl: '/faculty/activity thumbnails/efficacy.png'
-    },
-    {
-      title: 'CETP inhibition & obicetrapib: A new era in lipid management',
-      icon: <Heart size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-and-obicetrapib-a-new-era-in-lipid-management/37123/',
-      category: 'CETP Inhibition & Obicetrapib',
-      imageUrl: '/CETPthumb.png'
-    },
-    {
-      title: 'CETP inhibition: Implications for cardiovascular event prevention',
-      icon: <Heart size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/clinical-practice/cardiology/cetp-inhibition-with-obicetrapib-implications-for-cardiovascular-event-prevention/37124/',
-      category: 'CETP Inhibition & Obicetrapib',
-      imageUrl: '/faculty/activity thumbnails/CETP.png'
-    },
-    {
-      title: 'Clinical choices in managing LDL-C: Where do novel therapies fit in?',
+      title: 'Treatment Advances in Generalized Myasthenia Gravis: Addressing the Nuances of Its Underlying Immunopathology',
       icon: <BookOpen size={16} className="text-blue-700" />,
-      href: 'https://pace-cme.org/programs/cme/clinical-choices-in-managing-ldl-c-where-do-novel-therapies-fit-in/26362/',
-      category: 'LDL-C Novel Therapies',
-      imageUrl: '/faculty/activity thumbnails/clinical.png'
+      href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-addressing-the-nuances-of-its-underlying-immunopathology/29263/',
+      category: 'SF#17823 | CME Program',
+      imageUrl: '/activity-thumbnail-1.png'
     },
     {
-      title: 'Exploring CETP as a therapeutic target',
+      title: 'Treatment Advances in Generalized Myasthenia Gravis: A Pathophysiology-Driven Framework Leveraging FcRn Therapeutics',
       icon: <BookOpen size={16} className="text-blue-700" />,
-      href: 'https://pace-cme.org/programs/cme/innovating-the-clinical-management-of-ldl-c-exploring-cetp-as-therapeutic-target/24557/',
-      category: 'LDL-C Novel Therapies',
-      imageUrl: '/faculty/activity thumbnails/innovating.png'
+      href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-a-pathophysiology-driven-framework-leveraging-fcrn-therapeutics/29537/',
+      category: 'SF#17930 | CME Program',
+      imageUrl: '/9757b843673d44aad2245d9a7f986e17.png'
     },
     {
-      title: 'LOVE STORY: Lipid Education for Women\'s Heart Health',
-      icon: <Heart size={16} className="text-blue-700" />,
-      href: 'https://reachmd.com/programs/cme/love-story-lipid-education-for-womens-heart-health/26721/',
-      category: 'Women\'s Heart Health',
-      imageUrl: '/faculty/activity thumbnails/love.png'
+      title: 'Treatment Advances in Generalized Myasthenia Gravis: Clinical and Laboratory Criteria for Diagnosis and Optimal Treatment Selection',
+      icon: <BookOpen size={16} className="text-blue-700" />,
+      href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-clinical-and-laboratory-criteria-for-diagnosis-and-optimal-treatment-selection/29533/',
+      category: 'SF#17931 | CME Program',
+      imageUrl: '/1236d4c8afe6f55769bc49a12c6b411c.png'
     },
   ]
 
@@ -171,11 +118,11 @@ export function EducationalPrograms() {
           className="text-center mb-16"
         >
           <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-            Curated{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Activities</span>
+            Educational{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Programs</span>
           </h2>
           <p className="text-base lg:text-lg text-slate-700 max-w-6xl mx-auto leading-relaxed text-center">
-            Explore CME and clinical practice programs across FCS/SHTG, CETP/obicetrapib, LDL-C therapies, and women’s heart health.
+            Explore curated gMG-focused educational activities featuring expert faculty, clinical insights, and practical care strategies.
           </p>
         </motion.div>
 

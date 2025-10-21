@@ -1,7 +1,9 @@
 {
-  "name": "glc-learning-center",
-  "version": "0.1.0",
+  "name": "myasthenia-matters-learning-center",
+  "version": "1.0.0",
   "private": true,
+  "description": "A comprehensive 12-month thematic learning center for clinicians managing generalized Myasthenia Gravis (gMG)",
+  "author": "GLC Learning Center",
   "scripts": {
     "dev": "next dev",
     "dev:clean": "bash scripts/dev-clean.sh",

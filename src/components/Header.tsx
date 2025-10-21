@@ -54,13 +54,12 @@ export function Header() {
   };
 
   const navigationItems = [
-    { id: 'comprehensive-hub', label: 'Lipid 360°' },
-    { id: 'lipid-statistics', label: 'Lipid Statistics' },
+    { id: 'hero', label: 'Myasthenia Matters' },
+    { id: 'disease-statistics', label: 'Disease Stats' },
     { id: 'activities', label: 'Activities' },
-    { id: 'tracks', label: 'Tracks' },
-    { id: 'resource-center', label: 'Resource Center' },
-    { id: 'faculty', label: 'Key Faculty' },
-    { id: 'news', label: 'News' }
+    { id: 'faculty', label: 'Faculty' },
+    { id: 'resource-center', label: 'Resources' },
+    { id: 'conferences', label: 'Conferences' }
   ];
 
   return (

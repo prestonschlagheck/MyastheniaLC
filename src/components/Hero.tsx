@@ -12,7 +12,7 @@ export function Hero() {
     window.scrollTo({ top: y, behavior: 'smooth' })
   }
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] lg:h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <section id="hero" className="relative min-h-[calc(100vh-4rem)] lg:h-[75vh] overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sophisticated Background Patterns */}
       <div className="absolute inset-0">
         {/* Medical Grid Pattern */}
@@ -52,102 +52,79 @@ export function Hero() {
 
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center h-full px-6 lg:px-12 py-8 lg:py-0">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+      <div className="relative z-10 flex items-center h-full px-6 lg:px-12 py-16 lg:py-0">
+        <div className="max-w-7xl mx-auto w-full">
           
-          {/* Text Content */}
-          <div className="text-left space-y-8 lg:space-y-8 flex flex-col justify-start lg:justify-center pt-8 lg:pt-0">
-
-
-            {/* Main Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 0.1 }}
-              className="space-y-4"
-            >
-              <h1 className="heading-font text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight text-shadow-md">
-                Lipid 360° Learning Center:
-                <br className="hidden sm:block" />
-                <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
-                  {' '}Advancing Evidence-Based Care in Lipid Management
-                </span>
-              </h1>
-            </motion.div>
-
-            {/* Mobile Image - Only visible on mobile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:hidden flex justify-center items-center"
-            >
-              <div className="relative overflow-hidden rounded-2xl shadow-xl border-2 border-white/20 backdrop-blur-sm w-full max-w-sm mx-auto h-[200px]">
-                <Image
-                  src="/hearthero.jpeg"
-                  alt="Lipid Management Visualization"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 384px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
-              </div>
-            </motion.div>
-
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: 0.15 }}
-              className="text-sm sm:text-base lg:text-lg text-blue-100 leading-relaxed max-w-4xl font-sans"
-            >
-              Through expert interviews, interactive case discussions, multidisciplinary panels, and patient perspectives, leading global experts in cardiovascular medicine, lipidology, and endocrinology share the latest evidence alongside real-world clinical insights. Empower clinicians with practical strategies for optimizing lipid management across the spectrum of dyslipidemias from elevated LDL-C and lipoprotein(a) to severe hypertriglyceridemia and rare genetic disorders such as familial chylomicronemia syndrome (FCS).
-            </motion.p>
-
-
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.4 }}
-              className="flex items-center gap-4 pt-4"
-            >
-              <button 
-                onClick={() => scrollToWithOffset('activities')}
-                className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Column - Text Content */}
+            <div className="space-y-8">
+              
+              {/* Main Title */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
-                Explore Activities
-              </button>
-              <button 
-                onClick={() => scrollToWithOffset('resource-center')}
-                className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/60 text-white/90 hover:bg-white/10 hover:shadow-xl"
-              >
-                Explore Resources
-              </button>
-            </motion.div>
-          </div>
+                <h1 className="heading-font text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight text-shadow-md">
+                  Myasthenia Matters:
+                  <br />
+                  <span className="bg-gradient-to-r from-blue-300 to-teal-300 bg-clip-text text-transparent">
+                    Navigating a New Era of Treatment
+                  </span>
+                </h1>
+              </motion.div>
 
-          {/* Image Content */}
-          <div className="hidden lg:flex justify-center items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full flex justify-center"
-            >
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full max-w-lg h-[400px]">
-                <Image
-                  src="/hearthero.jpeg"
-                  alt="Lipid Management Visualization"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 512px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl"></div>
-              </div>
-            </motion.div>
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+                className="text-base lg:text-lg text-blue-100 leading-relaxed font-sans"
+              >
+                An immersive 12-month learning journey designed to empower clinicians managing generalized Myasthenia Gravis (gMG). This comprehensive hub features tailored curriculum with current and past gMG-focused programs, powered by ReachMD&apos;s Connected Insights Ecosystem and enhanced with transparent learner engagement metrics.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                className="flex flex-wrap items-center gap-4"
+              >
+                <button 
+                  onClick={() => scrollToWithOffset('activities')}
+                  className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                >
+                  Explore Activities
+                </button>
+                <button 
+                  onClick={() => scrollToWithOffset('resource-center')}
+                  className="px-8 py-4 rounded-xl font-semibold transition-all duration-300 border-2 border-white/60 text-white/90 hover:bg-white/10 hover:border-white hover:shadow-xl"
+                >
+                  Explore Resources
+                </button>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Image Content */}
+            <div className="flex justify-center items-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="relative w-full"
+              >
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full h-[400px] lg:h-[450px] bg-gradient-to-br from-blue-900/50 to-slate-800/50 flex items-center justify-center">
+                  <div className="text-white/60 text-center p-8">
+                    <p className="text-lg font-medium mb-2">Image Placeholder</p>
+                    <p className="text-sm">gMG Educational Visual</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
+          
         </div>
       </div>
 

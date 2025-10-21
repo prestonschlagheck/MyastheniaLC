@@ -1,0 +1,25 @@
+# Files to exclude from Vercel deployment
+
+# Development files
+node_modules
+.env.local
+.env*.local
+
+# Build files
+.next
+out
+
+# Testing
+coverage
+
+# Misc
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Documentation (optional, can deploy these if needed)
+# README.md
+# DEPLOYMENT.md
+

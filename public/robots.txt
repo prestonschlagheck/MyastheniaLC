@@ -1,0 +1,11 @@
+# Robots.txt for Myasthenia Matters Learning Center
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yourdomain.com/sitemap.xml
+
+# Disallow admin/private areas (if any in future)
+# Disallow: /admin/
+# Disallow: /api/
+

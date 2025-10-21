@@ -3,30 +3,38 @@ import type { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
-  title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
-  description: 'Your comprehensive hub for advancing evidence-based care in lipid management. Explore expert interviews, interactive cases, multidisciplinary panels, and patient perspectives across LDL-C, Lp(a), severe hypertriglyceridemia, and rare genetic disorders.',
-  keywords: 'lipids, dyslipidemia, LDL-C, Lp(a), hypertriglyceridemia, familial chylomicronemia syndrome, FCS, ASCVD, cardiology, endocrinology, CME',
-  authors: [{ name: 'Lipid 360° Learning Center' }],
-  robots: 'index, follow',
+  title: 'Myasthenia Matters: Navigating a New Era of Treatment | gMG Learning Center',
+  description: 'A 12-month immersive learning journey designed to empower clinicians managing generalized Myasthenia Gravis (gMG)—bridging knowledge gaps with curated education, expert insights, and real-world practice tools.',
+  keywords: 'myasthenia gravis, gMG, neuromuscular disorders, MG treatment, neurology, autoimmune disease, complement inhibitors, thymectomy, CME, medical education, AChR antibodies, MuSK antibodies, myasthenic crisis, immunotherapy, neuromuscular junction, ReachMD',
+  authors: [{ name: 'GLC Learning Center' }],
+  creator: 'GLC Learning Center',
+  publisher: 'GLC Learning Center',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
-    description: 'Advancing evidence-based care in lipid management with expert insights and practical strategies.',
+    title: 'Myasthenia Matters: Navigating a New Era of Treatment',
+    description: 'A 12-month thematic learning center for clinicians and care teams managing generalized Myasthenia Gravis (gMG). Features expert faculty, CME programs, clinical guidance, and disease statistics.',
     type: 'website',
     locale: 'en_US',
+    siteName: 'Myasthenia Matters Learning Center',
     images: [
       {
-        url: '/output (1).png',
+        url: '/GLC_logo-1-300x88.png',
         width: 1200,
         height: 630,
-        alt: 'Lipid 360 visual'
+        alt: 'Myasthenia Matters Learning Center - gMG Education Platform'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lipid 360° Learning Center | Evidence-Based Lipid Management',
-    description: 'Your comprehensive hub for advancing evidence-based care in lipid management.',
-  }
+    title: 'Myasthenia Matters: Navigating a New Era of Treatment',
+    description: 'A 12-month learning journey for clinicians managing generalized Myasthenia Gravis (gMG). Expert faculty, CME activities, and clinical resources.',
+    creator: '@ReachMD',
+  },
+  category: 'Medical Education',
 }
 
 export const viewport: Viewport = {

@@ -30,51 +30,51 @@ function FacultyCard({ faculty, index }: FacultyCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.2, delay: index * 0.05 }}
     >
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-5 h-40">
-        {/* Profile Photo */}
-        <div className="flex flex-col items-center text-center h-full justify-center">
-          <div className="relative w-[74px] h-[74px] mb-3 flex-shrink-0">
-            <div className="absolute inset-0 rounded-full overflow-hidden border-2 border-slate-200 shadow-md bg-gradient-to-br from-blue-100 to-teal-100">
-              {faculty.imageUrl ? (
-                <Image
-                  src={faculty.imageUrl}
-                  alt={faculty.name}
-                  width={74}
-                  height={74}
-                  className={`object-cover object-top w-full h-full ${
-                    faculty.name === 'Julia Brandts' ||
-                    faculty.name === 'Pasquale Perrone-Filardi' ||
-                    faculty.name === 'Ira J. Goldberg' ||
-                    faculty.name === 'Christie Ballantyne' ||
-                    faculty.name === 'Pam R. Taub'
-                      ? 'scale-125'
-                      : ''
-                  }`}
-                  quality={100}
-                  priority={index < 6}
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <User className="w-8 h-8 text-slate-400" />
-                </div>
-              )}
+      <div className="relative bg-white rounded-2xl shadow-lg border border-slate-200 px-5 pt-5 pb-[15px] h-56 flex flex-col">
+        {/* Credentials Badge - Top Right Corner */}
+        <div className="absolute top-1 right-[7px]">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-xl text-[9px] font-semibold text-white bg-gradient-to-r from-blue-600 to-teal-600 shadow-md">
+            {faculty.credentials}
+          </span>
+        </div>
+        
+        {/* Fixed Position Content */}
+        <div className="flex flex-col items-center pt-3">
+          {/* Profile Photo - Fixed Position */}
+          <div className="relative w-20 h-20 mb-3 flex-shrink-0">
+            {/* Gradient border wrapper */}
+            <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-600 to-teal-600 p-[3px]">
+              <div className="w-full h-full rounded-full overflow-hidden shadow-lg bg-white">
+                {faculty.imageUrl ? (
+                  <Image
+                    src={faculty.imageUrl}
+                    alt={faculty.name}
+                    width={80}
+                    height={80}
+                    className="object-cover object-top w-full h-full"
+                    quality={100}
+                    priority={index < 6}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-slate-100">
+                    <User className="w-9 h-9 text-slate-400" />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           
-          {/* Faculty Info */}
-          <div className="text-center">
-            <h3 className="font-semibold text-slate-900 text-sm leading-tight mb-1 whitespace-nowrap overflow-hidden text-ellipsis">
-              {faculty.name}
-            </h3>
-            <div className="text-xs font-medium text-slate-600 whitespace-nowrap overflow-hidden text-ellipsis">
-              {faculty.credentials}
-            </div>
-            {faculty.institution && (
-              <div className="text-xs text-slate-500 mt-1 whitespace-nowrap overflow-hidden text-ellipsis">
-                {faculty.institution}
-              </div>
-            )}
-          </div>
+          {/* Name - Fixed Position */}
+          <h3 className="font-bold text-slate-900 text-sm leading-tight px-1 text-center mb-3">
+            {faculty.name}
+          </h3>
+          
+          {/* Institution - Variable Height */}
+          {faculty.institution && (
+            <p className="text-[11px] text-slate-600 leading-snug px-2 text-center">
+              {faculty.institution}
+            </p>
+          )}
         </div>
       </div>
     </motion.div>
@@ -89,24 +89,35 @@ function FacultyPlaceholder({ index }: FacultyPlaceholderProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.2, delay: index * 0.05 }}
     >
-      <div className="relative bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 p-4 h-32">
-        {/* Profile Photo */}
-        <div className="flex flex-col items-center text-center h-full justify-center">
-          <div className="relative w-16 h-16 mb-2">
-            <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center overflow-hidden border-3 border-white shadow-md">
-              <User className="w-8 h-8 text-slate-400" />
+      <div className="relative bg-white rounded-2xl shadow-lg border border-slate-200 px-5 pt-5 pb-[15px] h-56 flex flex-col">
+        {/* Credentials Badge - Top Right Corner */}
+        <div className="absolute top-1 right-[7px]">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-xl text-[9px] font-semibold text-white bg-gradient-to-r from-slate-400 to-slate-500 shadow-md">
+            MD
+          </span>
+        </div>
+        
+        {/* Fixed Position Content */}
+        <div className="flex flex-col items-center pt-3">
+          {/* Profile Photo - Fixed Position */}
+          <div className="relative w-20 h-20 mb-3 flex-shrink-0">
+            {/* Gradient border wrapper */}
+            <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-600 to-teal-600 p-[3px]">
+              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center shadow-lg">
+                <User className="w-9 h-9 text-slate-400" />
+              </div>
             </div>
           </div>
           
-          {/* Placeholder Text */}
-          <div className="text-center">
-            <h3 className="heading-font font-semibold text-slate-400 text-sm leading-tight mb-1">
-              Expert Placeholder
-            </h3>
-            <div className="text-xs font-medium text-slate-300">
-              To Be Added
-            </div>
-          </div>
+          {/* Name - Fixed Position */}
+          <h3 className="font-bold text-slate-400 text-sm leading-tight px-1 text-center mb-3">
+            Expert Placeholder
+          </h3>
+          
+          {/* Institution - Variable Height */}
+          <p className="text-[11px] text-slate-300 leading-snug px-2 text-center">
+            To Be Added
+          </p>
         </div>
       </div>
     </motion.div>
@@ -117,86 +128,72 @@ export function Faculty() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  // Faculty data - Organized alphabetically by last name
+  // Faculty data - gMG Steering Committee
   const facultyMembers: Faculty[] = [
     {
-      name: 'Christie Ballantyne',
+      name: 'Vera Bril',
+      credentials: 'MD, FRCPC',
       title: 'Professor',
+      institution: 'University of Toronto & UHN',
+      imageUrl: '/faculty/bril.jpg'
+    },
+    {
+      name: 'Amanda C. Guidon',
+      credentials: 'MD, MPH',
+      title: 'Associate Professor',
+      institution: 'Massachusetts General Hospital / Harvard'
+    },
+    {
+      name: 'Jeffrey T. Guptill',
+      credentials: 'MD, MHS',
+      title: 'Professor',
+      institution: 'Duke University'
+    },
+    {
+      name: 'James F. Howard Jr.',
       credentials: 'MD',
-      imageUrl: '/faculty/christieb.jpg'
+      title: 'Professor',
+      institution: 'UNC Chapel Hill'
     },
     {
-      name: 'Julia Brandts',
-      title: 'Professor',
+      name: 'Henry J. Kaminski',
       credentials: 'MD',
-      imageUrl: '/faculty/juliab.jpg'
+      title: 'Professor',
+      institution: 'GWU / MGNet'
     },
     {
-      name: 'Daniel Gaudet',
-      title: 'Professor',
-      credentials: 'MD, PhD',
-      imageUrl: '/faculty/danielg.jpg'
-    },
-    {
-      name: 'Ira J. Goldberg',
-      title: 'Professor',
+      name: 'Srikanth Muppidi',
       credentials: 'MD',
-      imageUrl: '/faculty/iraj.png'
+      title: 'Clinical Associate Professor',
+      institution: 'Stanford University'
     },
     {
-      name: 'John Kastelein',
-      title: 'Chief Scientific Officer',
-      credentials: 'Prof.',
-      imageUrl: '/faculty/johnk.jpg'
-    },
-    {
-      name: 'Ulrich Laufs',
-      title: 'Professor',
-      credentials: 'MD, PhD',
-      imageUrl: '/faculty/ulrichl.jpg'
-    },
-    {
-      name: 'Erin Michos',
-      title: 'Professor',
+      name: 'Pushpa Narayanaswami',
       credentials: 'MD',
-      imageUrl: '/faculty/erinm.png'
+      title: 'Professor',
+      institution: 'Brigham & Women&apos;s / Harvard'
     },
     {
-      name: 'Stephen Nicholls',
+      name: 'Richard J. Nowak',
+      credentials: 'MD',
       title: 'Professor',
-      credentials: 'FRACP, FACC, FESC, FAHA',
-      imageUrl: '/faculty/stephenn.jpg'
+      institution: 'Yale University'
     },
     {
-      name: 'Børge G. Nordestgaard',
-      title: 'Professor',
-      credentials: 'MD, DMSc',
-      imageUrl: '/faculty/borgen.jpg'
+      name: 'Donald B. Sanders',
+      credentials: 'MD',
+      title: 'Professor Emeritus',
+      institution: 'Duke University'
     },
     {
-      name: 'Pasquale Perrone-Filardi',
+      name: 'Gil I. Wolfe',
+      credentials: 'MD',
       title: 'Professor',
-      credentials: 'MD, PhD',
-      imageUrl: '/faculty/pasqualep.png'
-    },
-    {
-      name: 'Kausik Ray',
-      title: 'Professor',
-      credentials: 'MBChB, MD, MPhil',
-      imageUrl: '/faculty/kausikr.png'
-    },
-    {
-      name: 'Pam R. Taub',
-      title: 'Professor',
-      credentials: 'MD, FACC, FASPC',
-      imageUrl: '/faculty/pamt.jpg'
+      institution: 'University at Buffalo'
     }
   ]
 
-  // Calculate remaining placeholder slots (total 12 - actual faculty, no extra slots needed)
-  const totalSlots = 12
-  const remainingSlots = Math.max(0, totalSlots - facultyMembers.length)
-  const placeholderSlots = Array.from({ length: remainingSlots }, (_, index) => index)
+  // No placeholders needed
 
   return (
     <section ref={ref} id="faculty" className="py-14 bg-white">
@@ -208,26 +205,19 @@ export function Faculty() {
           className="text-center mb-8"
         >
           <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900">
-            Leading <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Global Experts</span>
+            Expert Faculty & <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Steering Committee</span>
           </h2>
           <p className="text-slate-600 mt-4 max-w-4xl mx-auto">
-            Our distinguished multidisciplinary faculty represents the pinnacle of expertise in lipid management, bringing together renowned clinicians, researchers, and thought leaders from the world&apos;s most prestigious medical institutions.
+            Our distinguished steering committee comprises leading experts in Myasthenia Gravis management, bringing together renowned clinicians, researchers, and thought leaders dedicated to advancing gMG care and education.
           </p>
         </motion.div>
 
         {/* Faculty Grid */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 max-w-6xl">
-            {/* Real Faculty Members */}
-            {facultyMembers.map((faculty, index) => (
-              <FacultyCard key={`faculty-${index}`} faculty={faculty} index={index} />
-            ))}
-            
-            {/* Placeholder Slots */}
-            {placeholderSlots.map((index) => (
-              <FacultyPlaceholder key={`placeholder-${index}`} index={facultyMembers.length + index} />
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto">
+          {/* Real Faculty Members */}
+          {facultyMembers.map((faculty, index) => (
+            <FacultyCard key={`faculty-${index}`} faculty={faculty} index={index} />
+          ))}
         </div>
       </div>
     </section>

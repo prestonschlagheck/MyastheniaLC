@@ -1,89 +1,106 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { BarChart3, Users, TrendingUp, Heart, Database, Globe2 } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { Globe2, Activity, AlertCircle, TrendingUp, Users, Calendar } from 'lucide-react'
 
-interface StatisticCardProps {
-  icon: React.ReactNode
+interface StatItem {
+  metric: string
   value: string
-  description: string
-  index: number
-  color: string
-  cite?: { label: string; href: string }
+  notes?: string
 }
 
-function StatisticCard({ icon, value, description, index, color, cite }: StatisticCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group h-full"
-    >
-      <div className={`relative ${color} rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 group-hover:scale-105 h-full`}> 
-        <div className="flex items-start space-x-4">
-          <div className="p-3 bg-white/60 rounded-xl">
-            {icon}
-          </div>
-          <div className="flex-1">
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
-              className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2"
-            >
-              {value}
-            </motion.div>
-            <p className="text-slate-700 text-sm leading-relaxed">
-              {description}
-            </p>
-          </div>
-        </div>
-        {cite && (
-          <div className="absolute bottom-3 right-4 text-[10px] text-slate-500">
-            <a href={cite.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">
-              {cite.label}
-            </a>
-          </div>
-        )}
-      </div>
-    </motion.div>
-  )
+interface StatCategory {
+  id: string
+  title: string
+  icon: React.ReactNode
+  color: string
+  stats: StatItem[]
 }
 
 export function Statistics() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [activeCategory, setActiveCategory] = useState('epidemiology')
 
-  const statistics = [
+  const categories: StatCategory[] = [
     {
-      icon: <Globe2 size={28} className="text-blue-700" />,
-      value: "24.1%",
-      description: "prevalence of hypercholesterolemia in adults (meta-analysis).",
-      color: "bg-gradient-to-br from-blue-50 to-teal-50",
-      cite: { label: "JHPN 2025", href: "https://jhpn.biomedcentral.com/articles/10.1186/s41043-025-01054-3" }
+      id: 'epidemiology',
+      title: 'Epidemiology & Disease Burden',
+      icon: <Globe2 size={20} />,
+      color: 'from-blue-100 to-teal-100',
+      stats: [
+        { metric: 'Global Prevalence', value: '15–329 per million', notes: 'Varies widely by country/methodology' },
+        { metric: 'Global Incidence', value: '1.7–28 per million/year', notes: 'Depends on age, antibody status' },
+        { metric: 'U.S. Prevalence', value: '35.7 per 100,000', notes: 'Claims-based; may undercount' },
+        { metric: 'U.S. Incidence', value: '4.3 per 100,000 annually', notes: 'Based on insurance claims' },
+        { metric: 'Trend Over Time', value: 'Doubled since 1950s', notes: 'Better diagnosis, aging population' }
+      ]
     },
     {
-      icon: <TrendingUp size={28} className="text-blue-700" />,
-      value: "~50%",
-      description: "of high-risk patients fail to achieve LDL-C targets despite statin therapy.",
-      color: "bg-gradient-to-br from-blue-50 to-blue-100",
-      cite: { label: "AACE 2025", href: "https://pro.aace.com/clinical-guidance/2025-clinical-practice-guideline-pharmacologic-management-adults-dyslipidemia" }
+      id: 'subtypes',
+      title: 'Subtypes & Distribution',
+      icon: <Activity size={20} />,
+      color: 'from-purple-100 to-pink-100',
+      stats: [
+        { metric: 'Generalized MG (gMG)', value: '~80% convert to gMG', notes: 'Most common form' },
+        { metric: 'Ocular-only MG', value: '~50% present with ocular symptoms initially', notes: 'May progress to gMG' },
+        { metric: 'AChR+ Antibody', value: '80–85%', notes: 'Most common antibody subtype' },
+        { metric: 'MuSK Antibody', value: '5–10%', notes: 'Second most common subtype' }
+      ]
     },
     {
-      icon: <Heart size={28} className="text-blue-700" />,
-      value: "20–25%",
-      description: "of the population has elevated Lp(a), an independent causal ASCVD risk factor.",
-      color: "bg-gradient-to-br from-teal-50 to-teal-100",
-      cite: { label: "EHJ 2025", href: "https://academic.oup.com/eurheartj/advance-article/doi/10.1093/eurheartj/ehaf190/8234482" }
+      id: 'clinical',
+      title: 'Clinical Course & Burden',
+      icon: <AlertCircle size={20} />,
+      color: 'from-orange-100 to-red-100',
+      stats: [
+        { metric: 'Fluctuating Muscle Weakness', value: '~90% of patients', notes: 'Signature disease trait' },
+        { metric: 'Exacerbations/Relapses', value: '>30% within 1 year', notes: 'Definition varies by study' },
+        { metric: 'Myasthenic Crisis', value: '15–20% historically', notes: 'Improved today with therapy' }
+      ]
+    },
+    {
+      id: 'outcomes',
+      title: 'Outcomes & Mortality',
+      icon: <TrendingUp size={20} />,
+      color: 'from-teal-100 to-green-100',
+      stats: [
+        { metric: 'Historical Mortality Rate', value: '3–9%', notes: 'Lower today with modern treatment' },
+        { metric: 'U.S. Mortality Trend (Men)', value: '+66% (1999–2022)', notes: 'Rising concern' },
+        { metric: 'U.S. Mortality Trend (Women)', value: '+30% (1999–2022)', notes: 'Also increasing' },
+        { metric: 'Life Expectancy', value: 'Near-normal with treatment', notes: 'With proper management' }
+      ]
+    },
+    {
+      id: 'gaps',
+      title: 'Care Gaps',
+      icon: <AlertCircle size={20} />,
+      color: 'from-red-100 to-pink-100',
+      stats: [
+        { metric: 'Diagnostic Delay', value: 'Months to years', notes: 'Recognition issues' },
+        { metric: 'Mis/Underdiagnosis', value: 'Qualitatively reported', notes: 'Hidden burden' },
+        { metric: 'Treatment Utilization', value: 'Steroids, AChE inhibitors widely used', notes: 'Real-world practice patterns' }
+      ]
+    },
+    {
+      id: 'demographics',
+      title: 'Demographics & Forecasts',
+      icon: <Users size={20} />,
+      color: 'from-indigo-100 to-purple-100',
+      stats: [
+        { metric: 'Future Prevalence', value: 'May double in coming decades', notes: 'Projected burden forecast' },
+        { metric: 'Mean Age at Diagnosis', value: '67–68 years', notes: 'Peak age burden' },
+        { metric: 'Sex Distribution (Young Onset)', value: 'More women', notes: 'Gender profile varies by age' },
+        { metric: 'Sex Distribution (Late Onset)', value: 'More men', notes: 'Different pattern in older patients' }
+      ]
     }
   ]
 
+  const activeData = categories.find(cat => cat.id === activeCategory) || categories[0]
+
   return (
-    <section ref={ref} id="lipid-statistics" className="py-16 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
+    <section ref={ref} id="disease-statistics" className="py-16 bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
         <motion.div
@@ -93,19 +110,80 @@ export function Statistics() {
           className="text-center mb-12"
         >
           <h2 className="heading-font text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Lipid Disorders <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Global Statistics</span>
+            gMG Disease <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Statistics</span>
           </h2>
-          <p className="text-base lg:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
-            Key prevalence and treatment gap metrics across LDL-C, Lp(a), and hypercholesterolemia.
+          <p className="text-base lg:text-lg text-slate-700 max-w-5xl mx-auto leading-relaxed">
+            Comprehensive data on prevalence, disease burden, clinical course, and care gaps in generalized Myasthenia&nbsp;Gravis.
           </p>
         </motion.div>
 
-        {/* Statistics Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-2">
-          {statistics.map((stat, index) => (
-            <StatisticCard key={index} icon={stat.icon} value={stat.value} description={stat.description} index={index} color={stat.color} cite={stat.cite} />
-          ))}
-        </div>
+        {/* Category Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-10"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
+            {categories.map((category, index) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? `bg-gradient-to-r ${category.color} text-slate-700 shadow-lg scale-105 border border-slate-200`
+                    : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
+                }`}
+              >
+                {category.icon}
+                <span className="text-sm text-center">{category.title}</span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Stats Display */}
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activeData.stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={`bg-gradient-to-br ${activeData.color} rounded-xl p-6 border border-slate-200`}
+              >
+                <h3 className="text-sm font-semibold text-slate-600 mb-2 uppercase tracking-wide">
+                  {stat.metric}
+                </h3>
+                <p className="text-2xl font-bold text-slate-900 mb-2">
+                  {stat.value}
+                </p>
+                {stat.notes && (
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {stat.notes}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Legend/Note */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-8 text-sm text-slate-500"
+        >
+          <p>Data compiled from multiple sources including epidemiological studies, clinical trials, and registry data.</p>
+        </motion.div>
       </div>
     </section>
   )
