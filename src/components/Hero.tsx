@@ -76,14 +76,14 @@ export function Hero() {
               </motion.div>
 
               {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                className="text-base lg:text-lg text-blue-100 leading-relaxed font-sans"
-              >
-                An immersive 12-month learning journey designed to empower clinicians managing generalized Myasthenia Gravis (gMG). This comprehensive hub features tailored curriculum with current and past gMG-focused programs, powered by ReachMD&apos;s Connected Insights Ecosystem and enhanced with transparent learner engagement metrics.
-              </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="text-base lg:text-lg text-blue-100 leading-relaxed font-sans"
+        >
+          Generalized Myasthenia Gravis (gMG) is a chronic autoimmune neuromuscular disorder characterized by fluctuating muscle weakness and fatigue. Early recognition and prompt treatment are critical to improving patient outcomes and quality of life. This comprehensive learning center provides clinicians with evidence-based education spanning the full spectrum of gMG care—from foundational pathophysiology and diagnostic strategies to emerging therapeutic options and practical management approaches for optimizing long-term patient care.
+        </motion.p>
 
               {/* CTA Buttons */}
               <motion.div
@@ -108,14 +108,14 @@ export function Hero() {
             </div>
 
             {/* Right Column - Image Content */}
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-stretch h-full">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative w-full"
+                className="relative w-full h-full"
               >
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full h-[400px] lg:h-[450px] bg-gradient-to-br from-blue-900/50 to-slate-800/50 flex items-center justify-center">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full h-full bg-gradient-to-br from-blue-900/50 to-slate-800/50 flex items-center justify-center">
                   <div className="text-white/60 text-center p-8">
                     <p className="text-lg font-medium mb-2">Image Placeholder</p>
                     <p className="text-sm">gMG Educational Visual</p>

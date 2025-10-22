@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Globe2, Activity, AlertCircle, TrendingUp, Users, Calendar } from 'lucide-react'
 
@@ -126,10 +126,12 @@ export function Statistics() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
             {categories.map((category, index) => (
-              <button
+              <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-semibold transition-all duration-300 ease-in-out ${
                   activeCategory === category.id
                     ? `bg-gradient-to-r ${category.color} text-slate-700 shadow-lg scale-105 border border-slate-200`
                     : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200'
@@ -137,43 +139,52 @@ export function Statistics() {
               >
                 {category.icon}
                 <span className="text-sm text-center">{category.title}</span>
-              </button>
+              </motion.button>
             ))}
           </div>
         </motion.div>
 
-        {/* Stats Display */}
-        <motion.div
-          key={activeCategory}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="bg-white rounded-3xl p-8 shadow-xl border border-slate-200"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {activeData.stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={`bg-gradient-to-br ${activeData.color} rounded-xl p-6 border border-slate-200`}
-              >
-                <h3 className="text-sm font-semibold text-slate-600 mb-2 uppercase tracking-wide">
-                  {stat.metric}
-                </h3>
-                <p className="text-2xl font-bold text-slate-900 mb-2">
-                  {stat.value}
-                </p>
-                {stat.notes && (
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    {stat.notes}
-                  </p>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Stats Display - Fixed Height Container */}
+        <div className="bg-white rounded-3xl shadow-xl border border-slate-200 relative overflow-hidden" style={{ minHeight: '400px', paddingTop: '32px', paddingBottom: '32px', paddingLeft: '32px', paddingRight: '32px' }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-full h-full"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {activeData.stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      duration: 0.25, 
+                      delay: index * 0.04,
+                      ease: "easeOut"
+                    }}
+                    className={`bg-gradient-to-br ${activeData.color} rounded-xl p-6 border border-slate-200`}
+                  >
+                    <h3 className="text-sm font-semibold text-slate-600 mb-2 uppercase tracking-wide">
+                      {stat.metric}
+                    </h3>
+                    <p className="text-2xl font-bold text-slate-900 mb-2">
+                      {stat.value}
+                    </p>
+                    {stat.notes && (
+                      <p className="text-xs text-slate-500 leading-relaxed">
+                        {stat.notes}
+                      </p>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* Legend/Note */}
         <motion.div

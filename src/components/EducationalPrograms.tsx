@@ -49,6 +49,9 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
           )}
         </div>
         
+        {/* Gradient Divider Line */}
+        <div className="h-1 bg-gradient-to-r from-blue-600 to-teal-600"></div>
+        
         {/* Content Section */}
         <div className="p-5">
           {/* Category */}
