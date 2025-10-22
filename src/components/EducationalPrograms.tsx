@@ -2,14 +2,15 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { BookOpen, ExternalLink, Heart, Beaker } from 'lucide-react'
+import { BookOpen, ExternalLink, Heart, Beaker, Clock, GraduationCap } from 'lucide-react'
 import Image from 'next/image'
 
 interface Activity { 
   title: string; 
   icon: React.ReactNode; 
   href: string;
-  category: string;
+  credits: string;
+  duration: string;
   imageUrl?: string;
 }
 
@@ -54,14 +55,20 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
         
         {/* Content Section */}
         <div className="p-5">
-          {/* Category */}
-          <div className="flex items-center space-x-2 mb-3">
-            <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center">
-              {activity.icon}
+          {/* Credits and Duration */}
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="flex items-center space-x-1.5 bg-blue-50 px-3 py-1.5 rounded-lg">
+              <GraduationCap size={16} className="text-blue-600" />
+              <span className="text-slate-700 text-xs font-semibold">
+                {activity.credits} Credits
+              </span>
             </div>
-            <span className="text-slate-500 text-xs font-medium uppercase tracking-wide">
-              {activity.category}
-            </span>
+            <div className="flex items-center space-x-1.5 bg-teal-50 px-3 py-1.5 rounded-lg">
+              <Clock size={16} className="text-teal-600" />
+              <span className="text-slate-700 text-xs font-semibold">
+                {activity.duration}
+              </span>
+            </div>
           </div>
           
           {/* Title */}
@@ -84,21 +91,24 @@ export function EducationalPrograms() {
       title: 'Treatment Advances in Generalized Myasthenia Gravis: Addressing the Nuances of Its Underlying Immunopathology',
       icon: <BookOpen size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-addressing-the-nuances-of-its-underlying-immunopathology/29263/',
-      category: 'SF#17823 | CME Program',
+      credits: '1.00',
+      duration: '58m',
       imageUrl: '/activity-thumbnail-1.png'
     },
     {
       title: 'Treatment Advances in Generalized Myasthenia Gravis: A Pathophysiology-Driven Framework Leveraging FcRn Therapeutics',
       icon: <BookOpen size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-a-pathophysiology-driven-framework-leveraging-fcrn-therapeutics/29537/',
-      category: 'SF#17930 | CME Program',
+      credits: '0.75',
+      duration: '45m',
       imageUrl: '/9757b843673d44aad2245d9a7f986e17.png'
     },
     {
       title: 'Treatment Advances in Generalized Myasthenia Gravis: Clinical and Laboratory Criteria for Diagnosis and Optimal Treatment Selection',
       icon: <BookOpen size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/programs/cme/treatment-advances-in-generalized-myasthenia-gravis-clinical-and-laboratory-criteria-for-diagnosis-and-optimal-treatment-selection/29533/',
-      category: 'SF#17931 | CME Program',
+      credits: '0.75',
+      duration: '45m',
       imageUrl: '/1236d4c8afe6f55769bc49a12c6b411c.png'
     },
   ]
