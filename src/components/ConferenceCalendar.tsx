@@ -41,7 +41,7 @@ export function ConferenceCalendar() {
     {
       name: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
       date: 'October 30, 2025',
-      location: 'Hilton San Francisco Union Square, Imperial Ballroom',
+      location: 'San Francisco, CA',
       type: 'In-Person',
       href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/'
     },
@@ -127,7 +127,7 @@ export function ConferenceCalendar() {
                     </td>
                     <td className="px-6 py-4 text-sm text-slate-600">
                       <div className="flex items-center space-x-2">
-                        <MapPin size={16} className="text-slate-400" />
+                        <MapPin size={18} className="text-slate-400 flex-shrink-0" />
                         <span>{conference.location}</span>
                       </div>
                     </td>
