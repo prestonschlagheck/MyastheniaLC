@@ -131,6 +131,55 @@ export function Faculty() {
   // Faculty data - gMG Steering Committee
   const facultyMembers: Faculty[] = [
     {
+      name: 'Neelam Goyal',
+      credentials: 'MD',
+      title: 'Clinical Professor',
+      institution: 'Stanford University, Palo Alto, CA',
+      imageUrl: '/faculty/Goyal.jpg'
+    },
+    {
+      name: 'Nicholas J. Silvestri',
+      credentials: 'MD',
+      title: 'Associate Professor of Neurology',
+      institution: 'University at Buffalo, Buffalo, NY',
+      imageUrl: '/faculty/silvestri.png'
+    },
+    {
+      name: 'Hans Katzberg',
+      credentials: 'MD',
+      title: 'Professor of Neurology',
+      institution: 'University of Toronto, Canada',
+      imageUrl: '/faculty/Hans Katzberg, MD.jpeg'
+    },
+    {
+      name: 'Jonathan Strober',
+      credentials: 'MD',
+      title: 'Professor, Neurology',
+      institution: 'University of California, San Francisco',
+      imageUrl: '/faculty/Jonathan Strober, MD.jpeg'
+    },
+    {
+      name: 'Pushpa Narayanaswami',
+      credentials: 'MD, FAAN',
+      title: 'Professor of Clinical Neurology',
+      institution: 'Beth Israel Deaconess Medical Center / Harvard',
+      imageUrl: '/faculty/Pushpa Narayanaswami, MD, FAAN.jpeg'
+    },
+    {
+      name: 'Gil I. Wolfe',
+      credentials: 'MD, FAAN',
+      title: 'SUNY Distinguished Professor',
+      institution: 'University at Buffalo',
+      imageUrl: '/faculty/Gil I. Wolfe MD, FAAN'
+    },
+    {
+      name: 'Diana Castro',
+      credentials: 'MD',
+      title: 'Associate Professor',
+      institution: 'UT Southwestern / Dallas Children&apos;s Health',
+      imageUrl: '/faculty/The Best Neurologists in Texas _ US News.jpeg'
+    },
+    {
       name: 'Vera Bril',
       credentials: 'MD, FRCPC',
       title: 'Professor',
@@ -138,58 +187,11 @@ export function Faculty() {
       imageUrl: '/faculty/bril.jpg'
     },
     {
-      name: 'Amanda C. Guidon',
-      credentials: 'MD, MPH',
-      title: 'Associate Professor',
-      institution: 'Massachusetts General Hospital / Harvard'
-    },
-    {
-      name: 'Jeffrey T. Guptill',
-      credentials: 'MD, MHS',
-      title: 'Professor',
-      institution: 'Duke University'
-    },
-    {
-      name: 'James F. Howard Jr.',
-      credentials: 'MD',
-      title: 'Professor',
-      institution: 'UNC Chapel Hill'
-    },
-    {
-      name: 'Henry J. Kaminski',
-      credentials: 'MD',
-      title: 'Professor',
-      institution: 'GWU / MGNet'
-    },
-    {
-      name: 'Srikanth Muppidi',
-      credentials: 'MD',
-      title: 'Clinical Associate Professor',
-      institution: 'Stanford University'
-    },
-    {
-      name: 'Pushpa Narayanaswami',
-      credentials: 'MD',
-      title: 'Professor',
-      institution: 'Brigham & Women&apos;s / Harvard'
-    },
-    {
       name: 'Richard J. Nowak',
-      credentials: 'MD',
+      credentials: 'MD, MS',
       title: 'Professor',
-      institution: 'Yale University'
-    },
-    {
-      name: 'Donald B. Sanders',
-      credentials: 'MD',
-      title: 'Professor Emeritus',
-      institution: 'Duke University'
-    },
-    {
-      name: 'Gil I. Wolfe',
-      credentials: 'MD',
-      title: 'Professor',
-      institution: 'University at Buffalo'
+      institution: 'Yale University',
+      imageUrl: '/faculty/A person in a suit smiling AI-generated content may be incorrect.jpeg'
     }
   ]
 
@@ -213,10 +215,12 @@ export function Faculty() {
         </motion.div>
 
         {/* Faculty Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-5 max-w-7xl mx-auto">
           {/* Real Faculty Members */}
           {facultyMembers.map((faculty, index) => (
-            <FacultyCard key={`faculty-${index}`} faculty={faculty} index={index} />
+            <div key={`faculty-${index}`} className="w-[calc(50%-10px)] md:w-[calc(33.333%-14px)] lg:w-[calc(20%-16px)]">
+              <FacultyCard faculty={faculty} index={index} />
+            </div>
           ))}
         </div>
       </div>

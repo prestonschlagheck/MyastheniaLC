@@ -115,15 +115,30 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="relative w-full h-full"
               >
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full h-full bg-gradient-to-br from-blue-900/50 to-slate-800/50 flex items-center justify-center">
-                  <div className="text-white/60 text-center p-8">
-                    <p className="text-lg font-medium mb-2">Image Placeholder</p>
-                    <p className="text-sm">gMG Educational Visual</p>
-                  </div>
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-white/20 backdrop-blur-sm w-full h-full">
+                  <Image
+                    src="/8c75070403d39eb45bfbce5653c9466d.png"
+                    alt="Myasthenia Gravis Educational Visual"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </motion.div>
             </div>
           </div>
+          
+          {/* Grant Support Text */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-sm text-white/60 font-light">
+              Supported by an educational grant from Johnson & Johnson.
+            </p>
+          </motion.div>
           
         </div>
       </div>

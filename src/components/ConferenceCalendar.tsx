@@ -8,7 +8,7 @@ interface Conference {
   name: string
   date: string
   location: string
-  type: 'US' | 'International'
+  type: 'In-Person' | 'Virtual'
   href: string
 }
 
@@ -18,46 +18,53 @@ export function ConferenceCalendar() {
 
   const conferences: Conference[] = [
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, State/Country [PLACEHOLDER]',
-      type: 'US',
-      href: '#'
+      name: 'MGFA International Conference on Myasthenia & Related Disorders',
+      date: 'May 13-15, 2025',
+      location: 'Den Haag, The Netherlands',
+      type: 'In-Person',
+      href: 'https://myasthenia.org/Conference'
     },
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, Country [PLACEHOLDER]',
-      type: 'International',
-      href: '#'
+      name: 'Child Neurology Society 54th Annual Meeting',
+      date: 'October 8-11, 2025',
+      location: 'Charlotte, NC',
+      type: 'In-Person',
+      href: 'https://www.childneurologysociety.org/annual-meeting/'
     },
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, State [PLACEHOLDER]',
-      type: 'US',
-      href: '#'
+      name: 'American Association of Neuromuscular & Electrodiagnostic Medicine (AANEM) Annual Meeting',
+      date: 'October 29 - November 1, 2025',
+      location: 'San Francisco, CA',
+      type: 'In-Person',
+      href: 'https://www.aanem.org/events/event-description?CalendarEventKey='
     },
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, Country [PLACEHOLDER]',
-      type: 'International',
-      href: '#'
+      name: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
+      date: 'October 30, 2025',
+      location: 'Hilton San Francisco Union Square, Imperial Ballroom',
+      type: 'In-Person',
+      href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/'
     },
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, State [PLACEHOLDER]',
-      type: 'US',
-      href: '#'
+      name: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
+      date: 'October 30, 2025',
+      location: 'Virtual',
+      type: 'Virtual',
+      href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36318/'
     },
     {
-      name: 'Conference Name [PLACEHOLDER]',
-      date: 'XX/XX/XXXX',
-      location: 'City, Country [PLACEHOLDER]',
-      type: 'International',
-      href: '#'
+      name: 'Annual Meeting of the American Academy of Neurology (AAN)',
+      date: 'April 18-22, 2026',
+      location: 'Chicago, Illinois, USA',
+      type: 'In-Person',
+      href: 'https://www.aan.com/events-community/annual-meeting'
+    },
+    {
+      name: 'Child Neurology Society 55th Annual Meeting',
+      date: 'October 14-17, 2026',
+      location: 'Montreal, QC',
+      type: 'In-Person',
+      href: 'https://www.childneurologysociety.org/annual-meeting/'
     }
   ]
 
@@ -93,11 +100,11 @@ export function ConferenceCalendar() {
             <table className="w-full">
               <thead className="bg-gradient-to-r from-blue-600 to-teal-600 text-white">
                 <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Conference Name</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Date</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Location</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold">Type</th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold">Link</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold w-[38%]">Conference Name</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold w-[20%]">Date</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold w-[25%]">Location</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold w-[10%]">Type</th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold w-[7%]">Link</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
@@ -113,8 +120,8 @@ export function ConferenceCalendar() {
                       {conference.name}
                     </td>
                     <td className="px-6 py-4 text-sm text-slate-600">
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={16} className="text-slate-400" />
+                      <div className="flex items-center space-x-2 whitespace-nowrap">
+                        <Calendar size={16} className="text-slate-400 flex-shrink-0" />
                         <span>{conference.date}</span>
                       </div>
                     </td>
@@ -126,8 +133,8 @@ export function ConferenceCalendar() {
                     </td>
                     <td className="px-6 py-4 text-sm">
                       <span
-                        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                          conference.type === 'US'
+                        className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
+                          conference.type === 'In-Person'
                             ? 'bg-blue-100 text-blue-700'
                             : 'bg-purple-100 text-purple-700'
                         }`}
