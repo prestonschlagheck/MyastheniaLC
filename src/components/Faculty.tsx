@@ -1,7 +1,7 @@
 'use client'
 
+import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 
@@ -23,6 +23,8 @@ interface FacultyCardProps {
 }
 
 function FacultyCard({ faculty, index }: FacultyCardProps) {
+  const [imageError, setImageError] = React.useState(false)
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 30, scale: 0.9 }}
@@ -45,7 +47,7 @@ function FacultyCard({ faculty, index }: FacultyCardProps) {
             {/* Gradient border wrapper */}
             <div className="w-full h-full rounded-full bg-gradient-to-r from-blue-600 to-teal-600 p-[3px]">
               <div className="w-full h-full rounded-full overflow-hidden shadow-lg bg-white">
-                {faculty.imageUrl ? (
+                {faculty.imageUrl && !imageError ? (
                   <Image
                     src={faculty.imageUrl}
                     alt={faculty.name}
@@ -54,6 +56,8 @@ function FacultyCard({ faculty, index }: FacultyCardProps) {
                     className="object-cover object-top w-full h-full"
                     quality={100}
                     priority={index < 6}
+                    unoptimized
+                    onError={() => setImageError(true)}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-slate-100">
