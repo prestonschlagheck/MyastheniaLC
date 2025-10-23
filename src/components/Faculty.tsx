@@ -53,11 +53,13 @@ function FacultyCard({ faculty, index }: FacultyCardProps) {
                     alt={faculty.name}
                     width={80}
                     height={80}
+                    sizes="80px"
                     className="object-cover object-top w-full h-full"
-                    quality={100}
-                    priority={index < 6}
+                    quality={90}
+                    priority={index < 5}
                     unoptimized
                     onError={() => setImageError(true)}
+                    loading={index < 5 ? "eager" : "lazy"}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-slate-100">

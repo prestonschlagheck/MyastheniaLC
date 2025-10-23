@@ -7,13 +7,16 @@ const nextConfig = {
   
   // Image optimization configuration
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp', 'image/jpeg'],
     remotePatterns: [
       // Add external image domains here if needed
       // Example: ReachMD thumbnails, faculty images from external sources
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: false,
+    dangerouslyAllowSVG: false,
+    minimumCacheTTL: 60,
   },
 
   // Production optimizations
