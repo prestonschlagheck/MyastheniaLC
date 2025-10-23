@@ -135,49 +135,49 @@ export function Faculty() {
       credentials: 'MD',
       title: 'Clinical Professor',
       institution: 'Stanford University, Palo Alto, CA',
-      imageUrl: '/faculty/Goyal.jpg'
+      imageUrl: '/faculty/goyal.jpg'
     },
     {
       name: 'Nicholas J. Silvestri',
       credentials: 'MD',
       title: 'Associate Professor of Neurology',
       institution: 'University at Buffalo, Buffalo, NY',
-      imageUrl: '/faculty/silvestri.png'
+      imageUrl: '/faculty/silvestri-nicholas.jpg'
     },
     {
       name: 'Hans Katzberg',
       credentials: 'MD',
       title: 'Professor of Neurology',
       institution: 'University of Toronto, Canada',
-      imageUrl: '/faculty/Hans Katzberg, MD.jpeg'
+      imageUrl: '/faculty/katzberg.jpg'
     },
     {
       name: 'Jonathan Strober',
       credentials: 'MD',
       title: 'Professor, Neurology',
       institution: 'University of California, San Francisco',
-      imageUrl: '/faculty/Jonathan Strober, MD.jpeg'
+      imageUrl: '/faculty/strober.jpg'
     },
     {
       name: 'Pushpa Narayanaswami',
       credentials: 'MD, FAAN',
       title: 'Professor of Clinical Neurology',
       institution: 'Beth Israel Deaconess Medical Center / Harvard',
-      imageUrl: '/faculty/Pushpa Narayanaswami, MD, FAAN.jpeg'
+      imageUrl: '/faculty/narayanaswami.jpg'
     },
     {
       name: 'Gil I. Wolfe',
       credentials: 'MD, FAAN',
       title: 'SUNY Distinguished Professor',
       institution: 'University at Buffalo',
-      imageUrl: '/faculty/Gil I. Wolfe MD, FAAN'
+      imageUrl: '/faculty/wolfe.jpg'
     },
     {
       name: 'Diana Castro',
       credentials: 'MD',
       title: 'Associate Professor',
       institution: 'UT Southwestern / Dallas Children&apos;s Health',
-      imageUrl: '/faculty/The Best Neurologists in Texas _ US News.jpeg'
+      imageUrl: '/faculty/castro.jpg'
     },
     {
       name: 'Vera Bril',
@@ -191,7 +191,7 @@ export function Faculty() {
       credentials: 'MD, MS',
       title: 'Professor',
       institution: 'Yale University',
-      imageUrl: '/faculty/A person in a suit smiling AI-generated content may be incorrect.jpeg'
+      imageUrl: '/faculty/nowak.jpg'
     }
   ]
 
