@@ -55,7 +55,7 @@ export function ConferenceCalendar() {
     {
       name: 'Annual Meeting of the American Academy of Neurology (AAN)',
       date: 'April 18-22, 2026',
-      location: 'Chicago, Illinois, USA',
+      location: 'Chicago, Illinois',
       type: 'In-Person',
       href: 'https://www.aan.com/events-community/annual-meeting'
     },
