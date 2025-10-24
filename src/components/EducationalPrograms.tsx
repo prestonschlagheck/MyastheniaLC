@@ -116,14 +116,16 @@ export function EducationalPrograms() {
       icon: <BookOpen size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36318/',
       credits: '1.00',
-      duration: '1 hour'
+      duration: '1 hour',
+      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png'
     },
     {
       title: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
       icon: <BookOpen size={16} className="text-blue-700" />,
       href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36196/',
       credits: '1.00',
-      duration: '1h 15m'
+      duration: '1h 15m',
+      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png'
     },
   ]
 
