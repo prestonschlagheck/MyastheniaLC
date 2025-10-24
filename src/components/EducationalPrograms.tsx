@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { BookOpen, ExternalLink, Heart, Beaker, Clock, GraduationCap } from 'lucide-react'
+import { BookOpen, ExternalLink, Heart, Beaker, Clock, GraduationCap, MapPin } from 'lucide-react'
 import Image from 'next/image'
 
 interface Activity { 
@@ -12,6 +12,7 @@ interface Activity {
   credits: string;
   duration: string;
   imageUrl?: string;
+  format?: string;
 }
 
 function ActivityCard({ activity, index }: { activity: Activity; index: number }) {
@@ -55,8 +56,8 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
         
         {/* Content Section */}
         <div className="p-5">
-          {/* Credits and Duration */}
-          <div className="flex items-center space-x-3 mb-3">
+          {/* Credits, Duration, and Format */}
+          <div className="flex items-center flex-wrap gap-2 mb-3">
             <div className="flex items-center space-x-1.5 bg-blue-50 px-3 py-1.5 rounded-lg">
               <GraduationCap size={16} className="text-blue-600" />
               <span className="text-slate-700 text-xs font-semibold">
@@ -69,6 +70,14 @@ function ActivityCard({ activity, index }: { activity: Activity; index: number }
                 {activity.duration}
               </span>
             </div>
+            {activity.format && (
+              <div className="flex items-center space-x-1.5 bg-purple-50 px-3 py-1.5 rounded-lg">
+                <MapPin size={16} className="text-purple-600" />
+                <span className="text-slate-700 text-xs font-semibold">
+                  {activity.format}
+                </span>
+              </div>
+            )}
           </div>
           
           {/* Title */}
@@ -117,7 +126,8 @@ export function EducationalPrograms() {
       href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36318/',
       credits: '1.00',
       duration: '1 hour',
-      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png'
+      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png',
+      format: 'Virtual'
     },
     {
       title: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
@@ -125,7 +135,8 @@ export function EducationalPrograms() {
       href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36196/',
       credits: '1.00',
       duration: '1h 15m',
-      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png'
+      imageUrl: '/8c75070403d39eb45bfbce5653c9466d.png',
+      format: 'In-Person'
     },
   ]
 
