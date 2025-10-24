@@ -182,7 +182,7 @@ export function Faculty() {
       name: 'Diana Castro',
       credentials: 'MD',
       title: 'Associate Professor',
-      institution: 'UT Southwestern / Dallas Children&apos;s Health',
+      institution: 'UT Southwestern / Dallas Children\'s Health',
       imageUrl: '/faculty/castro.jpg'
     },
     {
