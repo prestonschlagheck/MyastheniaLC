@@ -114,7 +114,8 @@ export function ConferenceCalendar() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.1 * index }}
-                    className="hover:bg-slate-50 transition-colors duration-200"
+                    className="hover:bg-slate-50 transition-colors duration-200 cursor-pointer"
+                    onClick={() => window.open(conference.href, '_blank')}
                   >
                     <td className="px-6 py-4 text-sm font-medium text-slate-900">
                       {conference.name}
@@ -143,14 +144,9 @@ export function ConferenceCalendar() {
                       </span>
                     </td>
                     <td className="px-6 py-4 text-center">
-                      <a
-                        href={conference.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
-                      >
+                      <div className="inline-flex items-center text-blue-600 transition-colors">
                         <ExternalLink size={16} />
-                      </a>
+                      </div>
                     </td>
                   </motion.tr>
                 ))}
