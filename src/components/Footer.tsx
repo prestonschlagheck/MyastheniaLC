@@ -15,7 +15,7 @@ export function Footer() {
           <Image src="/glc.png" alt="GLC Logo" width={160} height={48} className="h-12 w-auto object-contain" />
         </div>
         <div className="text-center text-gray-500 text-sm">
-          © 2025 Lipid 360°. All rights reserved.
+          © 2025 Myasthenia Matters. All rights reserved.
         </div>
       </div>
     </footer>
