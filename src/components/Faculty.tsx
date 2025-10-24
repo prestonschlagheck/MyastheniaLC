@@ -155,7 +155,7 @@ export function Faculty() {
       credentials: 'MD',
       title: 'Professor of Neurology',
       institution: 'University of Toronto, Canada',
-      imageUrl: '/faculty/katzberg.jpg'
+      imageUrl: '/faculty/hans.jpg'
     },
     {
       name: 'Jonathan Strober',
