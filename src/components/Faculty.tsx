@@ -141,7 +141,7 @@ export function Faculty() {
       credentials: 'MD',
       title: 'Clinical Professor',
       institution: 'Stanford University, Palo Alto, CA',
-      imageUrl: '/faculty/goyal.jpg'
+      imageUrl: '/faculty/neelam.jpg'
     },
     {
       name: 'Nicholas J. Silvestri',
