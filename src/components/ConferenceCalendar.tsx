@@ -22,28 +22,28 @@ export function ConferenceCalendar() {
       date: 'May 13-15, 2025',
       location: 'Den Haag, The Netherlands',
       type: 'In-Person',
-      href: 'https://myasthenia.org/Conference'
+      href: 'https://myasthenia.org/events/2025-international-conference/'
     },
     {
       name: 'Child Neurology Society 54th Annual Meeting',
       date: 'October 8-11, 2025',
       location: 'Charlotte, NC',
       type: 'In-Person',
-      href: 'https://www.childneurologysociety.org/annual-meeting/'
+      href: 'https://www.childneurologysociety.org/colleagues/network/cns-annual-meeting/'
     },
     {
       name: 'American Association of Neuromuscular & Electrodiagnostic Medicine (AANEM) Annual Meeting',
       date: 'October 29 - November 1, 2025',
       location: 'San Francisco, CA',
       type: 'In-Person',
-      href: 'https://www.aanem.org/events/event-description?CalendarEventKey='
+      href: 'https://www.aanem.org/Meetings/Annual-Meeting'
     },
     {
       name: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
       date: 'October 30, 2025',
       location: 'San Francisco, CA',
       type: 'In-Person',
-      href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/'
+      href: 'https://reachmd.com/live-events/advancing-myasthenia-gravis-mg-treatment-through-guideline-updates-and-emerging-therapies/36196/'
     },
     {
       name: 'Advancing Myasthenia Gravis (MG) Treatment Through Guideline Updates and Emerging Therapies',
@@ -57,14 +57,14 @@ export function ConferenceCalendar() {
       date: 'April 18-22, 2026',
       location: 'Chicago, Illinois',
       type: 'In-Person',
-      href: 'https://www.aan.com/events-community/annual-meeting'
+      href: 'https://www.aan.com/events/annual-meeting/'
     },
     {
       name: 'Child Neurology Society 55th Annual Meeting',
       date: 'October 14-17, 2026',
       location: 'Montreal, QC',
       type: 'In-Person',
-      href: 'https://www.childneurologysociety.org/annual-meeting/'
+      href: 'https://www.childneurologysociety.org/event/cns-55th-annual-meeting/'
     }
   ]
 
